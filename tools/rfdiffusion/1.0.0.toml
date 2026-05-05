@@ -166,4 +166,4 @@ cache_paths = ["/cache/rfdiffusion"]
 
 
 [tool.binaries]
-exposed = ["scripts/run_inference.py"]
+exposed = ["python"]
