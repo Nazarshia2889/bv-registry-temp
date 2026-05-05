@@ -28,36 +28,36 @@ cuda_version = "11.8"
 
 [[tool.inputs]]
 name        = "input_pdb"
-type        = "str"
+type        = "file"
 entity      = "protein_structure"
 format      = "pdb"
 cardinality = "one"
 required    = false
 hydra_key   = "inference.input_pdb"
-description = "Path to the input PDB file. Required for binder design (target structure), motif scaffolding, and fold conditioning. Not required for unconditional monomer generation."
+description = "Path to the input PDB file. Required for binder design, motif scaffolding, and fold conditioning."
 
 
 [[tool.inputs]]
 name        = "output_prefix"
-type        = "str"
+type        = "file"
 entity      = "output_path_prefix"
 cardinality = "one"
 required    = true
-description = "Output path prefix including directory, e.g. 'results/design'. Output PDBs will be named <prefix>_0.pdb, <prefix>_1.pdb, etc."
+description = "Output path prefix including directory, e.g. 'results/design'."
 
 
 [[tool.inputs]]
 name        = "contigs"
-type        = "str"
+type        = "file"
 entity      = "contig_string"
 cardinality = "one"
 required    = true
-description = "Contig specification defining the design problem. Examples: '[100]' for a 100-residue monomer; '[A1-150/0 70-100]' for a binder to chain A residues 1-150; '[A10-25/0 B1-100]' for motif scaffolding of residues A10-25 in a 100-residue context."
+description = "Contig specification, e.g. '[100]' for monomer, '[A1-150/0 70-100]' for binder."
 
 
 [[tool.inputs]]
 name        = "num_designs"
-type        = "int"
+type        = "file"
 entity      = "num_designs"
 cardinality = "one"
 required    = false
@@ -67,90 +67,86 @@ description = "Number of backbone designs to generate."
 
 [[tool.inputs]]
 name        = "hotspot_res"
-type        = "str"
+type        = "file"
 entity      = "hotspot_residues"
 cardinality = "one"
 required    = false
 default     = ""
 hydra_key   = "ppi.hotspot_res"
-description = "Hotspot residues on the target for binder design, e.g. '[A30,A33,A34]'. Specifies which target residues the binder must contact. Recommend 3-6 hotspots."
+description = "Hotspot residues for binder design, e.g. '[A30,A33,A34]'."
 
 
 [[tool.inputs]]
 name        = "model_checkpoint"
-type        = "enum"
+type        = "file"
 entity      = "model_checkpoint_name"
-values      = ["Base_ckpt.pt", "Base_epoch8_ckpt.pt", "Complex_base_ckpt.pt", "Complex_Fold_base_ckpt.pt"]
 cardinality = "one"
 required    = false
 default     = "Complex_base_ckpt.pt"
-description = "Model checkpoint to use. 'Complex_base_ckpt.pt' for binder/PPI design. 'Base_ckpt.pt' for unconditional monomer design. 'Complex_Fold_base_ckpt.pt' for fold-conditioned design."
+description = "Model checkpoint: 'Complex_base_ckpt.pt' for binder design, 'Base_ckpt.pt' for monomer."
 
 
 [[tool.inputs]]
 name        = "num_timesteps"
-type        = "int"
+type        = "file"
 entity      = "diffusion_timesteps"
 cardinality = "one"
 required    = false
 default     = "50"
-description = "Number of diffusion timesteps for inference. Default: 50. Original training used 200; higher values increase quality at the cost of runtime."
+description = "Number of diffusion timesteps. Default: 50."
 
 
 [[tool.inputs]]
 name        = "noise_scale_ca"
-type        = "float"
+type        = "file"
 entity      = "noise_scale_ca"
 cardinality = "one"
 required    = false
 default     = "1.0"
-description = "Noise scale for CA atom positions during denoising. Set to 0 for binder design (recommended). Default: 1.0."
+description = "Noise scale for CA atoms. Set to 0 for binder design."
 
 
 [[tool.inputs]]
 name        = "noise_scale_frame"
-type        = "float"
+type        = "file"
 entity      = "noise_scale_frame"
 cardinality = "one"
 required    = false
 default     = "1.0"
-description = "Noise scale for backbone frames during denoising. Set to 0 for binder design (recommended). Default: 1.0."
+description = "Noise scale for backbone frames. Set to 0 for binder design."
 
 
 [[tool.inputs]]
 name        = "extra_overrides"
-type        = "list[str]"
+type        = "file"
 entity      = "hydra_overrides"
-cardinality = "many"
+cardinality = "one"
 required    = false
 default     = ""
-description = "Additional Hydra-style overrides passed directly to run_inference.py, e.g. ['scaffoldguided.scaffoldguided=True']. For advanced use cases."
+description = "Additional Hydra-style overrides passed directly to run_inference.py."
 
 
 [[tool.outputs]]
-name             = "pdb_files"
-type             = "list[str]"
-entity           = "protein_backbone_structure"
-format           = "pdb"
-cardinality_with = "trb_files"
-description      = "Generated backbone PDB files, one per design, named <output_prefix>_<N>.pdb. Contain only backbone atoms (N, CA, C, O) and are ready for inverse folding with ProteinMPNN."
+name        = "pdb_files"
+type        = "file"
+entity      = "protein_backbone_structure"
+format      = "pdb"
+description = "Generated backbone PDB files, one per design."
 
 
 [[tool.outputs]]
-name             = "trb_files"
-type             = "list[str]"
-entity           = "rfdiffusion_metadata"
-format           = "trb"
-cardinality_with = "pdb_files"
-description      = "Per-design .trb metadata files (pickled dicts) containing contig mapping, trajectory info, and design parameters."
+name        = "trb_files"
+type        = "file"
+entity      = "rfdiffusion_metadata"
+format      = "trb"
+description = "Per-design .trb metadata files."
 
 
 [[tool.outputs]]
 name        = "output_dir"
-type        = "str"
+type        = "dir"
 entity      = "rfdiffusion_output_dir"
-format      = "rfdiffusion_output_dir"
-description = "Directory containing all output files, including PDBs, .trb metadata, and traj/ subdirectory with trajectory structures."
+description = "Directory containing all output files."
 
 
 [tool.entrypoint]
