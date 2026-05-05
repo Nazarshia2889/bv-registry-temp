@@ -61,7 +61,7 @@ type        = "int"
 entity      = "num_designs"
 cardinality = "one"
 required    = false
-default     = 10
+default     = "10"
 description = "Number of backbone designs to generate."
 
 
@@ -93,7 +93,7 @@ type        = "int"
 entity      = "diffusion_timesteps"
 cardinality = "one"
 required    = false
-default     = 50
+default     = "50"
 description = "Number of diffusion timesteps for inference. Default: 50. Original training used 200; higher values increase quality at the cost of runtime."
 
 
@@ -103,7 +103,7 @@ type        = "float"
 entity      = "noise_scale_ca"
 cardinality = "one"
 required    = false
-default     = 1.0
+default     = "1.0"
 description = "Noise scale for CA atom positions during denoising. Set to 0 for binder design (recommended). Default: 1.0."
 
 
@@ -113,7 +113,7 @@ type        = "float"
 entity      = "noise_scale_frame"
 cardinality = "one"
 required    = false
-default     = 1.0
+default     = "1.0"
 description = "Noise scale for backbone frames during denoising. Set to 0 for binder design (recommended). Default: 1.0."
 
 
