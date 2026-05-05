@@ -123,7 +123,7 @@ type        = "list[str]"
 entity      = "hydra_overrides"
 cardinality = "many"
 required    = false
-default     = []
+default     = ""
 description = "Additional Hydra-style overrides passed directly to run_inference.py, e.g. ['scaffoldguided.scaffoldguided=True']. For advanced use cases."
 
 
