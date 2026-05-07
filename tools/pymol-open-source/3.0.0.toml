@@ -5,8 +5,7 @@ description = "PyMOL molecular visualization (open-source)"
 homepage = "https://github.com/schrodinger/pymol-open-source"
 license = "Custom"
 tier = "community"
-maintainers = ["github:schrodinger"]
-
+maintainers = [ "github:schrodinger",]
 [[tool.inputs]]
 name = "structure"
 type = "pdb"
@@ -32,4 +31,9 @@ disk_gb = 5.0
 command = "pymol"
 
 [tool.binaries]
-exposed = ["pymol"]
+exposed = [ "pymol",]
+
+[tool.factored]
+spec_path = "specs/pymol-open-source/3.0.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pymol-open-source:3.0.0"
+image_digest = "sha256:6fce346be1cc18267e5a5fa2a6a0d805e4df1f0cd50d57abf367b399cfe4d54f"
