@@ -5,9 +5,8 @@ description = "Detect biosynthetic gene clusters of secondary metabolites"
 homepage = "https://antismash.secondarymetabolites.org/"
 license = "AGPL-3.0"
 tier = "community"
-maintainers = ["github:antismash"]
-cache_paths = ["/cache/antismash"]
-
+maintainers = [ "github:antismash",]
+cache_paths = [ "/cache/antismash",]
 [[tool.inputs]]
 name = "genome"
 type = "fasta"
@@ -33,4 +32,9 @@ disk_gb = 50.0
 command = "antismash"
 
 [tool.binaries]
-exposed = ["antismash"]
+exposed = [ "antismash",]
+
+[tool.factored]
+spec_path = "specs/antismash/7.1.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/antismash:7.1.0"
+image_digest = "sha256:75fa036e89b22ca5d2b18dac00d4da75d2132946d7b1cf549abac72eae59616a"
