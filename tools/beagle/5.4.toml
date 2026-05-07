@@ -5,8 +5,7 @@ description = "Genotype phasing and imputation"
 homepage = "https://faculty.washington.edu/browning/beagle/beagle.html"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:browning-lab"]
-
+maintainers = [ "github:browning-lab",]
 [[tool.inputs]]
 name = "vcf"
 type = "vcf"
@@ -32,4 +31,9 @@ disk_gb = 20.0
 command = "beagle"
 
 [tool.binaries]
-exposed = ["beagle"]
+exposed = [ "beagle",]
+
+[tool.factored]
+spec_path = "specs/beagle/5.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/beagle:5.4"
+image_digest = "sha256:bf2c68d788859e001977876941fc3e8239eadd6e2dc0d79d8844e19155deafb2"
