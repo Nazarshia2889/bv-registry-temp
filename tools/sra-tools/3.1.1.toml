@@ -5,9 +5,8 @@ description = "NCBI SRA Toolkit: download and convert SRA archives to FASTQ/SAM"
 homepage = "https://github.com/ncbi/sra-tools"
 license = "Public Domain"
 tier = "core"
-maintainers = ["github:ncbi"]
-cache_paths = ["/cache/sra"]
-
+maintainers = [ "github:ncbi",]
+cache_paths = [ "/cache/sra",]
 [[tool.inputs]]
 name = "accession"
 type = "file"
@@ -33,4 +32,9 @@ disk_gb = 100.0
 command = "prefetch"
 
 [tool.binaries]
-exposed = ["prefetch", "fasterq-dump", "fastq-dump", "sra-stat", "vdb-validate", "vdb-dump", "sam-dump", "sff-dump", "abi-dump", "kar"]
+exposed = [ "prefetch", "fasterq-dump", "fastq-dump", "sra-stat", "vdb-validate", "vdb-dump", "sam-dump", "sff-dump", "abi-dump", "kar",]
+
+[tool.factored]
+spec_path = "specs/sra-tools/3.1.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/sra-tools:3.1.1"
+image_digest = "sha256:6a7116fbb55721ccce0abf4a692d9d27a8cc55f6a756481a69f742a82a1c99e7"
