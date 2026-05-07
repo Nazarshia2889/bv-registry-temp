@@ -5,8 +5,7 @@ description = "Structural variant calling and genotyping wrapper around lumpy an
 homepage = "https://github.com/brentp/smoove"
 license = "MIT"
 tier = "community"
-maintainers = ["github:brentp"]
-
+maintainers = [ "github:brentp",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -38,4 +37,9 @@ disk_gb = 20.0
 command = "smoove"
 
 [tool.binaries]
-exposed = ["smoove"]
+exposed = [ "smoove",]
+
+[tool.factored]
+spec_path = "specs/smoove/0.2.8.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/smoove:0.2.8"
+image_digest = "sha256:4a74fd3b2387013b2060dfb912e11469cc3b0ee04870ac2feabe08230c5d7373"
