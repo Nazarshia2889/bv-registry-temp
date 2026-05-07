@@ -5,8 +5,7 @@ description = "Signal-level analysis of Oxford Nanopore reads (polishing, methyl
 homepage = "https://github.com/jts/nanopolish"
 license = "MIT"
 tier = "community"
-maintainers = ["github:jts"]
-
+maintainers = [ "github:jts",]
 [[tool.inputs]]
 name = "reads"
 type = "fastq"
@@ -38,4 +37,9 @@ disk_gb = 100.0
 command = "nanopolish"
 
 [tool.binaries]
-exposed = ["nanopolish"]
+exposed = [ "nanopolish",]
+
+[tool.factored]
+spec_path = "specs/nanopolish/0.14.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/nanopolish:0.14.0"
+image_digest = "sha256:63da6b6cb6713f5ca7e224abc6c890dcba46b3c9cb9d0039227042a2f0dfafbc"
