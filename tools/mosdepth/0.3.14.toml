@@ -5,8 +5,7 @@ description = "Fast BAM/CRAM depth calculation for WGS, exome, or targeted seque
 homepage = "https://github.com/brentp/mosdepth"
 license = "MIT"
 tier = "community"
-maintainers = ["github:brentp"]
-
+maintainers = [ "github:brentp",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -33,4 +32,9 @@ disk_gb = 2.0
 command = "mosdepth"
 
 [tool.binaries]
-exposed = ["mosdepth"]
+exposed = [ "mosdepth",]
+
+[tool.factored]
+spec_path = "specs/mosdepth/0.3.14.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/mosdepth:0.3.14"
+image_digest = "sha256:99be310afff35e5eb17ac3213d0adfa9d29d4b6b32ced10258a51c4c0ed1fb71"
