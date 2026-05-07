@@ -5,8 +5,7 @@ description = "Pangenome graph aligner and constructor for structural variants"
 homepage = "https://github.com/lh3/minigraph"
 license = "MIT"
 tier = "community"
-maintainers = ["github:lh3"]
-
+maintainers = [ "github:lh3",]
 [[tool.inputs]]
 name = "graph"
 type = "file"
@@ -38,4 +37,9 @@ disk_gb = 50.0
 command = "minigraph"
 
 [tool.binaries]
-exposed = ["minigraph"]
+exposed = [ "minigraph",]
+
+[tool.factored]
+spec_path = "specs/minigraph/0.21.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/minigraph:0.21"
+image_digest = "sha256:25d9c4534ce076bfe8f144f4abfaa48d333bff1e7d919cb3445941dcbfabd470"
