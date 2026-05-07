@@ -5,8 +5,7 @@ description = "Subread aligner suite (separate from featureCounts package)"
 homepage = "http://subread.sourceforge.net/"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:ShiLab-Bioinformatics"]
-
+maintainers = [ "github:ShiLab-Bioinformatics",]
 [[tool.inputs]]
 name = "ref"
 type = "fasta"
@@ -38,4 +37,9 @@ disk_gb = 50.0
 command = "subread-align"
 
 [tool.binaries]
-exposed = ["subread-align", "subread-buildindex", "subjunc", "exactSNP"]
+exposed = [ "subread-align", "subread-buildindex", "subjunc", "exactSNP",]
+
+[tool.factored]
+spec_path = "specs/subread/2.0.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/subread:2.0.6"
+image_digest = "sha256:0eaae50cf8c0344dfab4f0629a2d255c711230d7b9ade97d7e306be9b2e61c81"
