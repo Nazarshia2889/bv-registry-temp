@@ -5,8 +5,7 @@ description = "Model-based Analysis of ChIP-seq: peak calling for ChIP/ATAC-seq"
 homepage = "https://github.com/macs3-project/MACS"
 license = "BSD-3-Clause"
 tier = "core"
-maintainers = ["github:macs3-project"]
-
+maintainers = [ "github:macs3-project",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -32,4 +31,9 @@ disk_gb = 10.0
 command = "macs3"
 
 [tool.binaries]
-exposed = ["macs3"]
+exposed = [ "macs3",]
+
+[tool.factored]
+spec_path = "specs/macs3/3.0.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/macs3:3.0.1"
+image_digest = "sha256:bf14ae7e6388dba384023c2f19eb646ae07a77f1defc9461607bc1a4eb160ba9"
