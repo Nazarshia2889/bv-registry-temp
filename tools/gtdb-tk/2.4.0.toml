@@ -5,9 +5,8 @@ description = "Genome Taxonomy Database toolkit for placing prokaryotic genomes 
 homepage = "https://github.com/Ecogenomics/GTDBTk"
 license = "GPL-3.0"
 tier = "core"
-maintainers = ["github:Ecogenomics"]
-cache_paths = ["/cache/gtdbtk"]
-
+maintainers = [ "github:Ecogenomics",]
+cache_paths = [ "/cache/gtdbtk",]
 [[tool.inputs]]
 name = "genomes"
 type = "dir"
@@ -33,4 +32,9 @@ disk_gb = 100.0
 command = "gtdbtk"
 
 [tool.binaries]
-exposed = ["gtdbtk"]
+exposed = [ "gtdbtk",]
+
+[tool.factored]
+spec_path = "specs/gtdb-tk/2.4.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/gtdb-tk:2.4.0"
+image_digest = "sha256:2d07e0c0e09af2117b9b094f28d07c4886d1951ab33f565223ca97a95563a287"
