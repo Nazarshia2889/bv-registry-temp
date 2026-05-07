@@ -5,8 +5,7 @@ description = "Whole-genome regression for biobank-scale association studies"
 homepage = "https://rgcgithub.github.io/regenie/"
 license = "MIT"
 tier = "core"
-maintainers = ["github:rgcgithub"]
-
+maintainers = [ "github:rgcgithub",]
 [[tool.inputs]]
 name = "bed"
 type = "file"
@@ -38,4 +37,9 @@ disk_gb = 50.0
 command = "regenie"
 
 [tool.binaries]
-exposed = ["regenie"]
+exposed = [ "regenie",]
+
+[tool.factored]
+spec_path = "specs/regenie/3.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/regenie:3.6"
+image_digest = "sha256:254ae91743a5297daddfd597c951b343238b17b9d84d8bde77f12bf7d966c3be"
