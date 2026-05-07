@@ -5,8 +5,7 @@ description = "Read-based phasing of variants for short, long, and Hi-C reads"
 homepage = "https://whatshap.readthedocs.io/"
 license = "MIT"
 tier = "core"
-maintainers = ["github:whatshap"]
-
+maintainers = [ "github:whatshap",]
 [[tool.inputs]]
 name = "vcf"
 type = "vcf"
@@ -38,4 +37,9 @@ disk_gb = 10.0
 command = "whatshap"
 
 [tool.binaries]
-exposed = ["whatshap"]
+exposed = [ "whatshap",]
+
+[tool.factored]
+spec_path = "specs/whatshap/2.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/whatshap:2.3"
+image_digest = "sha256:faffbad99d965900011279c5af4e43efb72c0ef8d0f68a07043f4210589cf276"
