@@ -5,8 +5,7 @@ description = "Efficient single-cell RNA-seq quantification from salmon/piscem R
 homepage = "https://github.com/COMBINE-lab/alevin-fry"
 license = "BSD-3-Clause"
 tier = "core"
-maintainers = ["github:COMBINE-lab"]
-
+maintainers = [ "github:COMBINE-lab",]
 [[tool.inputs]]
 name = "rad"
 type = "dir"
@@ -32,4 +31,9 @@ disk_gb = 50.0
 command = "alevin-fry"
 
 [tool.binaries]
-exposed = ["alevin-fry"]
+exposed = [ "alevin-fry",]
+
+[tool.factored]
+spec_path = "specs/alevin-fry/0.10.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/alevin-fry:0.10.0"
+image_digest = "sha256:fde27f2c83a43b604d429976dc1a0c8f3344573fd5987773f2da5342b177eb33"
