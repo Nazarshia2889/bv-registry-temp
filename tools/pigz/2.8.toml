@@ -5,8 +5,7 @@ description = "Parallel gzip implementation"
 homepage = "https://zlib.net/pigz/"
 license = "Zlib"
 tier = "community"
-maintainers = ["github:madler"]
-
+maintainers = [ "github:madler",]
 [[tool.inputs]]
 name = "input"
 type = "file"
@@ -32,4 +31,9 @@ disk_gb = 50.0
 command = "pigz"
 
 [tool.binaries]
-exposed = ["pigz", "unpigz"]
+exposed = [ "pigz", "unpigz",]
+
+[tool.factored]
+spec_path = "specs/pigz/2.8.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pigz:2.8"
+image_digest = "sha256:833a8d0b4fef89345f619067a13b9829d022ebbca9bd7e921582b75baa6615a7"
