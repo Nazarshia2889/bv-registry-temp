@@ -1,0 +1,41 @@
+[tool]
+id = "usalign"
+version = "20241201"
+description = "Universal structure alignment for monomer, dimer, multimer, and RNA"
+homepage = "https://github.com/pylelab/USalign"
+license = "Custom"
+tier = "core"
+maintainers = ["github:pylelab"]
+
+[[tool.inputs]]
+name = "structure1"
+type = "pdb"
+cardinality = "one"
+description = "First structure"
+
+[[tool.inputs]]
+name = "structure2"
+type = "pdb"
+cardinality = "one"
+description = "Second structure"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Alignment + TM-score"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/usalign:20241201--h503566f_0"
+
+[tool.hardware]
+cpu_cores = 2
+ram_gb = 4.0
+disk_gb = 1.0
+
+[tool.entrypoint]
+command = "USalign"
+
+[tool.binaries]
+exposed = ["USalign"]

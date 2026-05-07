@@ -1,0 +1,36 @@
+[tool]
+id = "rgi"
+version = "6.0.3"
+description = "Resistance Gene Identifier (CARD database)"
+homepage = "https://github.com/arpcard/rgi"
+license = "Apache-2.0"
+tier = "community"
+maintainers = ["github:arpcard"]
+cache_paths = ["/cache/rgi"]
+
+[[tool.inputs]]
+name = "fasta"
+type = "fasta"
+cardinality = "one"
+description = "Nucleotide or protein FASTA"
+
+[[tool.outputs]]
+name = "out"
+type = "tabular"
+cardinality = "one"
+description = "RGI hit table"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/rgi:6.0.3--pyha8f3691_1"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "rgi"
+
+[tool.binaries]
+exposed = ["rgi"]

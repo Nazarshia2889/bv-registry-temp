@@ -1,0 +1,35 @@
+[tool]
+id = "pairtools"
+version = "1.1.0"
+description = "Hi-C pair-file utilities: parse, sort, dedup, select"
+homepage = "https://github.com/open2c/pairtools"
+license = "MIT"
+tier = "core"
+maintainers = ["github:open2c"]
+
+[[tool.inputs]]
+name = "sam"
+type = "sam"
+cardinality = "one"
+description = "Hi-C alignment"
+
+[[tool.outputs]]
+name = "pairs"
+type = "file"
+cardinality = "one"
+description = "Pair file"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/pairtools:1.1.0--py39h7a39fba_3"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "pairtools"
+
+[tool.binaries]
+exposed = ["pairtools"]

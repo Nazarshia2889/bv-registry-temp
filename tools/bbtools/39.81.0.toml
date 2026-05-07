@@ -32,7 +32,7 @@ description = "Processed reverse reads"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/bbmap:39.81--h9b5c0a0_0"
+reference = "quay.io/biocontainers/bbmap:39.81--h9b5c0a0_1"
 
 [tool.hardware]
 cpu_cores = 8

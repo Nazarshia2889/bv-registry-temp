@@ -24,7 +24,7 @@ description = "Annotated VCF with functional effect predictions"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/snpeff:5.4.0c--hdfd78af_0"
+reference = "quay.io/biocontainers/snpeff:5.2--hdfd78af_3"
 digest = "sha256:832e86061ab3c1ef4339ec42f10fb98c4eaaecd498cd37d2bbe747e6bcc14de7"
 
 [tool.hardware]

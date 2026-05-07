@@ -1,0 +1,35 @@
+[tool]
+id = "beagle"
+version = "5.4"
+description = "Genotype phasing and imputation"
+homepage = "https://faculty.washington.edu/browning/beagle/beagle.html"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:browning-lab"]
+
+[[tool.inputs]]
+name = "vcf"
+type = "vcf"
+cardinality = "one"
+description = "Genotypes"
+
+[[tool.outputs]]
+name = "imputed"
+type = "vcf"
+cardinality = "one"
+description = "Phased and imputed genotypes"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/beagle:5.4_22Jul22.46e--hdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 20.0
+
+[tool.entrypoint]
+command = "beagle"
+
+[tool.binaries]
+exposed = ["beagle"]

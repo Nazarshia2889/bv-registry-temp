@@ -20,7 +20,7 @@ description = "PLINK binary format output prefix"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/plink:1.90b6.21--hec16e2b_4"
+reference = "quay.io/biocontainers/plink:1.90b6.21--h7b50bb2_7"
 
 [tool.hardware]
 cpu_cores = 4

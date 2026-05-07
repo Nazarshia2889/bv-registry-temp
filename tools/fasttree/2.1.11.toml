@@ -20,7 +20,7 @@ description = "Newick format phylogenetic tree"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/fasttree:2.1.11--h031d066_3"
+reference = "quay.io/biocontainers/fasttree:2.1.11--h7b50bb2_5"
 
 [tool.hardware]
 cpu_cores = 4

@@ -1,0 +1,11 @@
+name = "nanopolish"
+version = "0.14.0"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["nanopolish ==0.14.0"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/nanopolish"

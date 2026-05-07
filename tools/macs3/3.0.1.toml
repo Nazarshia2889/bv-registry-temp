@@ -1,0 +1,35 @@
+[tool]
+id = "macs3"
+version = "3.0.1"
+description = "Model-based Analysis of ChIP-seq: peak calling for ChIP/ATAC-seq"
+homepage = "https://github.com/macs3-project/MACS"
+license = "BSD-3-Clause"
+tier = "core"
+maintainers = ["github:macs3-project"]
+
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "ChIP/ATAC alignment"
+
+[[tool.outputs]]
+name = "peaks"
+type = "file"
+cardinality = "one"
+description = "Called peaks (narrowPeak/broadPeak)"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/macs3:3.0.1--py39he47c912_3"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "macs3"
+
+[tool.binaries]
+exposed = ["macs3"]

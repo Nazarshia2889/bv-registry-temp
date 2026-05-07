@@ -1,0 +1,11 @@
+name = "mashtree"
+version = "1.4.6"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["mashtree ==1.4.6"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/mashtree"

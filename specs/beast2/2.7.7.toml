@@ -1,0 +1,11 @@
+name = "beast2"
+version = "2.7.7"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["beast2 ==2.7.7"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/beast"

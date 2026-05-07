@@ -1,0 +1,41 @@
+[tool]
+id = "ngmlr"
+version = "0.2.7"
+description = "Long-read mapper with structural-variant–aware alignment"
+homepage = "https://github.com/philres/ngmlr"
+license = "MIT"
+tier = "community"
+maintainers = ["github:philres"]
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "one"
+description = "Long reads"
+
+[[tool.outputs]]
+name = "sam"
+type = "sam"
+cardinality = "one"
+description = "Alignments"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/ngmlr:0.2.7--h077b44d_10"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "ngmlr"
+
+[tool.binaries]
+exposed = ["ngmlr"]

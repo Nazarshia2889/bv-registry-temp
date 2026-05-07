@@ -20,7 +20,7 @@ description = "Output prefix for haplotype GFA/FASTA files"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/hifiasm:0.19.8--h43eeafb_0"
+reference = "quay.io/biocontainers/hifiasm:0.19.8--h43eeafb_1"
 
 [tool.hardware]
 cpu_cores = 32

@@ -1,0 +1,11 @@
+name = "nextclade"
+version = "3.9.1"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["nextclade ==3.9.1"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/nextclade"

@@ -1,0 +1,41 @@
+[tool]
+id = "regenie"
+version = "3.6"
+description = "Whole-genome regression for biobank-scale association studies"
+homepage = "https://rgcgithub.github.io/regenie/"
+license = "MIT"
+tier = "core"
+maintainers = ["github:rgcgithub"]
+
+[[tool.inputs]]
+name = "bed"
+type = "file"
+cardinality = "one"
+description = "PLINK BED genotypes"
+
+[[tool.inputs]]
+name = "pheno"
+type = "file"
+cardinality = "one"
+description = "Phenotype file"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Association results"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/regenie:3.6--h90dfdf2_0"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "regenie"
+
+[tool.binaries]
+exposed = ["regenie"]

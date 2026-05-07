@@ -24,7 +24,7 @@ description = "Filtered or manipulated VCF file"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/snpsift:5.4.0c--hdfd78af_0"
+reference = "quay.io/biocontainers/snpsift:5.2--hdfd78af_0"
 digest = "sha256:5683a819f59a36fec2eb0e9f6ca78a98494b200eb73a54dc6a1f6dcffb206e26"
 
 [tool.hardware]

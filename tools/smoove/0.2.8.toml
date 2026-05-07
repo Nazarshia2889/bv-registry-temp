@@ -1,0 +1,41 @@
+[tool]
+id = "smoove"
+version = "0.2.8"
+description = "Structural variant calling and genotyping wrapper around lumpy and svtyper"
+homepage = "https://github.com/brentp/smoove"
+license = "MIT"
+tier = "community"
+maintainers = ["github:brentp"]
+
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "many"
+description = "Aligned reads"
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.outputs]]
+name = "vcf"
+type = "vcf"
+cardinality = "one"
+description = "SV calls"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/smoove:0.2.8--h9ee0642_1"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 20.0
+
+[tool.entrypoint]
+command = "smoove"
+
+[tool.binaries]
+exposed = ["smoove"]

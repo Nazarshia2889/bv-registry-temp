@@ -20,7 +20,7 @@ description = "Processed sequences"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/seqtk:1.4--he4a0461_1"
+reference = "quay.io/biocontainers/seqtk:1.4--h577a1d6_3"
 
 [tool.hardware]
 cpu_cores = 1

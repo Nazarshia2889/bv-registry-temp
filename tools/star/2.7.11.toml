@@ -26,7 +26,7 @@ description = "Aligned reads in BAM format"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/star:2.7.11b--h43eeafb_0"
+reference = "quay.io/biocontainers/star:2.7.11b--h5ca1c30_8"
 
 [tool.hardware]
 cpu_cores = 8

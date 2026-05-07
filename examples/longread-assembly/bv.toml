@@ -1,0 +1,15 @@
+# ONT long-read genome assembly + polishing + QC.
+
+[project]
+name = "longread-assembly"
+description = "Oxford Nanopore genome assembly with Flye + medaka"
+
+[tools]
+chopper   = "0.7.0"
+nanostat  = "1.6.0"
+flye      = "2.9.5"
+medaka    = "1.11.3"
+busco     = "6.0.0"
+quast     = "5.2.0"
+samtools  = "1.21.0"
+minimap2  = "2.28"

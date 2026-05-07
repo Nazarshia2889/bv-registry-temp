@@ -1,0 +1,11 @@
+name = "ldsc"
+version = "1.0.1"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["ldsc ==1.0.1"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/ldsc.py"

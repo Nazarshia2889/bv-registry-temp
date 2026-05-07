@@ -1,0 +1,11 @@
+name = "velocyto"
+version = "0.17.17"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["velocyto.py ==0.17.17"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/velocyto"

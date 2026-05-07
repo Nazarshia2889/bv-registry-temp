@@ -20,7 +20,7 @@ description = "Processed alignment file"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+reference = "quay.io/biocontainers/samtools:1.21--h96c455f_1"
 
 [tool.hardware]
 cpu_cores = 4

@@ -1,0 +1,35 @@
+[tool]
+id = "cooler"
+version = "0.10.0"
+description = "Hi-C contact matrices in HDF5 (.cool/.mcool format)"
+homepage = "https://github.com/open2c/cooler"
+license = "BSD-3-Clause"
+tier = "core"
+maintainers = ["github:open2c"]
+
+[[tool.inputs]]
+name = "pairs"
+type = "file"
+cardinality = "one"
+description = "Pair file"
+
+[[tool.outputs]]
+name = "cool"
+type = "file"
+cardinality = "one"
+description = ".cool contact matrix"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/cooler:0.10.0--pyhdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "cooler"
+
+[tool.binaries]
+exposed = ["cooler"]

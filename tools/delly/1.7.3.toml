@@ -27,7 +27,7 @@ description = "Structural variant calls in BCF format"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/delly:1.7.3--hd6466ae_0"
+reference = "quay.io/biocontainers/delly:1.3.3--h4d20210_1"
 digest = "sha256:97e6daaa0b8c4f0e4c77066c4152cef169ffe517ee816bc77bf8637d1f25a592"
 
 [tool.hardware]

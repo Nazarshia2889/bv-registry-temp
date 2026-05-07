@@ -20,7 +20,7 @@ description = "Processed VCF or BCF file"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/bcftools:1.21--h8b25389_0"
+reference = "quay.io/biocontainers/bcftools:1.21--h3a4d415_1"
 
 [tool.hardware]
 cpu_cores = 4

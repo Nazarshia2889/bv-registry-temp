@@ -1,0 +1,41 @@
+[tool]
+id = "treetime"
+version = "0.11.4"
+description = "Maximum-likelihood molecular-clock dating of phylogenetic trees"
+homepage = "https://github.com/neherlab/treetime"
+license = "MIT"
+tier = "core"
+maintainers = ["github:neherlab"]
+
+[[tool.inputs]]
+name = "tree"
+type = "file"
+cardinality = "one"
+description = "Newick tree"
+
+[[tool.inputs]]
+name = "aln"
+type = "msa"
+cardinality = "one"
+description = "Alignment"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Time-tree results"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/treetime:0.11.4--pyhdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 5.0
+
+[tool.entrypoint]
+command = "treetime"
+
+[tool.binaries]
+exposed = ["treetime"]

@@ -1,0 +1,11 @@
+name = "mosdepth"
+version = "0.3.14"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["mosdepth ==0.3.14"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/mosdepth"

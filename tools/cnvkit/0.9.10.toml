@@ -1,0 +1,41 @@
+[tool]
+id = "cnvkit"
+version = "0.9.10"
+description = "Copy number variant detection from targeted DNA sequencing"
+homepage = "https://github.com/etal/cnvkit"
+license = "Apache-2.0"
+tier = "community"
+maintainers = ["github:etal"]
+
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "many"
+description = "Tumor/normal BAMs"
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "CNV results"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/cnvkit:0.9.10--pyhdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "cnvkit.py"
+
+[tool.binaries]
+exposed = ["cnvkit.py"]

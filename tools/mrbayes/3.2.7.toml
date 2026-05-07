@@ -1,0 +1,35 @@
+[tool]
+id = "mrbayes"
+version = "3.2.7"
+description = "Bayesian phylogenetic inference using MCMC"
+homepage = "https://nbisweden.github.io/MrBayes/"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:NBISweden"]
+
+[[tool.inputs]]
+name = "nexus"
+type = "file"
+cardinality = "one"
+description = "NEXUS-formatted alignment + commands"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Posterior trees and parameters"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/mrbayes:3.2.7a--hcee41ef_0"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 32.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "mb"
+
+[tool.binaries]
+exposed = ["mb"]

@@ -1,0 +1,35 @@
+[tool]
+id = "repeatmasker"
+version = "4.1.7"
+description = "Mask repetitive DNA using a curated library"
+homepage = "http://www.repeatmasker.org/"
+license = "OSL-2.1"
+tier = "community"
+maintainers = ["github:rmhubley"]
+
+[[tool.inputs]]
+name = "genome"
+type = "fasta"
+cardinality = "one"
+description = "Genome assembly"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Masked sequence + reports"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/repeatmasker:4.1.7p1--pl5321hdfd78af_1"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "RepeatMasker"
+
+[tool.binaries]
+exposed = ["RepeatMasker"]

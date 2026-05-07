@@ -32,7 +32,7 @@ description = "Aligned reads in SAM format"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/bwa:0.7.18--he4a0461_0"
+reference = "quay.io/biocontainers/bwa:0.7.18--h577a1d6_2"
 
 [tool.hardware]
 cpu_cores = 8

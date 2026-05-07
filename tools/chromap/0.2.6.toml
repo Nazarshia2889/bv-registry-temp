@@ -1,0 +1,41 @@
+[tool]
+id = "chromap"
+version = "0.2.6"
+description = "Ultra-fast aligner specialized for ChIP-seq, ATAC-seq, and Hi-C data"
+homepage = "https://github.com/haowenz/chromap"
+license = "MIT"
+tier = "community"
+maintainers = ["github:haowenz"]
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "many"
+description = "Reads"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Alignments (SAM, pairs, or BED)"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/chromap:0.2.6--hdcf5f25_1"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 32.0
+disk_gb = 20.0
+
+[tool.entrypoint]
+command = "chromap"
+
+[tool.binaries]
+exposed = ["chromap"]

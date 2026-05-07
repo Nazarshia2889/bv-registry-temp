@@ -24,7 +24,7 @@ description = "Per-read taxonomic classification results"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/centrifuge:1.0.4.2--h077b44d_1"
+reference = "quay.io/biocontainers/centrifuge:1.0.4--hd03093a_0"
 digest = "sha256:024d696d29f8d781c0c43b6836f6ad1983046d4adaa17e4068dd2f267142a3df"
 
 [tool.hardware]

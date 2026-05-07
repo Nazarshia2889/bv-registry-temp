@@ -1,0 +1,35 @@
+[tool]
+id = "gappa"
+version = "0.8.5"
+description = "Phylogenetic placement post-analysis (jplace files)"
+homepage = "https://github.com/lczech/gappa"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:lczech"]
+
+[[tool.inputs]]
+name = "jplace"
+type = "file"
+cardinality = "one"
+description = "Phylogenetic placement"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Analysis results"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/gappa:0.8.5--h077b44d_3"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 5.0
+
+[tool.entrypoint]
+command = "gappa"
+
+[tool.binaries]
+exposed = ["gappa"]

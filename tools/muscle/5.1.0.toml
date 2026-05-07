@@ -20,7 +20,7 @@ description = "Multiple sequence alignment"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/muscle:5.1--h9f5acd7_1"
+reference = "quay.io/biocontainers/muscle:5.1--h4ac6f70_3"
 
 [tool.hardware]
 cpu_cores = 4

@@ -1,0 +1,41 @@
+[tool]
+id = "whatshap"
+version = "2.3"
+description = "Read-based phasing of variants for short, long, and Hi-C reads"
+homepage = "https://whatshap.readthedocs.io/"
+license = "MIT"
+tier = "core"
+maintainers = ["github:whatshap"]
+
+[[tool.inputs]]
+name = "vcf"
+type = "vcf"
+cardinality = "one"
+description = "Unphased variants"
+
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Aligned reads"
+
+[[tool.outputs]]
+name = "phased"
+type = "vcf"
+cardinality = "one"
+description = "Phased VCF"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/whatshap:2.3--py39h2de1943_3"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "whatshap"
+
+[tool.binaries]
+exposed = ["whatshap"]

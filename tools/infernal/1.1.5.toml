@@ -1,0 +1,41 @@
+[tool]
+id = "infernal"
+version = "1.1.5"
+description = "Inference of RNA alignments from covariation models (Rfam engine)"
+homepage = "http://eddylab.org/infernal/"
+license = "BSD-3-Clause"
+tier = "community"
+maintainers = ["github:EddyRivasLab"]
+
+[[tool.inputs]]
+name = "cm"
+type = "file"
+cardinality = "one"
+description = "Covariance model"
+
+[[tool.inputs]]
+name = "seqdb"
+type = "fasta"
+cardinality = "one"
+description = "Sequence database"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Search hits"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/infernal:1.1.5--pl5321h7b50bb2_4"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "cmsearch"
+
+[tool.binaries]
+exposed = ["cmsearch", "cmscan", "cmalign", "cmbuild", "cmcalibrate", "cmstat", "cmpress", "cmconvert"]

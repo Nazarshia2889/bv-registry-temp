@@ -1,0 +1,41 @@
+[tool]
+id = "bismark"
+version = "0.24.2"
+description = "Bisulfite read aligner and methylation caller"
+homepage = "https://github.com/FelixKrueger/Bismark"
+license = "GPL-3.0"
+tier = "core"
+maintainers = ["github:FelixKrueger"]
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "many"
+description = "Bisulfite-treated reads"
+
+[[tool.inputs]]
+name = "genome"
+type = "dir"
+cardinality = "one"
+description = "Bismark-prepared reference dir"
+
+[[tool.outputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Methylation alignment"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/bismark:0.24.2--hdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "bismark"
+
+[tool.binaries]
+exposed = ["bismark", "bismark_genome_preparation", "bismark_methylation_extractor", "deduplicate_bismark"]

@@ -1,0 +1,41 @@
+[tool]
+id = "winnowmap"
+version = "2.03"
+description = "Long-read mapper that downweights repetitive minimizers"
+homepage = "https://github.com/marbl/Winnowmap"
+license = "Public Domain"
+tier = "community"
+maintainers = ["github:marbl"]
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "one"
+description = "Long reads"
+
+[[tool.outputs]]
+name = "sam"
+type = "sam"
+cardinality = "one"
+description = "Alignments"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/winnowmap:2.03--h5ca1c30_4"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "winnowmap"
+
+[tool.binaries]
+exposed = ["winnowmap", "meryl"]

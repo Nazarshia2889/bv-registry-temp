@@ -1,0 +1,11 @@
+name = "racon"
+version = "1.5.0"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["racon ==1.5.0"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/racon"

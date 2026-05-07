@@ -1,0 +1,41 @@
+[tool]
+id = "manta"
+version = "1.6.0"
+description = "Structural variant and indel caller for short reads"
+homepage = "https://github.com/Illumina/manta"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:Illumina"]
+
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Aligned reads"
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Manta run directory"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/manta:1.6.0--py27h9948957_6"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 20.0
+
+[tool.entrypoint]
+command = "configManta.py"
+
+[tool.binaries]
+exposed = ["configManta.py"]

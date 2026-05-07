@@ -1,0 +1,35 @@
+[tool]
+id = "gcta"
+version = "1.94.1"
+description = "Genome-wide complex trait analysis (GREML, COJO, GSMR)"
+homepage = "https://yanglab.westlake.edu.cn/software/gcta/"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:jianyangqt"]
+
+[[tool.inputs]]
+name = "bed"
+type = "file"
+cardinality = "one"
+description = "PLINK BED genotypes"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "GCTA results"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/gcta:1.94.1--h9ee0642_0"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "gcta64"
+
+[tool.binaries]
+exposed = ["gcta64"]

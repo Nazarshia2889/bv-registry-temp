@@ -26,7 +26,7 @@ description = "Quantification output directory with quant.sf"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/salmon:1.10.3--h6dccd9a_2"
+reference = "quay.io/biocontainers/salmon:1.10.3--h45fbf2d_5"
 
 [tool.hardware]
 cpu_cores = 8

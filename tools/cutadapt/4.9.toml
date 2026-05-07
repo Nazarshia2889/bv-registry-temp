@@ -1,0 +1,36 @@
+[tool]
+id = "cutadapt"
+version = "4.9"
+description = "Adapter trimming for high-throughput sequencing reads"
+homepage = "https://cutadapt.readthedocs.io/"
+license = "MIT"
+tier = "core"
+maintainers = ["github:marcelm"]
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "many"
+description = "Input FASTQ reads (single or paired)"
+
+[[tool.outputs]]
+name = "trimmed"
+type = "fastq"
+cardinality = "many"
+description = "Trimmed FASTQ reads"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/cutadapt:4.9--py39hbcbf7aa_3"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 2.0
+
+[tool.entrypoint]
+command = "cutadapt"
+args_template = "-o {trimmed} {reads}"
+
+[tool.binaries]
+exposed = ["cutadapt"]

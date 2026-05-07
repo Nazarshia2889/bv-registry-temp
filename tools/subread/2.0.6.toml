@@ -1,0 +1,41 @@
+[tool]
+id = "subread"
+version = "2.0.6"
+description = "Subread aligner suite (separate from featureCounts package)"
+homepage = "http://subread.sourceforge.net/"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:ShiLab-Bioinformatics"]
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "many"
+description = "Reads"
+
+[[tool.outputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Alignments"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/subread:2.0.6--h577a1d6_3"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "subread-align"
+
+[tool.binaries]
+exposed = ["subread-align", "subread-buildindex", "subjunc", "exactSNP"]

@@ -1,0 +1,35 @@
+[tool]
+id = "homer"
+version = "5.1"
+description = "Motif discovery and ChIP-seq analysis suite"
+homepage = "http://homer.ucsd.edu/homer/"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:HOMER"]
+
+[[tool.inputs]]
+name = "tagdir"
+type = "dir"
+cardinality = "one"
+description = "HOMER tag directory"
+
+[[tool.outputs]]
+name = "peaks"
+type = "file"
+cardinality = "one"
+description = "Peak calls"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/homer:5.1--pl5321hc52dbad_1"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "findPeaks"
+
+[tool.binaries]
+exposed = ["findPeaks", "findMotifsGenome.pl", "annotatePeaks.pl", "makeTagDirectory", "scanMotifGenomeWide.pl", "compareMotifs.pl"]

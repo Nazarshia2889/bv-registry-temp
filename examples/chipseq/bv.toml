@@ -1,0 +1,15 @@
+# ChIP-seq peak-calling pipeline.
+
+[project]
+name = "chipseq"
+description = "Single-end ChIP-seq peak calling and motif analysis"
+
+[tools]
+fastp     = "0.23.4"
+bowtie2   = "2.5.4"
+samtools  = "1.21.0"
+picard    = "3.4.0"
+macs3     = "3.0.1"
+homer     = "5.1"
+deeptools = "3.5.5"
+multiqc   = "1.25"

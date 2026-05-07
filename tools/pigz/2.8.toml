@@ -1,0 +1,35 @@
+[tool]
+id = "pigz"
+version = "2.8"
+description = "Parallel gzip implementation"
+homepage = "https://zlib.net/pigz/"
+license = "Zlib"
+tier = "community"
+maintainers = ["github:madler"]
+
+[[tool.inputs]]
+name = "input"
+type = "file"
+cardinality = "one"
+description = "File to compress or decompress"
+
+[[tool.outputs]]
+name = "output"
+type = "file"
+cardinality = "one"
+description = "Compressed or decompressed file"
+
+[tool.image]
+backend = "docker"
+reference = "ghcr.io/tejasprabhune/bv-pkg/pigz:2.8"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 4.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "pigz"
+
+[tool.binaries]
+exposed = ["pigz", "unpigz"]

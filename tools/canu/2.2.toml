@@ -1,0 +1,35 @@
+[tool]
+id = "canu"
+version = "2.2"
+description = "Long-read genome assembler for PacBio and Oxford Nanopore data"
+homepage = "https://github.com/marbl/canu"
+license = "GPL-2.0-or-later"
+tier = "community"
+maintainers = ["github:marbl"]
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "many"
+description = "Long reads (PacBio or ONT)"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Assembly output directory"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/canu:2.2--ha47f30e_0"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 200.0
+
+[tool.entrypoint]
+command = "canu"
+
+[tool.binaries]
+exposed = ["canu"]

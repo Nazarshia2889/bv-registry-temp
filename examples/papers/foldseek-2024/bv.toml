@@ -1,0 +1,15 @@
+# Port of: van Kempen et al. 2024, Nat Biotechnol
+# "Fast and accurate protein structure search with Foldseek"
+# DOI: 10.1038/s41587-023-01773-0
+
+[project]
+name = "foldseek-2024-port"
+description = "Reproduce the Foldseek paper's structure-search benchmarks"
+
+[tools]
+colabfold = "1.6.1"
+foldseek  = "10.941cd33"
+mmseqs2   = "15.6f452"
+tmalign   = "2024.3.3"
+usalign   = "20240319"
+seqkit    = "2.8.2"

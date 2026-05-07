@@ -21,7 +21,7 @@ description = "Trimmed multiple sequence alignment"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/trimal:1.5.1--h9948957_0"
+reference = "quay.io/biocontainers/trimal:1.5.0--h9948957_2"
 digest = "sha256:2ddc872b92ac2634961cdd1f234d2d7779fccbd03b8c717e0bbbfe74dc7fb4dd"
 
 [tool.hardware]

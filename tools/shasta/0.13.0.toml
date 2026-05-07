@@ -1,0 +1,35 @@
+[tool]
+id = "shasta"
+version = "0.13.0"
+description = "Fast de novo long-read assembler optimized for ONT data"
+homepage = "https://github.com/paoloshasta/shasta"
+license = "BSD-3-Clause"
+tier = "community"
+maintainers = ["github:paoloshasta"]
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "one"
+description = "Long reads"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Assembly directory"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/shasta:0.13.0--h9948957_1"
+
+[tool.hardware]
+cpu_cores = 32
+ram_gb = 128.0
+disk_gb = 200.0
+
+[tool.entrypoint]
+command = "shasta"
+
+[tool.binaries]
+exposed = ["shasta"]

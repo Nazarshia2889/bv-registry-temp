@@ -1,0 +1,35 @@
+[tool]
+id = "beast2"
+version = "2.7.7"
+description = "Bayesian Evolutionary Analysis Sampling Trees (BEAST 2)"
+homepage = "https://www.beast2.org/"
+license = "LGPL-2.1"
+tier = "community"
+maintainers = ["github:CompEvol"]
+
+[[tool.inputs]]
+name = "xml"
+type = "file"
+cardinality = "one"
+description = "BEAST 2 XML configuration"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Posterior trees and trace logs"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/beast2:2.7.7--he65b2d3_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "beast"
+
+[tool.binaries]
+exposed = ["beast", "beauti", "treeannotator", "logcombiner", "applauncher"]

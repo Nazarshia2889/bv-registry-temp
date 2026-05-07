@@ -1,0 +1,36 @@
+[tool]
+id = "antismash"
+version = "7.1.0"
+description = "Detect biosynthetic gene clusters of secondary metabolites"
+homepage = "https://antismash.secondarymetabolites.org/"
+license = "AGPL-3.0"
+tier = "community"
+maintainers = ["github:antismash"]
+cache_paths = ["/cache/antismash"]
+
+[[tool.inputs]]
+name = "genome"
+type = "fasta"
+cardinality = "one"
+description = "Bacterial/fungal assembly"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Cluster predictions"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/antismash:7.1.0--pyh7e72e81_1"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "antismash"
+
+[tool.binaries]
+exposed = ["antismash"]

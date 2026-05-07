@@ -1,0 +1,11 @@
+name = "megahit"
+version = "1.2.9"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["megahit ==1.2.9"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/megahit"

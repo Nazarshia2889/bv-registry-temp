@@ -1,0 +1,40 @@
+[tool]
+id = "gromacs"
+version = "2024.3"
+description = "Molecular dynamics simulation suite"
+homepage = "https://www.gromacs.org/"
+license = "LGPL-2.1"
+tier = "community"
+maintainers = ["github:gromacs"]
+
+[[tool.inputs]]
+name = "tpr"
+type = "file"
+cardinality = "one"
+description = "Run input file"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Trajectory and outputs"
+
+[tool.image]
+backend = "docker"
+reference = "ghcr.io/tejasprabhune/bv-pkg/gromacs:2024.3"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.hardware.gpu]
+required = false
+min_vram_gb = 8
+cuda_version = "12.0"
+
+[tool.entrypoint]
+command = "gmx"
+
+[tool.binaries]
+exposed = ["gmx"]

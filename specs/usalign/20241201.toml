@@ -1,0 +1,11 @@
+name = "usalign"
+version = "20241201"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["usalign ==20241201"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/USalign"

@@ -1,0 +1,15 @@
+# Port of: Watson et al. 2023, Nature
+# "De novo design of protein structure and function with RFdiffusion"
+# DOI: 10.1038/s41586-023-06415-8
+
+[project]
+name = "rfdiffusion-2023-port"
+description = "Reproduce the validation half of the RFdiffusion design loop"
+
+[tools]
+proteinmpnn = "1.0.1"
+colabfold   = "1.6.1"
+foldseek    = "10.941cd33"
+tmalign     = "2024.3.3"
+usalign     = "20241201"
+seqkit      = "2.8.2"

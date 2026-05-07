@@ -20,7 +20,7 @@ description = "Gene predictions in GFF3 format"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/augustus:3.5.0--pl5321h700735d_3"
+reference = "quay.io/biocontainers/augustus:3.5.0--pl5321h9716f88_9"
 
 [tool.hardware]
 cpu_cores = 4

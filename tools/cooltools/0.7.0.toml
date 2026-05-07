@@ -1,0 +1,35 @@
+[tool]
+id = "cooltools"
+version = "0.7.0"
+description = "Analysis of Hi-C/Micro-C cooler matrices: TADs, compartments, expected"
+homepage = "https://github.com/open2c/cooltools"
+license = "MIT"
+tier = "community"
+maintainers = ["github:open2c"]
+
+[[tool.inputs]]
+name = "cool"
+type = "file"
+cardinality = "one"
+description = ".cool matrix"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Analysis result (BED/TSV)"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/cooltools:0.7.0--py39h24fbfe6_2"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "cooltools"
+
+[tool.binaries]
+exposed = ["cooltools"]

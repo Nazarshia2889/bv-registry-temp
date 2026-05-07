@@ -1,0 +1,41 @@
+[tool]
+id = "smina"
+version = "2020.12.10"
+description = "AutoDock Vina fork with custom scoring functions"
+homepage = "https://sourceforge.net/projects/smina/"
+license = "GPL-2.0"
+tier = "community"
+maintainers = ["github:mwojcikowski"]
+
+[[tool.inputs]]
+name = "receptor"
+type = "file"
+cardinality = "one"
+description = "Receptor"
+
+[[tool.inputs]]
+name = "ligand"
+type = "file"
+cardinality = "one"
+description = "Ligand"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Docked poses"
+
+[tool.image]
+backend = "docker"
+reference = "ghcr.io/tejasprabhune/bv-pkg/smina:2020.12.10"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 5.0
+
+[tool.entrypoint]
+command = "smina"
+
+[tool.binaries]
+exposed = ["smina"]

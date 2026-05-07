@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bv: examples</title>
+  <link rel="stylesheet" href="https://use.typekit.net/bsk0vur.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .examples-wrap { padding: 48px 24px 80px; max-width: var(--max); margin: 0 auto; }
+    .examples-lede { font-size: 15px; line-height: 1.6; opacity: 0.82; margin-bottom: 32px; }
+    .ex-section { margin-top: 40px; margin-bottom: 12px; }
+    .ex-section h2 {
+      font-family: "calling-code", sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      font-style: italic;
+      opacity: 0.45;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+    }
+    .ex-card {
+      border: 1px solid var(--g15);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      transition: border-color var(--t), background var(--t);
+    }
+    .ex-card:hover { border-color: var(--g); }
+    .ex-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      gap: 16px;
+    }
+    .ex-name {
+      font-family: "orpheuspro", serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--g);
+    }
+    .ex-paper-cite {
+      font-size: 12px;
+      font-style: italic;
+      opacity: 0.5;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .ex-desc { font-size: 14px; line-height: 1.55; opacity: 0.82; margin-bottom: 10px; }
+    .ex-tools {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .ex-tools span {
+      border: 1px solid var(--g15);
+      padding: 3px 10px;
+      font-family: "calling-code", sans-serif;
+      opacity: 0.85;
+    }
+    .ex-link {
+      font-size: 12px;
+      font-style: italic;
+      opacity: 0.55;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .ex-link:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="page-wrap">
+    <h1 class="site-title">bv</h1>
+    <p class="site-subtitle">examples: reproducible bioinformatics pipelines</p>
+    <div class="header-links">
+      <a href="index.html">tools</a>
+      <a href="data.html">data</a>
+      <a href="examples.html" class="active">examples</a>
+      <a href="about.html">about</a>
+      <a href="docs.html">docs</a>
+      <a href="design.html">design</a>
+      <a href="layer-sharing.html">layer sharing</a>
+      <a href="contributing.html">contributing</a>
+      <a href="https://github.com/tejasprabhune/bv">bv repo</a>
+      <a href="https://github.com/tejasprabhune/bv-registry">registry repo</a>
+    </div>
+  </div>
+</header>
+
+<div class="examples-wrap">
+
+  <p class="examples-lede">
+    Each example is a self-contained directory under
+    <code>examples/</code> in the registry repo, with a pinned
+    <code>bv.toml</code>, a <code>bv.lock</code>, and a runnable script.
+    <code>bv sync</code> reproduces the exact bytes anywhere; the example's
+    <code>run.sh</code> drives the pipeline. Two flavors:
+  </p>
+
+  <div class="ex-section">
+    <h2>bv-authored pipelines</h2>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">variant calling</div></div>
+    <div class="ex-desc">
+      Germline SNV and indel calling from short reads, mirroring the
+      GATK best-practices recipe through annotated VCF.
+    </div>
+    <div class="ex-tools">
+      <span>fastp</span><span>bwa-mem2</span><span>samtools</span>
+      <span>picard</span><span>gatk4</span><span>bcftools</span>
+      <span>vcftools</span><span>ensembl-vep</span><span>multiqc</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/variant-calling">examples/variant-calling →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">bulk RNA-seq</div></div>
+    <div class="ex-desc">
+      Selective-alignment quantification with Salmon. Output drops straight
+      into <code>tximport</code> / <code>DESeq2</code>.
+    </div>
+    <div class="ex-tools">
+      <span>fastp</span><span>salmon</span><span>samtools</span>
+      <span>multiqc</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/rnaseq-bulk">examples/rnaseq-bulk →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">long-read assembly</div></div>
+    <div class="ex-desc">
+      Oxford Nanopore genome assembly + polish + QC. Flye, then medaka, then
+      BUSCO and QUAST to score the result.
+    </div>
+    <div class="ex-tools">
+      <span>chopper</span><span>nanostat</span><span>flye</span>
+      <span>minimap2</span><span>medaka</span><span>busco</span>
+      <span>quast</span><span>samtools</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/longread-assembly">examples/longread-assembly →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">metagenomics</div></div>
+    <div class="ex-desc">
+      Shotgun metagenomics: read-based taxonomy (kraken2/bracken,
+      metaphlan4), function (humann), assembly + binning (megahit,
+      metabat2), and MAG QC (checkm2, gtdb-tk, bakta).
+    </div>
+    <div class="ex-tools">
+      <span>fastp</span><span>kraken2</span><span>bracken</span>
+      <span>metaphlan4</span><span>humann</span><span>megahit</span>
+      <span>metabat2</span><span>checkm2</span><span>gtdb-tk</span>
+      <span>bakta</span><span>multiqc</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/metagenomics">examples/metagenomics →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">protein design loop</div></div>
+    <div class="ex-desc">
+      Backbone → ProteinMPNN → ColabFold → TM-align filter → Foldseek search
+      for natural homologs. Uses bv's GPU-layer sharing across MPNN and
+      ColabFold.
+    </div>
+    <div class="ex-tools">
+      <span>proteinmpnn</span><span>colabfold</span>
+      <span>foldseek</span><span>tmalign</span><span>usalign</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/protein-design">examples/protein-design →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">structure search</div></div>
+    <div class="ex-desc">
+      "What does this protein do?" Fold first with ColabFold, then search by
+      structure with Foldseek and re-rank with US-align.
+    </div>
+    <div class="ex-tools">
+      <span>colabfold</span><span>foldseek</span>
+      <span>tmalign</span><span>usalign</span><span>mmseqs2</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/structure-search">examples/structure-search →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">phylogenetics</div></div>
+    <div class="ex-desc">
+      Genomes → orthogroups → per-OG MSA + trimming + ML gene trees →
+      concatenated species tree with bootstrap support.
+    </div>
+    <div class="ex-tools">
+      <span>prodigal</span><span>orthofinder</span><span>mafft</span>
+      <span>trimal</span><span>iqtree2</span><span>fasttree</span>
+      <span>treetime</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/phylo-pipeline">examples/phylo-pipeline →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">ChIP-seq</div></div>
+    <div class="ex-desc">
+      Single-end ChIP-seq with input control: bowtie2 → dedup → MACS3 narrow
+      peaks → HOMER motifs → deepTools coverage tracks.
+    </div>
+    <div class="ex-tools">
+      <span>fastp</span><span>bowtie2</span><span>samtools</span>
+      <span>picard</span><span>macs3</span><span>homer</span>
+      <span>deeptools</span><span>multiqc</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/chipseq">examples/chipseq →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head"><div class="ex-name">AMR surveillance</div></div>
+    <div class="ex-desc">
+      Bacterial AMR profiling from short reads: assembly with SPAdes,
+      annotation with bakta, AMR with three databases (abricate, AMRFinder+,
+      RGI/CARD) for cross-validation.
+    </div>
+    <div class="ex-tools">
+      <span>fastp</span><span>spades</span><span>bakta</span>
+      <span>abricate</span><span>amrfinderplus</span><span>rgi</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/amr-surveillance">examples/amr-surveillance →</a>
+  </div>
+
+  <div class="ex-section">
+    <h2>ports of published pipelines</h2>
+  </div>
+
+  <p style="font-size:14px;opacity:0.7;margin-bottom:14px;">
+    Each port pins exact tool versions for one published paper so the
+    pipeline is reproducible by digest. The <em>science</em> still belongs
+    to the original authors - cite their papers, not bv.
+  </p>
+
+  <div class="ex-card">
+    <div class="ex-head">
+      <div class="ex-name">foldseek (2024)</div>
+      <div class="ex-paper-cite">van Kempen et al., <em>Nat Biotechnol</em></div>
+    </div>
+    <div class="ex-desc">
+      Reproduces the SCOPe40 structure-search benchmarks: fold queries with
+      ColabFold, search with Foldseek and MMseqs2, ground-truth with
+      US-align.
+    </div>
+    <div class="ex-tools">
+      <span>colabfold</span><span>foldseek</span><span>mmseqs2</span>
+      <span>tmalign</span><span>usalign</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/papers/foldseek-2024">examples/papers/foldseek-2024 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head">
+      <div class="ex-name">RFdiffusion (2023) - validation half</div>
+      <div class="ex-paper-cite">Watson et al., <em>Nature</em></div>
+    </div>
+    <div class="ex-desc">
+      The half of the design loop that's fully reproducible without
+      RFdiffusion's custom kernels: ProteinMPNN sequence design + ColabFold
+      validation + structural-novelty Foldseek search.
+    </div>
+    <div class="ex-tools">
+      <span>proteinmpnn</span><span>colabfold</span>
+      <span>foldseek</span><span>tmalign</span><span>usalign</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/papers/rfdiffusion-2023">examples/papers/rfdiffusion-2023 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head">
+      <div class="ex-name">CheckM2 (2023)</div>
+      <div class="ex-paper-cite">Chklovski et al., <em>Nat Methods</em></div>
+    </div>
+    <div class="ex-desc">
+      Recovers MAGs from a metagenome and scores them with CheckM2's ML
+      quality classifier. Goes through the full assemble + bin + score +
+      dereplicate + GTDB place + annotate pipeline so the comparison with
+      CheckM1 can be reproduced locally.
+    </div>
+    <div class="ex-tools">
+      <span>fastp</span><span>megahit</span><span>bwa-mem2</span>
+      <span>metabat2</span><span>checkm2</span><span>drep</span>
+      <span>gtdb-tk</span><span>bakta</span><span>samtools</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/papers/checkm2-2023">examples/papers/checkm2-2023 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-head">
+      <div class="ex-name">Nextstrain (2018)</div>
+      <div class="ex-paper-cite">Hadfield et al., <em>Bioinformatics</em></div>
+    </div>
+    <div class="ex-desc">
+      The phylogenetic build layer that augur orchestrates, replaced with
+      direct bv exec calls so every step is digest-pinned. Aligns,
+      infers an ML tree, dates it with treetime, and assigns clades.
+    </div>
+    <div class="ex-tools">
+      <span>mafft</span><span>iqtree2</span><span>treetime</span>
+      <span>nextclade</span><span>minimap2</span><span>mash</span>
+      <span>seqkit</span><span>samtools</span>
+    </div>
+    <a class="ex-link" href="https://github.com/tejasprabhune/bv-registry/tree/main/examples/papers/nextstrain-2018">examples/papers/nextstrain-2018 →</a>
+  </div>
+
+  <p style="font-size:13px;opacity:0.6;margin-top:30px;">
+    More candidates in
+    <a href="https://github.com/tejasprabhune/bv-registry/blob/main/examples/papers/SHORTLIST.md">SHORTLIST.md</a>
+    (Tara Oceans, GATK best-practices, ESM-Atlas, EMP 16S meta-analysis,
+    HOMER ChIP-seq motifs). Pull requests welcome.
+  </p>
+
+</div>
+
+</body>
+</html>

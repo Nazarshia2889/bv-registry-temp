@@ -1,0 +1,35 @@
+[tool]
+id = "roary"
+version = "3.13.0"
+description = "Rapid large-scale prokaryote pan-genome analysis"
+homepage = "https://sanger-pathogens.github.io/Roary/"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:sanger-pathogens"]
+
+[[tool.inputs]]
+name = "gff_dir"
+type = "dir"
+cardinality = "one"
+description = "Directory of per-genome GFF files"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Pan-genome outputs"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/roary:3.13.0--pl526h516909a_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "roary"
+
+[tool.binaries]
+exposed = ["roary"]

@@ -1,0 +1,35 @@
+[tool]
+id = "entrez-direct"
+version = "22.4"
+description = "Entrez Direct: Unix-style command-line access to NCBI Entrez"
+homepage = "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
+license = "Public Domain"
+tier = "core"
+maintainers = ["github:ncbi"]
+
+[[tool.inputs]]
+name = "query"
+type = "file"
+cardinality = "one"
+description = "Search term or accession"
+
+[[tool.outputs]]
+name = "records"
+type = "file"
+cardinality = "one"
+description = "Fetched records (FASTA, GenBank, XML, etc.)"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/entrez-direct:22.4--he881be0_0"
+
+[tool.hardware]
+cpu_cores = 1
+ram_gb = 2.0
+disk_gb = 1.0
+
+[tool.entrypoint]
+command = "esearch"
+
+[tool.binaries]
+exposed = ["esearch", "efetch", "einfo", "elink", "epost", "esummary", "xtract", "filter-stop-words", "sort-uniq-count"]

@@ -26,7 +26,7 @@ description = "HMMER search results"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/hmmer:3.3.2--h87f3376_2"
+reference = "quay.io/biocontainers/hmmer:3.3.2--hdbdd923_4"
 
 [tool.hardware]
 cpu_cores = 4

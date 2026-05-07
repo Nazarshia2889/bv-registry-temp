@@ -1,7 +1,112 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-06T00:24:22.168499+00:00",
+  "generated_at": "2026-05-07T20:35:58.632982+00:00",
   "tools": [
+    {
+      "id": "abricate",
+      "version": "1.0.1",
+      "versions": [
+        "1.0.1"
+      ],
+      "description": "Mass screening of contigs for AMR/virulence genes",
+      "tier": "community",
+      "maintainers": [
+        "github:tseemann"
+      ],
+      "homepage": "https://github.com/tseemann/abricate",
+      "license": "GPL-2.0",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "tabular"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "admixture",
+      "version": "1.3.0",
+      "versions": [
+        "1.3.0"
+      ],
+      "description": "Maximum-likelihood ancestry estimation",
+      "tier": "community",
+      "maintainers": [
+        "github:dalexander"
+      ],
+      "homepage": "https://dalexander.github.io/admixture/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "alevin-fry",
+      "version": "0.10.0",
+      "versions": [
+        "0.10.0"
+      ],
+      "description": "Efficient single-cell RNA-seq quantification from salmon/piscem RAD output",
+      "tier": "core",
+      "maintainers": [
+        "github:COMBINE-lab"
+      ],
+      "homepage": "https://github.com/COMBINE-lab/alevin-fry",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "amrfinderplus",
+      "version": "4.0.3",
+      "versions": [
+        "4.0.3"
+      ],
+      "description": "NCBI AMR gene and point mutation finder",
+      "tier": "core",
+      "maintainers": [
+        "github:ncbi"
+      ],
+      "homepage": "https://github.com/ncbi/amr",
+      "license": "Public Domain",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "tabular"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "antismash",
+      "version": "7.1.0",
+      "versions": [
+        "7.1.0"
+      ],
+      "description": "Detect biosynthetic gene clusters of secondary metabolites",
+      "tier": "community",
+      "maintainers": [
+        "github:antismash"
+      ],
+      "homepage": "https://antismash.secondarymetabolites.org/",
+      "license": "AGPL-3.0",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
     {
       "id": "augustus",
       "version": "3.5.0",
@@ -20,6 +125,49 @@
       ],
       "output_types": [
         "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "autodock-vina",
+      "version": "1.2.5",
+      "versions": [
+        "1.2.5"
+      ],
+      "description": "Molecular docking with AutoDock Vina",
+      "tier": "community",
+      "maintainers": [
+        "github:ccsb-scripps"
+      ],
+      "homepage": "https://vina.scripps.edu/",
+      "license": "Apache-2.0",
+      "input_types": [
+        "file",
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "bakta",
+      "version": "1.10.4",
+      "versions": [
+        "1.10.4"
+      ],
+      "description": "Rapid bacterial genome annotation with curated databases (modern prokka)",
+      "tier": "core",
+      "maintainers": [
+        "github:oschwengers"
+      ],
+      "homepage": "https://github.com/oschwengers/bakta",
+      "license": "GPL-3.0",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
       ],
       "deprecated": false
     },
@@ -89,6 +237,48 @@
       "deprecated": false
     },
     {
+      "id": "beagle",
+      "version": "5.4",
+      "versions": [
+        "5.4"
+      ],
+      "description": "Genotype phasing and imputation",
+      "tier": "community",
+      "maintainers": [
+        "github:browning-lab"
+      ],
+      "homepage": "https://faculty.washington.edu/browning/beagle/beagle.html",
+      "license": "GPL-3.0",
+      "input_types": [
+        "vcf"
+      ],
+      "output_types": [
+        "vcf"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "beast2",
+      "version": "2.7.7",
+      "versions": [
+        "2.7.7"
+      ],
+      "description": "Bayesian Evolutionary Analysis Sampling Trees (BEAST 2)",
+      "tier": "community",
+      "maintainers": [
+        "github:CompEvol"
+      ],
+      "homepage": "https://www.beast2.org/",
+      "license": "LGPL-2.1",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "bedtools",
       "version": "2.31.1",
       "versions": [
@@ -107,6 +297,28 @@
       ],
       "output_types": [
         "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "bismark",
+      "version": "0.24.2",
+      "versions": [
+        "0.24.2"
+      ],
+      "description": "Bisulfite read aligner and methylation caller",
+      "tier": "core",
+      "maintainers": [
+        "github:FelixKrueger"
+      ],
+      "homepage": "https://github.com/FelixKrueger/Bismark",
+      "license": "GPL-3.0",
+      "input_types": [
+        "fastq",
+        "dir"
+      ],
+      "output_types": [
+        "bam"
       ],
       "deprecated": false
     },
@@ -242,6 +454,27 @@
       "deprecated": false
     },
     {
+      "id": "canu",
+      "version": "2.2",
+      "versions": [
+        "2.2"
+      ],
+      "description": "Long-read genome assembler for PacBio and Oxford Nanopore data",
+      "tier": "community",
+      "maintainers": [
+        "github:marbl"
+      ],
+      "homepage": "https://github.com/marbl/canu",
+      "license": "GPL-2.0-or-later",
+      "input_types": [
+        "fastq"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "cd_hit",
       "version": "4.8.1",
       "versions": [
@@ -284,6 +517,27 @@
       "deprecated": false
     },
     {
+      "id": "checkm2",
+      "version": "1.0.2",
+      "versions": [
+        "1.0.2"
+      ],
+      "description": "ML-based bin quality assessment for completeness and contamination",
+      "tier": "core",
+      "maintainers": [
+        "github:chklovski"
+      ],
+      "homepage": "https://github.com/chklovski/CheckM2",
+      "license": "GPL-3.0",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "chopper",
       "version": "0.8.0",
       "versions": [
@@ -305,6 +559,28 @@
       "deprecated": false
     },
     {
+      "id": "chromap",
+      "version": "0.2.6",
+      "versions": [
+        "0.2.6"
+      ],
+      "description": "Ultra-fast aligner specialized for ChIP-seq, ATAC-seq, and Hi-C data",
+      "tier": "community",
+      "maintainers": [
+        "github:haowenz"
+      ],
+      "homepage": "https://github.com/haowenz/chromap",
+      "license": "MIT",
+      "input_types": [
+        "fasta",
+        "fastq"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "clustalo",
       "version": "1.2.4",
       "versions": [
@@ -322,6 +598,28 @@
       ],
       "output_types": [
         "msa"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "cnvkit",
+      "version": "0.9.10",
+      "versions": [
+        "0.9.10"
+      ],
+      "description": "Copy number variant detection from targeted DNA sequencing",
+      "tier": "community",
+      "maintainers": [
+        "github:etal"
+      ],
+      "homepage": "https://github.com/etal/cnvkit",
+      "license": "Apache-2.0",
+      "input_types": [
+        "bam",
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
       ],
       "deprecated": false
     },
@@ -349,10 +647,116 @@
       "deprecated": false
     },
     {
-      "id": "deepvariant",
-      "version": "1.6.1",
+      "id": "concoct",
+      "version": "1.1.0",
       "versions": [
-        "1.6.1"
+        "1.1.0"
+      ],
+      "description": "Clustering contigs with composition and coverage",
+      "tier": "community",
+      "maintainers": [
+        "github:BinPro"
+      ],
+      "homepage": "https://github.com/BinPro/CONCOCT",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "fasta",
+        "file"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "cooler",
+      "version": "0.10.0",
+      "versions": [
+        "0.10.0"
+      ],
+      "description": "Hi-C contact matrices in HDF5 (.cool/.mcool format)",
+      "tier": "core",
+      "maintainers": [
+        "github:open2c"
+      ],
+      "homepage": "https://github.com/open2c/cooler",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "cooltools",
+      "version": "0.7.0",
+      "versions": [
+        "0.7.0"
+      ],
+      "description": "Analysis of Hi-C/Micro-C cooler matrices: TADs, compartments, expected",
+      "tier": "community",
+      "maintainers": [
+        "github:open2c"
+      ],
+      "homepage": "https://github.com/open2c/cooltools",
+      "license": "MIT",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "cutadapt",
+      "version": "4.9",
+      "versions": [
+        "4.9"
+      ],
+      "description": "Adapter trimming for high-throughput sequencing reads",
+      "tier": "core",
+      "maintainers": [
+        "github:marcelm"
+      ],
+      "homepage": "https://cutadapt.readthedocs.io/",
+      "license": "MIT",
+      "input_types": [
+        "fastq"
+      ],
+      "output_types": [
+        "fastq"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "deeptools",
+      "version": "3.5.5",
+      "versions": [
+        "3.5.5"
+      ],
+      "description": "Visualization and analysis of deep-sequencing data (BigWig, heatmaps, profiles)",
+      "tier": "core",
+      "maintainers": [
+        "github:deeptools"
+      ],
+      "homepage": "https://deeptools.readthedocs.io/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "bam"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "deepvariant",
+      "version": "1.10.0",
+      "versions": [
+        "1.10.0"
       ],
       "description": "DeepVariant: deep learning variant caller for short and long reads",
       "tier": "community",
@@ -411,6 +815,90 @@
       ],
       "output_types": [
         "blast_tab"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "drep",
+      "version": "3.5.0",
+      "versions": [
+        "3.5.0"
+      ],
+      "description": "Dereplicate genome sets to species-level representatives",
+      "tier": "community",
+      "maintainers": [
+        "github:MrOlm"
+      ],
+      "homepage": "https://github.com/MrOlm/drep",
+      "license": "MIT",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "ensembl-vep",
+      "version": "113.0",
+      "versions": [
+        "113.0"
+      ],
+      "description": "Variant Effect Predictor: annotate variants with consequences and regulatory info",
+      "tier": "core",
+      "maintainers": [
+        "github:Ensembl"
+      ],
+      "homepage": "https://www.ensembl.org/info/docs/tools/vep/index.html",
+      "license": "Apache-2.0",
+      "input_types": [
+        "vcf"
+      ],
+      "output_types": [
+        "vcf"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "entrez-direct",
+      "version": "22.4",
+      "versions": [
+        "22.4"
+      ],
+      "description": "Entrez Direct: Unix-style command-line access to NCBI Entrez",
+      "tier": "core",
+      "maintainers": [
+        "github:ncbi"
+      ],
+      "homepage": "https://www.ncbi.nlm.nih.gov/books/NBK179288/",
+      "license": "Public Domain",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "fair-esm",
+      "version": "2.0.0",
+      "versions": [
+        "2.0.0"
+      ],
+      "description": "Evolutionary Scale Modeling: Meta AI protein language models (ESM-1b, ESM-2, ESMFold)",
+      "tier": "core",
+      "maintainers": [
+        "github:facebookresearch"
+      ],
+      "homepage": "https://github.com/facebookresearch/esm",
+      "license": "MIT",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
       ],
       "deprecated": false
     },
@@ -522,6 +1010,28 @@
       "deprecated": false
     },
     {
+      "id": "foldseek",
+      "version": "10.941cd33",
+      "versions": [
+        "10.941cd33"
+      ],
+      "description": "Ultra-fast protein-structure search (alignment-by-3Di alphabet)",
+      "tier": "core",
+      "maintainers": [
+        "github:steineggerlab"
+      ],
+      "homepage": "https://github.com/steineggerlab/foldseek",
+      "license": "GPL-3.0",
+      "input_types": [
+        "pdb",
+        "dir"
+      ],
+      "output_types": [
+        "tabular"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "freebayes",
       "version": "1.3.7",
       "versions": [
@@ -544,10 +1054,31 @@
       "deprecated": false
     },
     {
-      "id": "gatk4",
-      "version": "4.6.0",
+      "id": "gappa",
+      "version": "0.8.5",
       "versions": [
-        "4.6.0"
+        "0.8.5"
+      ],
+      "description": "Phylogenetic placement post-analysis (jplace files)",
+      "tier": "community",
+      "maintainers": [
+        "github:lczech"
+      ],
+      "homepage": "https://github.com/lczech/gappa",
+      "license": "GPL-3.0",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "gatk4",
+      "version": "4.6.2",
+      "versions": [
+        "4.6.2"
       ],
       "description": "GATK4: genome analysis toolkit for variant discovery in high-throughput sequencing data",
       "tier": "core",
@@ -566,6 +1097,27 @@
       "deprecated": false
     },
     {
+      "id": "gcta",
+      "version": "1.94.1",
+      "versions": [
+        "1.94.1"
+      ],
+      "description": "Genome-wide complex trait analysis (GREML, COJO, GSMR)",
+      "tier": "community",
+      "maintainers": [
+        "github:jianyangqt"
+      ],
+      "homepage": "https://yanglab.westlake.edu.cn/software/gcta/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "genie2",
       "version": "1.0.0",
       "versions": [
@@ -578,6 +1130,69 @@
       "license": "Apache-2.0",
       "input_types": [],
       "output_types": [],
+      "deprecated": false
+    },
+    {
+      "id": "gromacs",
+      "version": "2024.3",
+      "versions": [
+        "2024.3"
+      ],
+      "description": "Molecular dynamics simulation suite",
+      "tier": "community",
+      "maintainers": [
+        "github:gromacs"
+      ],
+      "homepage": "https://www.gromacs.org/",
+      "license": "LGPL-2.1",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "gtdb-tk",
+      "version": "2.4.0",
+      "versions": [
+        "2.4.0"
+      ],
+      "description": "Genome Taxonomy Database toolkit for placing prokaryotic genomes in GTDB",
+      "tier": "core",
+      "maintainers": [
+        "github:Ecogenomics"
+      ],
+      "homepage": "https://github.com/Ecogenomics/GTDBTk",
+      "license": "GPL-3.0",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "hicup",
+      "version": "0.9.2",
+      "versions": [
+        "0.9.2"
+      ],
+      "description": "Hi-C pipeline for mapping, filtering, and QC",
+      "tier": "community",
+      "maintainers": [
+        "github:StevenWingett"
+      ],
+      "homepage": "https://www.bioinformatics.babraham.ac.uk/projects/hicup/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "fastq"
+      ],
+      "output_types": [
+        "dir"
+      ],
       "deprecated": false
     },
     {
@@ -642,6 +1257,114 @@
       ],
       "output_types": [
         "hmmer_output"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "homer",
+      "version": "5.1",
+      "versions": [
+        "5.1"
+      ],
+      "description": "Motif discovery and ChIP-seq analysis suite",
+      "tier": "community",
+      "maintainers": [
+        "github:HOMER"
+      ],
+      "homepage": "http://homer.ucsd.edu/homer/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "htseq",
+      "version": "2.0.5",
+      "versions": [
+        "2.0.5"
+      ],
+      "description": "Count reads overlapping genomic features",
+      "tier": "community",
+      "maintainers": [
+        "github:htseq"
+      ],
+      "homepage": "https://github.com/htseq/htseq",
+      "license": "GPL-3.0",
+      "input_types": [
+        "bam",
+        "file"
+      ],
+      "output_types": [
+        "tabular"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "humann",
+      "version": "3.9",
+      "versions": [
+        "3.9"
+      ],
+      "description": "Functional profiling of microbial communities (pathways and gene families)",
+      "tier": "core",
+      "maintainers": [
+        "github:biobakery"
+      ],
+      "homepage": "https://github.com/biobakery/humann",
+      "license": "MIT",
+      "input_types": [
+        "fastq"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "hyphy",
+      "version": "2.5.62",
+      "versions": [
+        "2.5.62"
+      ],
+      "description": "HYPHY: hypothesis testing for molecular evolution and selection",
+      "tier": "community",
+      "maintainers": [
+        "github:veg"
+      ],
+      "homepage": "https://www.hyphy.org/",
+      "license": "MIT",
+      "input_types": [
+        "msa",
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "infernal",
+      "version": "1.1.5",
+      "versions": [
+        "1.1.5"
+      ],
+      "description": "Inference of RNA alignments from covariation models (Rfam engine)",
+      "tier": "community",
+      "maintainers": [
+        "github:EddyRivasLab"
+      ],
+      "homepage": "http://eddylab.org/infernal/",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "file",
+        "fasta"
+      ],
+      "output_types": [
+        "file"
       ],
       "deprecated": false
     },
@@ -733,6 +1456,48 @@
       "deprecated": false
     },
     {
+      "id": "ldsc",
+      "version": "1.0.1",
+      "versions": [
+        "1.0.1"
+      ],
+      "description": "LD Score regression for SNP-heritability and genetic correlation",
+      "tier": "community",
+      "maintainers": [
+        "github:bulik"
+      ],
+      "homepage": "https://github.com/bulik/ldsc",
+      "license": "GPL-3.0",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "macs3",
+      "version": "3.0.1",
+      "versions": [
+        "3.0.1"
+      ],
+      "description": "Model-based Analysis of ChIP-seq: peak calling for ChIP/ATAC-seq",
+      "tier": "core",
+      "maintainers": [
+        "github:macs3-project"
+      ],
+      "homepage": "https://github.com/macs3-project/MACS",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "bam"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "mafft",
       "version": "7.525.0",
       "versions": [
@@ -754,6 +1519,28 @@
       "deprecated": false
     },
     {
+      "id": "manta",
+      "version": "1.6.0",
+      "versions": [
+        "1.6.0"
+      ],
+      "description": "Structural variant and indel caller for short reads",
+      "tier": "community",
+      "maintainers": [
+        "github:Illumina"
+      ],
+      "homepage": "https://github.com/Illumina/manta",
+      "license": "GPL-3.0",
+      "input_types": [
+        "bam",
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "mash",
       "version": "2.3.0",
       "versions": [
@@ -771,6 +1558,49 @@
       ],
       "output_types": [
         "tabular"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "mashtree",
+      "version": "1.4.6",
+      "versions": [
+        "1.4.6"
+      ],
+      "description": "Build neighbor-joining trees from mash distances",
+      "tier": "community",
+      "maintainers": [
+        "github:lskatz"
+      ],
+      "homepage": "https://github.com/lskatz/mashtree",
+      "license": "GPL-3.0",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "maxbin2",
+      "version": "2.2.7",
+      "versions": [
+        "2.2.7"
+      ],
+      "description": "Binning of metagenomic contigs based on tetranucleotide frequencies",
+      "tier": "community",
+      "maintainers": [
+        "github:movingpictures83"
+      ],
+      "homepage": "https://sourceforge.net/projects/maxbin2/",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "fasta",
+        "file"
+      ],
+      "output_types": [
+        "dir"
       ],
       "deprecated": false
     },
@@ -797,6 +1627,49 @@
       "deprecated": false
     },
     {
+      "id": "megahit",
+      "version": "1.2.9",
+      "versions": [
+        "1.2.9"
+      ],
+      "description": "Ultra-fast metagenome assembler",
+      "tier": "core",
+      "maintainers": [
+        "github:voutcn"
+      ],
+      "homepage": "https://github.com/voutcn/megahit",
+      "license": "GPL-3.0",
+      "input_types": [
+        "fastq"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "metabat2",
+      "version": "2.17",
+      "versions": [
+        "2.17"
+      ],
+      "description": "Adaptive binning algorithm for genome reconstruction from metagenomes",
+      "tier": "core",
+      "maintainers": [
+        "bitbucket:berkeleylab"
+      ],
+      "homepage": "https://bitbucket.org/berkeleylab/metabat",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "fasta",
+        "file"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "metaphlan4",
       "version": "4.1.1",
       "versions": [
@@ -814,6 +1687,50 @@
       ],
       "output_types": [
         "tabular"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "methyldackel",
+      "version": "0.6.1",
+      "versions": [
+        "0.6.1"
+      ],
+      "description": "Universal methylation extractor for bisulfite-sequencing BAMs",
+      "tier": "community",
+      "maintainers": [
+        "github:dpryan79"
+      ],
+      "homepage": "https://github.com/dpryan79/MethylDackel",
+      "license": "MIT",
+      "input_types": [
+        "bam",
+        "fasta"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "minigraph",
+      "version": "0.21",
+      "versions": [
+        "0.21"
+      ],
+      "description": "Pangenome graph aligner and constructor for structural variants",
+      "tier": "community",
+      "maintainers": [
+        "github:lh3"
+      ],
+      "homepage": "https://github.com/lh3/minigraph",
+      "license": "MIT",
+      "input_types": [
+        "file",
+        "fasta"
+      ],
+      "output_types": [
+        "file"
       ],
       "deprecated": false
     },
@@ -862,6 +1779,27 @@
       "deprecated": false
     },
     {
+      "id": "modkit",
+      "version": "0.4.1",
+      "versions": [
+        "0.4.1"
+      ],
+      "description": "Oxford Nanopore methylation calling and bedMethyl manipulation",
+      "tier": "community",
+      "maintainers": [
+        "github:nanoporetech"
+      ],
+      "homepage": "https://github.com/nanoporetech/modkit",
+      "license": "ONT-Public",
+      "input_types": [
+        "bam"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "mosdepth",
       "version": "0.3.14",
       "versions": [
@@ -879,6 +1817,27 @@
       ],
       "output_types": [
         "tabular"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "mrbayes",
+      "version": "3.2.7",
+      "versions": [
+        "3.2.7"
+      ],
+      "description": "Bayesian phylogenetic inference using MCMC",
+      "tier": "community",
+      "maintainers": [
+        "github:NBISweden"
+      ],
+      "homepage": "https://nbisweden.github.io/MrBayes/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
       ],
       "deprecated": false
     },
@@ -925,6 +1884,28 @@
       "deprecated": false
     },
     {
+      "id": "nanopolish",
+      "version": "0.14.0",
+      "versions": [
+        "0.14.0"
+      ],
+      "description": "Signal-level analysis of Oxford Nanopore reads (polishing, methylation)",
+      "tier": "community",
+      "maintainers": [
+        "github:jts"
+      ],
+      "homepage": "https://github.com/jts/nanopolish",
+      "license": "MIT",
+      "input_types": [
+        "fastq",
+        "dir"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "nanostat",
       "version": "1.6.0",
       "versions": [
@@ -939,6 +1920,27 @@
       "license": "MIT",
       "input_types": [
         "fastq"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "ncbi-datasets-cli",
+      "version": "16.30.0",
+      "versions": [
+        "16.30.0"
+      ],
+      "description": "NCBI Datasets command-line: fetch genomes, genes, and metadata",
+      "tier": "core",
+      "maintainers": [
+        "github:ncbi"
+      ],
+      "homepage": "https://github.com/ncbi/datasets",
+      "license": "Public Domain",
+      "input_types": [
+        "file"
       ],
       "output_types": [
         "file"
@@ -967,6 +1969,49 @@
       "deprecated": false
     },
     {
+      "id": "nextpolish",
+      "version": "1.4.1",
+      "versions": [
+        "1.4.1"
+      ],
+      "description": "Genome assembly polisher using short and long reads",
+      "tier": "community",
+      "maintainers": [
+        "github:Nextomics"
+      ],
+      "homepage": "https://github.com/Nextomics/NextPolish",
+      "license": "GPL-3.0",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "ngmlr",
+      "version": "0.2.7",
+      "versions": [
+        "0.2.7"
+      ],
+      "description": "Long-read mapper with structural-variant\u2013aware alignment",
+      "tier": "community",
+      "maintainers": [
+        "github:philres"
+      ],
+      "homepage": "https://github.com/philres/ngmlr",
+      "license": "MIT",
+      "input_types": [
+        "fasta",
+        "fastq"
+      ],
+      "output_types": [
+        "sam"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "orthofinder",
       "version": "3.1.4",
       "versions": [
@@ -984,6 +2029,27 @@
       ],
       "output_types": [
         "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "pairtools",
+      "version": "1.1.0",
+      "versions": [
+        "1.1.0"
+      ],
+      "description": "Hi-C pair-file utilities: parse, sort, dedup, select",
+      "tier": "core",
+      "maintainers": [
+        "github:open2c"
+      ],
+      "homepage": "https://github.com/open2c/pairtools",
+      "license": "MIT",
+      "input_types": [
+        "sam"
+      ],
+      "output_types": [
+        "file"
       ],
       "deprecated": false
     },
@@ -1010,6 +2076,48 @@
       "deprecated": false
     },
     {
+      "id": "panaroo",
+      "version": "1.5.1",
+      "versions": [
+        "1.5.1"
+      ],
+      "description": "Pan-genome analysis with stricter graph cleaning than roary",
+      "tier": "community",
+      "maintainers": [
+        "github:gtonkinhill"
+      ],
+      "homepage": "https://github.com/gtonkinhill/panaroo",
+      "license": "MIT",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "pggb",
+      "version": "0.7.2",
+      "versions": [
+        "0.7.2"
+      ],
+      "description": "PanGenome Graph Builder pipeline",
+      "tier": "community",
+      "maintainers": [
+        "github:pangenome"
+      ],
+      "homepage": "https://github.com/pangenome/pggb",
+      "license": "MIT",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "picard",
       "version": "3.4.0",
       "versions": [
@@ -1031,6 +2139,49 @@
       "deprecated": false
     },
     {
+      "id": "pigz",
+      "version": "2.8",
+      "versions": [
+        "2.8"
+      ],
+      "description": "Parallel gzip implementation",
+      "tier": "community",
+      "maintainers": [
+        "github:madler"
+      ],
+      "homepage": "https://zlib.net/pigz/",
+      "license": "Zlib",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "pilon",
+      "version": "1.24",
+      "versions": [
+        "1.24"
+      ],
+      "description": "Short-read polisher for assembly improvement and variant calling",
+      "tier": "community",
+      "maintainers": [
+        "github:broadinstitute"
+      ],
+      "homepage": "https://github.com/broadinstitute/pilon",
+      "license": "GPL-2.0",
+      "input_types": [
+        "fasta",
+        "bam"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "plink",
       "version": "1.90.0",
       "versions": [
@@ -1045,6 +2196,27 @@
       "license": "GPL-3.0",
       "input_types": [
         "vcf"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "plink2",
+      "version": "2.0.0",
+      "versions": [
+        "2.0.0"
+      ],
+      "description": "PLINK 2.0: whole-genome association and population-genetic toolkit",
+      "tier": "core",
+      "maintainers": [
+        "github:chrchang"
+      ],
+      "homepage": "https://www.cog-genomics.org/plink/2.0/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "file"
       ],
       "output_types": [
         "file"
@@ -1075,9 +2247,9 @@
     },
     {
       "id": "prokka",
-      "version": "1.15.6",
+      "version": "1.14.6",
       "versions": [
-        "1.15.6"
+        "1.14.6"
       ],
       "description": "Rapid annotation of prokaryotic genomes",
       "tier": "community",
@@ -1116,6 +2288,27 @@
       "deprecated": false
     },
     {
+      "id": "pymol-open-source",
+      "version": "3.0.0",
+      "versions": [
+        "3.0.0"
+      ],
+      "description": "PyMOL molecular visualization (open-source)",
+      "tier": "community",
+      "maintainers": [
+        "github:schrodinger"
+      ],
+      "homepage": "https://github.com/schrodinger/pymol-open-source",
+      "license": "Custom",
+      "input_types": [
+        "pdb"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "quast",
       "version": "5.2.0",
       "versions": [
@@ -1137,6 +2330,29 @@
       "deprecated": false
     },
     {
+      "id": "racon",
+      "version": "1.5.0",
+      "versions": [
+        "1.5.0"
+      ],
+      "description": "Fast consensus polisher for long reads against draft assemblies",
+      "tier": "community",
+      "maintainers": [
+        "github:lbcb-sci"
+      ],
+      "homepage": "https://github.com/lbcb-sci/racon",
+      "license": "MIT",
+      "input_types": [
+        "fastq",
+        "sam",
+        "fasta"
+      ],
+      "output_types": [
+        "fasta"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "raxml-ng",
       "version": "1.2.2",
       "versions": [
@@ -1151,6 +2367,133 @@
       "license": "AGPL-3.0",
       "input_types": [
         "msa"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "regenie",
+      "version": "3.6",
+      "versions": [
+        "3.6"
+      ],
+      "description": "Whole-genome regression for biobank-scale association studies",
+      "tier": "core",
+      "maintainers": [
+        "github:rgcgithub"
+      ],
+      "homepage": "https://rgcgithub.github.io/regenie/",
+      "license": "MIT",
+      "input_types": [
+        "file",
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "repeatmasker",
+      "version": "4.1.7",
+      "versions": [
+        "4.1.7"
+      ],
+      "description": "Mask repetitive DNA using a curated library",
+      "tier": "community",
+      "maintainers": [
+        "github:rmhubley"
+      ],
+      "homepage": "http://www.repeatmasker.org/",
+      "license": "OSL-2.1",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "repeatmodeler",
+      "version": "2.0.5",
+      "versions": [
+        "2.0.5"
+      ],
+      "description": "De novo transposable-element family discovery",
+      "tier": "community",
+      "maintainers": [
+        "github:Dfam-consortium"
+      ],
+      "homepage": "https://github.com/Dfam-consortium/RepeatModeler",
+      "license": "OSL-2.1",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "fasta"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "rgi",
+      "version": "6.0.3",
+      "versions": [
+        "6.0.3"
+      ],
+      "description": "Resistance Gene Identifier (CARD database)",
+      "tier": "community",
+      "maintainers": [
+        "github:arpcard"
+      ],
+      "homepage": "https://github.com/arpcard/rgi",
+      "license": "Apache-2.0",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "tabular"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "roary",
+      "version": "3.13.0",
+      "versions": [
+        "3.13.0"
+      ],
+      "description": "Rapid large-scale prokaryote pan-genome analysis",
+      "tier": "community",
+      "maintainers": [
+        "github:sanger-pathogens"
+      ],
+      "homepage": "https://sanger-pathogens.github.io/Roary/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "dir"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "rsem",
+      "version": "1.3.3",
+      "versions": [
+        "1.3.3"
+      ],
+      "description": "RNA-Seq by Expectation Maximization for transcript quantification",
+      "tier": "community",
+      "maintainers": [
+        "github:deweylab"
+      ],
+      "homepage": "https://github.com/deweylab/RSEM",
+      "license": "GPL-3.0",
+      "input_types": [
+        "bam"
       ],
       "output_types": [
         "file"
@@ -1180,6 +2523,27 @@
       "deprecated": false
     },
     {
+      "id": "samblaster",
+      "version": "0.1.26",
+      "versions": [
+        "0.1.26"
+      ],
+      "description": "Mark duplicates and extract discordant/split reads from SAM streams",
+      "tier": "community",
+      "maintainers": [
+        "github:GregoryFaust"
+      ],
+      "homepage": "https://github.com/GregoryFaust/samblaster",
+      "license": "MIT",
+      "input_types": [
+        "sam"
+      ],
+      "output_types": [
+        "sam"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "samtools",
       "version": "1.21.0",
       "versions": [
@@ -1197,6 +2561,27 @@
       ],
       "output_types": [
         "bam"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "scanpy",
+      "version": "1.10.4",
+      "versions": [
+        "1.10.4"
+      ],
+      "description": "Single-cell analysis in Python (preprocessing, embedding, clustering, DE)",
+      "tier": "core",
+      "maintainers": [
+        "github:scverse"
+      ],
+      "homepage": "https://scanpy.readthedocs.io/",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
       ],
       "deprecated": false
     },
@@ -1239,6 +2624,71 @@
       ],
       "output_types": [
         "fastq"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "shasta",
+      "version": "0.13.0",
+      "versions": [
+        "0.13.0"
+      ],
+      "description": "Fast de novo long-read assembler optimized for ONT data",
+      "tier": "community",
+      "maintainers": [
+        "github:paoloshasta"
+      ],
+      "homepage": "https://github.com/paoloshasta/shasta",
+      "license": "BSD-3-Clause",
+      "input_types": [
+        "fastq"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "smina",
+      "version": "2020.12.10",
+      "versions": [
+        "2020.12.10"
+      ],
+      "description": "AutoDock Vina fork with custom scoring functions",
+      "tier": "community",
+      "maintainers": [
+        "github:mwojcikowski"
+      ],
+      "homepage": "https://sourceforge.net/projects/smina/",
+      "license": "GPL-2.0",
+      "input_types": [
+        "file",
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "smoove",
+      "version": "0.2.8",
+      "versions": [
+        "0.2.8"
+      ],
+      "description": "Structural variant calling and genotyping wrapper around lumpy and svtyper",
+      "tier": "community",
+      "maintainers": [
+        "github:brentp"
+      ],
+      "homepage": "https://github.com/brentp/smoove",
+      "license": "MIT",
+      "input_types": [
+        "bam",
+        "fasta"
+      ],
+      "output_types": [
+        "vcf"
       ],
       "deprecated": false
     },
@@ -1307,6 +2757,27 @@
       "deprecated": false
     },
     {
+      "id": "sra-tools",
+      "version": "3.1.1",
+      "versions": [
+        "3.1.1"
+      ],
+      "description": "NCBI SRA Toolkit: download and convert SRA archives to FASTQ/SAM",
+      "tier": "core",
+      "maintainers": [
+        "github:ncbi"
+      ],
+      "homepage": "https://github.com/ncbi/sra-tools",
+      "license": "Public Domain",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "fastq"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "star",
       "version": "2.7.11",
       "versions": [
@@ -1325,6 +2796,28 @@
       ],
       "output_types": [
         "bam"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "strelka2",
+      "version": "2.9.10",
+      "versions": [
+        "2.9.10"
+      ],
+      "description": "Small variant caller (SNV+indel) for germline and somatic samples",
+      "tier": "community",
+      "maintainers": [
+        "github:Illumina"
+      ],
+      "homepage": "https://github.com/Illumina/strelka",
+      "license": "GPL-3.0",
+      "input_types": [
+        "bam",
+        "fasta"
+      ],
+      "output_types": [
+        "dir"
       ],
       "deprecated": false
     },
@@ -1350,6 +2843,28 @@
       "deprecated": false
     },
     {
+      "id": "subread",
+      "version": "2.0.6",
+      "versions": [
+        "2.0.6"
+      ],
+      "description": "Subread aligner suite (separate from featureCounts package)",
+      "tier": "community",
+      "maintainers": [
+        "github:ShiLab-Bioinformatics"
+      ],
+      "homepage": "http://subread.sourceforge.net/",
+      "license": "GPL-3.0",
+      "input_types": [
+        "fasta",
+        "fastq"
+      ],
+      "output_types": [
+        "bam"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "tmalign",
       "version": "2024.3.3",
       "versions": [
@@ -1367,6 +2882,49 @@
       "output_types": [
         "file",
         "pdb"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "treetime",
+      "version": "0.11.4",
+      "versions": [
+        "0.11.4"
+      ],
+      "description": "Maximum-likelihood molecular-clock dating of phylogenetic trees",
+      "tier": "core",
+      "maintainers": [
+        "github:neherlab"
+      ],
+      "homepage": "https://github.com/neherlab/treetime",
+      "license": "MIT",
+      "input_types": [
+        "file",
+        "msa"
+      ],
+      "output_types": [
+        "dir"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "trf",
+      "version": "4.9.1",
+      "versions": [
+        "4.9.1"
+      ],
+      "description": "Tandem Repeats Finder",
+      "tier": "community",
+      "maintainers": [
+        "github:Benson-Genomics-Lab"
+      ],
+      "homepage": "https://tandem.bu.edu/trf/trf.html",
+      "license": "AGPL-3.0",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "file"
       ],
       "deprecated": false
     },
@@ -1437,6 +2995,28 @@
       "deprecated": false
     },
     {
+      "id": "usalign",
+      "version": "20241201",
+      "versions": [
+        "20241201"
+      ],
+      "description": "Universal structure alignment for monomer, dimer, multimer, and RNA",
+      "tier": "core",
+      "maintainers": [
+        "github:pylelab"
+      ],
+      "homepage": "https://github.com/pylelab/USalign",
+      "license": "Custom",
+      "input_types": [
+        "pdb",
+        "pdb"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
       "id": "vcftools",
       "version": "0.1.16",
       "versions": [
@@ -1454,6 +3034,114 @@
       ],
       "output_types": [
         "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "velocyto",
+      "version": "0.17.17",
+      "versions": [
+        "0.17.17"
+      ],
+      "description": "RNA velocity from spliced/unspliced read counts",
+      "tier": "community",
+      "maintainers": [
+        "github:velocyto-team"
+      ],
+      "homepage": "http://velocyto.org/",
+      "license": "BSD-2-Clause",
+      "input_types": [
+        "bam",
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "vg",
+      "version": "1.60.0",
+      "versions": [
+        "1.60.0"
+      ],
+      "description": "Variation graph toolkit for graph-based reference genomes",
+      "tier": "core",
+      "maintainers": [
+        "github:vgteam"
+      ],
+      "homepage": "https://github.com/vgteam/vg",
+      "license": "MIT",
+      "input_types": [
+        "file"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "viennarna",
+      "version": "2.7.0",
+      "versions": [
+        "2.7.0"
+      ],
+      "description": "ViennaRNA Package: RNA secondary structure prediction and analysis",
+      "tier": "core",
+      "maintainers": [
+        "github:ViennaRNA"
+      ],
+      "homepage": "https://www.tbi.univie.ac.at/RNA/",
+      "license": "MIT",
+      "input_types": [
+        "fasta"
+      ],
+      "output_types": [
+        "file"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "whatshap",
+      "version": "2.3",
+      "versions": [
+        "2.3"
+      ],
+      "description": "Read-based phasing of variants for short, long, and Hi-C reads",
+      "tier": "core",
+      "maintainers": [
+        "github:whatshap"
+      ],
+      "homepage": "https://whatshap.readthedocs.io/",
+      "license": "MIT",
+      "input_types": [
+        "vcf",
+        "bam"
+      ],
+      "output_types": [
+        "vcf"
+      ],
+      "deprecated": false
+    },
+    {
+      "id": "winnowmap",
+      "version": "2.03",
+      "versions": [
+        "2.03"
+      ],
+      "description": "Long-read mapper that downweights repetitive minimizers",
+      "tier": "community",
+      "maintainers": [
+        "github:marbl"
+      ],
+      "homepage": "https://github.com/marbl/Winnowmap",
+      "license": "Public Domain",
+      "input_types": [
+        "fasta",
+        "fastq"
+      ],
+      "output_types": [
+        "sam"
       ],
       "deprecated": false
     }

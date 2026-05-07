@@ -1,0 +1,11 @@
+name = "pymol-open-source"
+version = "3.0.0"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["pymol-open-source ==3.0.0"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/pymol"

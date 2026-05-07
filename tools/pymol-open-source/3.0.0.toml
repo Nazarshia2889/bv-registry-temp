@@ -1,0 +1,35 @@
+[tool]
+id = "pymol-open-source"
+version = "3.0.0"
+description = "PyMOL molecular visualization (open-source)"
+homepage = "https://github.com/schrodinger/pymol-open-source"
+license = "Custom"
+tier = "community"
+maintainers = ["github:schrodinger"]
+
+[[tool.inputs]]
+name = "structure"
+type = "pdb"
+cardinality = "one"
+description = "Structure to render"
+
+[[tool.outputs]]
+name = "image"
+type = "file"
+cardinality = "one"
+description = "Rendered image"
+
+[tool.image]
+backend = "docker"
+reference = "ghcr.io/tejasprabhune/bv-pkg/pymol-open-source:3.0.0"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 5.0
+
+[tool.entrypoint]
+command = "pymol"
+
+[tool.binaries]
+exposed = ["pymol"]

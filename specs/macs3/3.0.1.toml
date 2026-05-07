@@ -1,0 +1,11 @@
+name = "macs3"
+version = "3.0.1"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["macs3 ==3.0.1"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/macs3"

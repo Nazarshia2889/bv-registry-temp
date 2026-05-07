@@ -1,0 +1,41 @@
+[tool]
+id = "minigraph"
+version = "0.21"
+description = "Pangenome graph aligner and constructor for structural variants"
+homepage = "https://github.com/lh3/minigraph"
+license = "MIT"
+tier = "community"
+maintainers = ["github:lh3"]
+
+[[tool.inputs]]
+name = "graph"
+type = "file"
+cardinality = "one"
+description = "GFA or FASTA graph"
+
+[[tool.inputs]]
+name = "query"
+type = "fasta"
+cardinality = "one"
+description = "Query sequences"
+
+[[tool.outputs]]
+name = "paf"
+type = "file"
+cardinality = "one"
+description = "PAF/GFA output"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/minigraph:0.21--h577a1d6_3"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "minigraph"
+
+[tool.binaries]
+exposed = ["minigraph"]

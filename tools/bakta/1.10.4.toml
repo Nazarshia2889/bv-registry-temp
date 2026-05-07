@@ -1,0 +1,36 @@
+[tool]
+id = "bakta"
+version = "1.10.4"
+description = "Rapid bacterial genome annotation with curated databases (modern prokka)"
+homepage = "https://github.com/oschwengers/bakta"
+license = "GPL-3.0"
+tier = "core"
+maintainers = ["github:oschwengers"]
+cache_paths = ["/cache/bakta"]
+
+[[tool.inputs]]
+name = "genome"
+type = "fasta"
+cardinality = "one"
+description = "Bacterial assembly"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Annotation outputs (GFF, GBK, FAA)"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/bakta:1.10.4--pyhdfd78af_1"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 30.0
+
+[tool.entrypoint]
+command = "bakta"
+
+[tool.binaries]
+exposed = ["bakta", "bakta_db"]

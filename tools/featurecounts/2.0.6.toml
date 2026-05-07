@@ -20,7 +20,7 @@ description = "Read counts per feature"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/subread:2.0.6--he4a0461_0"
+reference = "quay.io/biocontainers/subread:2.0.6--h577a1d6_3"
 
 [tool.hardware]
 cpu_cores = 8
