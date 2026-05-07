@@ -5,22 +5,7 @@ description = "DeepVariant: deep learning variant caller for short and long read
 homepage = "https://github.com/google/deepvariant"
 license = "BSD-3-Clause"
 tier = "community"
-maintainers = ["github:google"]
-
-[tool.image]
-backend = "docker"
-reference = "google/deepvariant:1.6.1"
-
-[tool.hardware]
-cpu_cores = 8
-ram_gb = 16.0
-disk_gb = 10.0
-
-[tool.hardware.gpu]
-required = false
-min_vram_gb = 8
-cuda_version = "11.8"
-
+maintainers = [ "github:google",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -39,9 +24,28 @@ type = "vcf"
 cardinality = "one"
 description = "Called variants in VCF format"
 
+[tool.image]
+backend = "docker"
+reference = "google/deepvariant:1.6.1"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 10.0
+
 [tool.entrypoint]
 command = "run_deepvariant"
 args_template = "--model_type=WGS --ref={reference} --reads={bam} --output_vcf={vcf} --num_shards={cpu_cores}"
 
 [tool.binaries]
-exposed = ["run_deepvariant"]
+exposed = [ "run_deepvariant",]
+
+[tool.factored]
+spec_path = "specs/deepvariant/1.10.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/deepvariant:1.10.0"
+image_digest = "sha256:4713ca5f0eb55a54d02faf5923e5b8454dfb482bc12d542293ed90cd9b9e39aa"
+
+[tool.hardware.gpu]
+required = false
+min_vram_gb = 8
+cuda_version = "11.8"
