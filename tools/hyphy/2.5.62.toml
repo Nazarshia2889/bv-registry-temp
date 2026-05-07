@@ -5,8 +5,7 @@ description = "HYPHY: hypothesis testing for molecular evolution and selection"
 homepage = "https://www.hyphy.org/"
 license = "MIT"
 tier = "community"
-maintainers = ["github:veg"]
-
+maintainers = [ "github:veg",]
 [[tool.inputs]]
 name = "aln"
 type = "msa"
@@ -38,4 +37,9 @@ disk_gb = 5.0
 command = "hyphy"
 
 [tool.binaries]
-exposed = ["hyphy"]
+exposed = [ "hyphy",]
+
+[tool.factored]
+spec_path = "specs/hyphy/2.5.62.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/hyphy:2.5.62"
+image_digest = "sha256:9bcd8f47b5dc15b88a9d6b45fb49146b5079b27fbd3718f6ca699d3ddcca8ba9"
