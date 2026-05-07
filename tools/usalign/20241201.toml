@@ -5,8 +5,7 @@ description = "Universal structure alignment for monomer, dimer, multimer, and R
 homepage = "https://github.com/pylelab/USalign"
 license = "Custom"
 tier = "core"
-maintainers = ["github:pylelab"]
-
+maintainers = [ "github:pylelab",]
 [[tool.inputs]]
 name = "structure1"
 type = "pdb"
@@ -38,4 +37,9 @@ disk_gb = 1.0
 command = "USalign"
 
 [tool.binaries]
-exposed = ["USalign"]
+exposed = [ "USalign",]
+
+[tool.factored]
+spec_path = "specs/usalign/20241201.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/usalign:20241201"
+image_digest = "sha256:86b60ba4ec44ba9f7eed03ae1f0dafa90186896720ce45cc453eae4d43a66a90"
