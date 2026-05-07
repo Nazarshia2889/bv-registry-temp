@@ -5,8 +5,7 @@ description = "LD Score regression for SNP-heritability and genetic correlation"
 homepage = "https://github.com/bulik/ldsc"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:bulik"]
-
+maintainers = [ "github:bulik",]
 [[tool.inputs]]
 name = "sumstats"
 type = "file"
@@ -32,4 +31,9 @@ disk_gb = 10.0
 command = "ldsc.py"
 
 [tool.binaries]
-exposed = ["ldsc.py", "munge_sumstats.py"]
+exposed = [ "ldsc.py", "munge_sumstats.py",]
+
+[tool.factored]
+spec_path = "specs/ldsc/1.0.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/ldsc:1.0.1"
+image_digest = "sha256:5002c1c8f0b561828fe64788798e0c11f3cd433d400f7699258dd9dd0e11d06a"
