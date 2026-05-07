@@ -5,8 +5,7 @@ description = "Variation graph toolkit for graph-based reference genomes"
 homepage = "https://github.com/vgteam/vg"
 license = "MIT"
 tier = "core"
-maintainers = ["github:vgteam"]
-
+maintainers = [ "github:vgteam",]
 [[tool.inputs]]
 name = "graph"
 type = "file"
@@ -32,4 +31,9 @@ disk_gb = 100.0
 command = "vg"
 
 [tool.binaries]
-exposed = ["vg"]
+exposed = [ "vg",]
+
+[tool.factored]
+spec_path = "specs/vg/1.60.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/vg:1.60.0"
+image_digest = "sha256:1b90906af3a7fb2a4483cb400fbb7afb9543008b64d5e3859f0a919ddd80bf24"
