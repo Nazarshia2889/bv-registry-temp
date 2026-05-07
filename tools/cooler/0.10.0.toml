@@ -5,8 +5,7 @@ description = "Hi-C contact matrices in HDF5 (.cool/.mcool format)"
 homepage = "https://github.com/open2c/cooler"
 license = "BSD-3-Clause"
 tier = "core"
-maintainers = ["github:open2c"]
-
+maintainers = [ "github:open2c",]
 [[tool.inputs]]
 name = "pairs"
 type = "file"
@@ -32,4 +31,9 @@ disk_gb = 50.0
 command = "cooler"
 
 [tool.binaries]
-exposed = ["cooler"]
+exposed = [ "cooler",]
+
+[tool.factored]
+spec_path = "specs/cooler/0.10.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/cooler:0.10.0"
+image_digest = "sha256:0b692aa5fd6c4fd8ba47d602ca455e2cdd00133a069f58b95a384ed7670fe04d"
