@@ -5,8 +5,7 @@ description = "Structural variant discovery by integrated paired-end and split-r
 homepage = "https://github.com/dellytools/delly"
 license = "BSD-3-Clause"
 tier = "community"
-maintainers = ["github:dellytools"]
-
+maintainers = [ "github:dellytools",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -39,4 +38,9 @@ disk_gb = 5.0
 command = "delly"
 
 [tool.binaries]
-exposed = ["delly"]
+exposed = [ "delly",]
+
+[tool.factored]
+spec_path = "specs/delly/1.7.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/delly:1.7.3"
+image_digest = "sha256:55af898e41c7bcb37ad14f474bcbf81757066a8189625ec838a9a008cbfd7393"
