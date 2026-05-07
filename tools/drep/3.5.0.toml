@@ -5,8 +5,7 @@ description = "Dereplicate genome sets to species-level representatives"
 homepage = "https://github.com/MrOlm/drep"
 license = "MIT"
 tier = "community"
-maintainers = ["github:MrOlm"]
-
+maintainers = [ "github:MrOlm",]
 [[tool.inputs]]
 name = "genomes"
 type = "dir"
@@ -32,4 +31,9 @@ disk_gb = 50.0
 command = "dRep"
 
 [tool.binaries]
-exposed = ["dRep"]
+exposed = [ "dRep",]
+
+[tool.factored]
+spec_path = "specs/drep/3.5.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/drep:3.5.0"
+image_digest = "sha256:3d4b53f7a1cbf700a2fbbc80f5d80e74a3260266cb5a2e6e1f969827b73cd610"
