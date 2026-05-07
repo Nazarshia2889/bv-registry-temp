@@ -5,8 +5,7 @@ description = "Universal methylation extractor for bisulfite-sequencing BAMs"
 homepage = "https://github.com/dpryan79/MethylDackel"
 license = "MIT"
 tier = "community"
-maintainers = ["github:dpryan79"]
-
+maintainers = [ "github:dpryan79",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -38,4 +37,9 @@ disk_gb = 10.0
 command = "MethylDackel"
 
 [tool.binaries]
-exposed = ["MethylDackel"]
+exposed = [ "MethylDackel",]
+
+[tool.factored]
+spec_path = "specs/methyldackel/0.6.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/methyldackel:0.6.1"
+image_digest = "sha256:082031a845ffd67820b4ad728634af7c2c4d31dbdf6aec68d80f40b363faa382"
