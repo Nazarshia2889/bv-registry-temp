@@ -5,8 +5,7 @@ description = "Ultra-fast aligner specialized for ChIP-seq, ATAC-seq, and Hi-C d
 homepage = "https://github.com/haowenz/chromap"
 license = "MIT"
 tier = "community"
-maintainers = ["github:haowenz"]
-
+maintainers = [ "github:haowenz",]
 [[tool.inputs]]
 name = "ref"
 type = "fasta"
@@ -38,4 +37,9 @@ disk_gb = 20.0
 command = "chromap"
 
 [tool.binaries]
-exposed = ["chromap"]
+exposed = [ "chromap",]
+
+[tool.factored]
+spec_path = "specs/chromap/0.2.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/chromap:0.2.6"
+image_digest = "sha256:698bf35f2541bb06f0a7d5c00f7ac31762c207128169d88233f95b8d16124898"
