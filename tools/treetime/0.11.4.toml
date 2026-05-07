@@ -5,8 +5,7 @@ description = "Maximum-likelihood molecular-clock dating of phylogenetic trees"
 homepage = "https://github.com/neherlab/treetime"
 license = "MIT"
 tier = "core"
-maintainers = ["github:neherlab"]
-
+maintainers = [ "github:neherlab",]
 [[tool.inputs]]
 name = "tree"
 type = "file"
@@ -38,4 +37,9 @@ disk_gb = 5.0
 command = "treetime"
 
 [tool.binaries]
-exposed = ["treetime"]
+exposed = [ "treetime",]
+
+[tool.factored]
+spec_path = "specs/treetime/0.11.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/treetime:0.11.4"
+image_digest = "sha256:9d61eb92000e2f59082efed9bfd269d51c079aedf430668fe91feba89f5942bc"
