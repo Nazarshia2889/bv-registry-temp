@@ -5,8 +5,7 @@ description = "Tandem Repeats Finder"
 homepage = "https://tandem.bu.edu/trf/trf.html"
 license = "AGPL-3.0"
 tier = "community"
-maintainers = ["github:Benson-Genomics-Lab"]
-
+maintainers = [ "github:Benson-Genomics-Lab",]
 [[tool.inputs]]
 name = "fasta"
 type = "fasta"
@@ -32,4 +31,9 @@ disk_gb = 10.0
 command = "trf"
 
 [tool.binaries]
-exposed = ["trf"]
+exposed = [ "trf",]
+
+[tool.factored]
+spec_path = "specs/trf/4.9.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/trf:4.9.1"
+image_digest = "sha256:b79bbaf12a3f43f221a1f20dd270655add838e91812700271f28102f12baad23"
