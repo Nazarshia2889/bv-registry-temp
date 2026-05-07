@@ -5,8 +5,7 @@ description = "Copy number variant detection from targeted DNA sequencing"
 homepage = "https://github.com/etal/cnvkit"
 license = "Apache-2.0"
 tier = "community"
-maintainers = ["github:etal"]
-
+maintainers = [ "github:etal",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -38,4 +37,9 @@ disk_gb = 10.0
 command = "cnvkit.py"
 
 [tool.binaries]
-exposed = ["cnvkit.py"]
+exposed = [ "cnvkit.py",]
+
+[tool.factored]
+spec_path = "specs/cnvkit/0.9.10.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/cnvkit:0.9.10"
+image_digest = "sha256:a5f66ea1c68cd45d480443ab1f5c6eacfa731617c474bfac28b26270fbae4b80"
