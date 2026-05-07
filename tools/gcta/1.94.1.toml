@@ -5,8 +5,7 @@ description = "Genome-wide complex trait analysis (GREML, COJO, GSMR)"
 homepage = "https://yanglab.westlake.edu.cn/software/gcta/"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:jianyangqt"]
-
+maintainers = [ "github:jianyangqt",]
 [[tool.inputs]]
 name = "bed"
 type = "file"
@@ -32,4 +31,9 @@ disk_gb = 50.0
 command = "gcta64"
 
 [tool.binaries]
-exposed = ["gcta64"]
+exposed = [ "gcta64",]
+
+[tool.factored]
+spec_path = "specs/gcta/1.94.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/gcta:1.94.1"
+image_digest = "sha256:1b93dcee23f8e50b0a822403b073f66de12b80f3b4426ecc1aeb429990d1704c"
