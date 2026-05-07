@@ -5,8 +5,7 @@ description = "Ultra-fast metagenome assembler"
 homepage = "https://github.com/voutcn/megahit"
 license = "GPL-3.0"
 tier = "core"
-maintainers = ["github:voutcn"]
-
+maintainers = [ "github:voutcn",]
 [[tool.inputs]]
 name = "reads"
 type = "fastq"
@@ -32,4 +31,9 @@ disk_gb = 100.0
 command = "megahit"
 
 [tool.binaries]
-exposed = ["megahit"]
+exposed = [ "megahit",]
+
+[tool.factored]
+spec_path = "specs/megahit/1.2.9.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/megahit:1.2.9"
+image_digest = "sha256:0a47003ab76ef7640fd679e8db43cc57af1db02300ea33f3beded85ee694929c"
