@@ -152,6 +152,7 @@ description = "Directory containing all output files."
 [tool.entrypoint]
 command       = "python"
 workdir       = "/app/RFdiffusion"
+native_output_dir  = "results"
 args_template = "scripts/run_inference.py inference.input_pdb={input_pdb} inference.output_prefix={output_prefix} contigmap.contigs='{contigs}' inference.num_designs={num_designs} diffuser.T={num_timesteps} denoiser.noise_scale_ca={noise_scale_ca} denoiser.noise_scale_frame={noise_scale_frame} inference.ckpt_override_path=models/{model_checkpoint} {extra_overrides}"
 # Hydra-style overrides are passed positionally — no flags, no dashes.
 # Must use shell=True at runtime so the single quotes around {contigs} are
