@@ -4,18 +4,8 @@ version = "2.14.0"
 description = "BLAST+ Basic Local Alignment Search Tool"
 homepage = "https://blast.ncbi.nlm.nih.gov/Blast.cgi"
 tier = "core"
-maintainers = ["github:ncbi"]
+maintainers = [ "github:ncbi",]
 license = "Public Domain"
-
-[tool.image]
-backend = "docker"
-reference = "ncbi/blast:2.14.0"
-
-[tool.hardware]
-cpu_cores = 4
-ram_gb = 8.0
-disk_gb = 2.0
-
 [[tool.inputs]]
 name = "query"
 type = "fasta"
@@ -34,16 +24,23 @@ type = "blast_tab"
 cardinality = "one"
 description = "Tabular BLAST alignment results (outfmt 6)"
 
+[tool.image]
+backend = "docker"
+reference = "ncbi/blast:2.14.0"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 2.0
+
 [tool.entrypoint]
 command = "blastn"
 args_template = "-query {query} -db {db} -out {output} -num_threads {cpu_cores}"
 
 [tool.binaries]
-exposed = [
-  "blastn", "blastp", "tblastn", "tblastx", "psiblast",
-  "rpsblast", "rpstblastn", "deltablast",
-  "makeblastdb", "makembindex", "makeprofiledb",
-  "blastdbcmd", "blastdb_aliastool", "blastdbcheck",
-  "blast_formatter", "convert2blastmask", "dustmasker",
-  "segmasker", "windowmasker",
-]
+exposed = [ "blastn", "blastp", "tblastn", "tblastx", "psiblast", "rpsblast", "rpstblastn", "deltablast", "makeblastdb", "makembindex", "makeprofiledb", "blastdbcmd", "blastdb_aliastool", "blastdbcheck", "blast_formatter", "convert2blastmask", "dustmasker", "segmasker", "windowmasker",]
+
+[tool.factored]
+spec_path = "specs/blast/2.14.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/blast:2.14.0"
+image_digest = "sha256:662ab2ed9b7af3c48d8111ae4348cb2c3b5351c22ce58f696c02097fffc87e72"
