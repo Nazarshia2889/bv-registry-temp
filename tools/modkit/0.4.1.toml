@@ -5,8 +5,7 @@ description = "Oxford Nanopore methylation calling and bedMethyl manipulation"
 homepage = "https://github.com/nanoporetech/modkit"
 license = "ONT-Public"
 tier = "community"
-maintainers = ["github:nanoporetech"]
-
+maintainers = [ "github:nanoporetech",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -32,4 +31,9 @@ disk_gb = 50.0
 command = "modkit"
 
 [tool.binaries]
-exposed = ["modkit"]
+exposed = [ "modkit",]
+
+[tool.factored]
+spec_path = "specs/modkit/0.4.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/modkit:0.4.1"
+image_digest = "sha256:3121ac1285443dd21a05f2adee0ce71974a93373041cf02cf06a0b5c795fb785"
