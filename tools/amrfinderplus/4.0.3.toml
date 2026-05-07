@@ -5,9 +5,8 @@ description = "NCBI AMR gene and point mutation finder"
 homepage = "https://github.com/ncbi/amr"
 license = "Public Domain"
 tier = "core"
-maintainers = ["github:ncbi"]
-cache_paths = ["/cache/amrfinder"]
-
+maintainers = [ "github:ncbi",]
+cache_paths = [ "/cache/amrfinder",]
 [[tool.inputs]]
 name = "fasta"
 type = "fasta"
@@ -33,4 +32,9 @@ disk_gb = 10.0
 command = "amrfinder"
 
 [tool.binaries]
-exposed = ["amrfinder", "amrfinder_update"]
+exposed = [ "amrfinder", "amrfinder_update",]
+
+[tool.factored]
+spec_path = "specs/amrfinderplus/4.0.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/amrfinderplus:4.0.3"
+image_digest = "sha256:30b3af0f35446811a9cb1135b50c4f3a30c2ec177d0363bf505bd14b6d0dac1c"
