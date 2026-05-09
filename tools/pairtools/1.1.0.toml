@@ -33,3 +33,8 @@ command = "pairtools"
 
 [tool.binaries]
 exposed = ["pairtools"]
+
+[tool.factored]
+spec_path = "specs/pairtools/1.1.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pairtools:1.1.0"
+image_digest = "sha256:3de508a0be79b9ec3505ce1aa43eb1956bca11c94aff6af61fd5e091616c7606"

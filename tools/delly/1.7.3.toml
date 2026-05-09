@@ -40,3 +40,8 @@ command = "delly"
 
 [tool.binaries]
 exposed = ["delly"]
+
+[tool.factored]
+spec_path = "specs/delly/1.7.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/delly:1.7.3"
+image_digest = "sha256:6e00f61f75c37d545a4e27110e19cc325dcf79293014c2dee72f1d6f18ef322f"

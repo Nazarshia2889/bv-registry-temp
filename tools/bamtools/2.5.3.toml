@@ -34,3 +34,8 @@ command = "bamtools"
 
 [tool.binaries]
 exposed = ["bamtools"]
+
+[tool.factored]
+spec_path = "specs/bamtools/2.5.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/bamtools:2.5.3"
+image_digest = "sha256:00ef8da65f2257a4d5760868e9ca7dedff5ab854d0e2f428f7d06cf631dfc9c7"

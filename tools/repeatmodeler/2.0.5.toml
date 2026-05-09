@@ -33,3 +33,8 @@ command = "RepeatModeler"
 
 [tool.binaries]
 exposed = ["RepeatModeler", "BuildDatabase"]
+
+[tool.factored]
+spec_path = "specs/repeatmodeler/2.0.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/repeatmodeler:2.0.5"
+image_digest = "sha256:bc9e50ce82fc060dc49ba93f22b16d0e4471cbc53e4c5023ca0c854f0e4d8733"

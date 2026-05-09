@@ -34,3 +34,8 @@ command = "checkm2"
 
 [tool.binaries]
 exposed = ["checkm2"]
+
+[tool.factored]
+spec_path = "specs/checkm2/1.0.2.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/checkm2:1.0.2"
+image_digest = "sha256:70162338eab49ef919d23515eec3d9e75485eb62adf924ad1c7e4436270d25ca"

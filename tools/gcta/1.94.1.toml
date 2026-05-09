@@ -33,3 +33,8 @@ command = "gcta64"
 
 [tool.binaries]
 exposed = ["gcta64"]
+
+[tool.factored]
+spec_path = "specs/gcta/1.94.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/gcta:1.94.1"
+image_digest = "sha256:97854d2ccdd99b5c96a7f730a1b7ec6f4ab51f3204b10a83a003c5271f65b97f"

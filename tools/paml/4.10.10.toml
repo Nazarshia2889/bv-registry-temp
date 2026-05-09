@@ -40,3 +40,8 @@ command = "codeml"
 
 [tool.binaries]
 exposed = ["codeml", "baseml", "evolver", "chi2", "yn00"]
+
+[tool.factored]
+spec_path = "specs/paml/4.10.10.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/paml:4.10.10"
+image_digest = "sha256:f526fa8e34d41a29c7f7ba5e62f6faee14f41ef96a41a67f9b0a1b237041e187"

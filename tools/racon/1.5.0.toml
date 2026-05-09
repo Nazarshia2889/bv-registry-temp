@@ -45,3 +45,8 @@ command = "racon"
 
 [tool.binaries]
 exposed = ["racon"]
+
+[tool.factored]
+spec_path = "specs/racon/1.5.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/racon:1.5.0"
+image_digest = "sha256:bf655cf921ae9fe2e64719de803c63180a2f3e7b31b1e12be35de096debd381a"

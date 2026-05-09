@@ -33,3 +33,8 @@ command = "roary"
 
 [tool.binaries]
 exposed = ["roary"]
+
+[tool.factored]
+spec_path = "specs/roary/3.13.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/roary:3.13.0"
+image_digest = "sha256:58dd535927d709aeae257ffc0f028a9e54d2883cd65c634f1c5615594cccbd8a"

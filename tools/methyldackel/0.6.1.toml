@@ -39,3 +39,8 @@ command = "MethylDackel"
 
 [tool.binaries]
 exposed = ["MethylDackel"]
+
+[tool.factored]
+spec_path = "specs/methyldackel/0.6.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/methyldackel:0.6.1"
+image_digest = "sha256:d741710f3526f293288d047e47baad44ce6c536e31ccd93fa454da1a7b3a9f2c"

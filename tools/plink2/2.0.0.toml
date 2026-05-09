@@ -33,3 +33,8 @@ command = "plink2"
 
 [tool.binaries]
 exposed = ["plink2"]
+
+[tool.factored]
+spec_path = "specs/plink2/2.0.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/plink2:2.0.0"
+image_digest = "sha256:48466a07b2196ab2e2c58ecf3bffd963435bd4e669e5d0d6dbc8f3c074913e64"

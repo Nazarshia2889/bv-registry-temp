@@ -39,3 +39,8 @@ command = "ngmlr"
 
 [tool.binaries]
 exposed = ["ngmlr"]
+
+[tool.factored]
+spec_path = "specs/ngmlr/0.2.7.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/ngmlr:0.2.7"
+image_digest = "sha256:9cb439752c506019bfefee183d77aaa747ec97e98808f35fcaa4901a0739d8c2"

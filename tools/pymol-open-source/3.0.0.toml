@@ -33,3 +33,8 @@ command = "pymol"
 
 [tool.binaries]
 exposed = ["pymol"]
+
+[tool.factored]
+spec_path = "specs/pymol-open-source/3.0.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pymol-open-source:3.0.0"
+image_digest = "sha256:24f899757d3c954e576c6975e87b1a8e865680138433e7103db88155384ad4d9"

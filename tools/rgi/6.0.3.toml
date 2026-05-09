@@ -34,3 +34,8 @@ command = "rgi"
 
 [tool.binaries]
 exposed = ["rgi"]
+
+[tool.factored]
+spec_path = "specs/rgi/6.0.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/rgi:6.0.3"
+image_digest = "sha256:af74051c36b75c5c94c6b5d677d90f2c27c0aebdabee11338199c0ec6a8dd975"

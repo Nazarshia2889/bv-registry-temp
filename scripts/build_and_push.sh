@@ -66,20 +66,37 @@ if [ -z "${FORCE:-}" ] && grep -q "image_digest = \"sha256:" "${MANIFEST}" \
     exit 0
 fi
 
+retry() {
+    local attempts="${1}"; shift
+    local delay=10
+    local i=1
+    while true; do
+        if "$@"; then return 0; fi
+        if [ "${i}" -ge "${attempts}" ]; then
+            echo "    failed after ${attempts} attempts" >&2
+            return 1
+        fi
+        echo "    attempt ${i}/${attempts} failed, retrying in ${delay}s..." >&2
+        sleep "${delay}"
+        i=$((i + 1))
+        delay=$((delay * 2))
+    done
+}
+
 echo "==> ${NAME} ${VERSION}: building"
 if [ -n "${POPULARITY_FILE:-}" ]; then
-    "${BV_BUILDER}" build "${SPEC}" \
+    retry 3 "${BV_BUILDER}" build "${SPEC}" \
         --output "${TARBALL}" \
         --max-layers "${MAX_LAYERS}" \
         --popularity "${POPULARITY_FILE}"
 else
-    "${BV_BUILDER}" build "${SPEC}" \
+    retry 3 "${BV_BUILDER}" build "${SPEC}" \
         --output "${TARBALL}" \
         --max-layers "${MAX_LAYERS}"
 fi
 
 echo "==> ${NAME} ${VERSION}: pushing to ${REF}"
-"${BV_BUILDER}" push "${TARBALL}" "${REF}"
+retry 3 "${BV_BUILDER}" push "${TARBALL}" "${REF}"
 DIGEST=$(cat /tmp/push-digest.txt)
 echo "==> ${NAME} ${VERSION}: digest ${DIGEST}"
 

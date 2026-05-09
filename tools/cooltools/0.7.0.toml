@@ -33,3 +33,8 @@ command = "cooltools"
 
 [tool.binaries]
 exposed = ["cooltools"]
+
+[tool.factored]
+spec_path = "specs/cooltools/0.7.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/cooltools:0.7.0"
+image_digest = "sha256:ccc15bffae291f727750c1eebedf3c3209ba7a05c058576ad5924ab53bf8a022"

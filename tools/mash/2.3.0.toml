@@ -37,3 +37,8 @@ command = "mash"
 
 [tool.binaries]
 exposed = ["mash"]
+
+[tool.factored]
+spec_path = "specs/mash/2.3.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/mash:2.3.0"
+image_digest = "sha256:9e95cd833c8008e19512cc01ce7a9ec81489d78c14fd9ed7c3a749cad670e799"

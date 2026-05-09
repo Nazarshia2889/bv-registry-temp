@@ -39,3 +39,8 @@ command = "whatshap"
 
 [tool.binaries]
 exposed = ["whatshap"]
+
+[tool.factored]
+spec_path = "specs/whatshap/2.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/whatshap:2.3"
+image_digest = "sha256:cbd42e3660336db35dc65f7ec36bd4cfee47557d8c0c58ea296aacd5a65d8e29"

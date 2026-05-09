@@ -33,3 +33,8 @@ command = "samblaster"
 
 [tool.binaries]
 exposed = ["samblaster"]
+
+[tool.factored]
+spec_path = "specs/samblaster/0.1.26.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/samblaster:0.1.26"
+image_digest = "sha256:68dc4bec5c0b527f860f73df0bff01ac69b45289ea41b0a0c083ae439b9f4fa4"

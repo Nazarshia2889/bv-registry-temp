@@ -39,3 +39,8 @@ command = "treetime"
 
 [tool.binaries]
 exposed = ["treetime"]
+
+[tool.factored]
+spec_path = "specs/treetime/0.11.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/treetime:0.11.4"
+image_digest = "sha256:27a5b025fe5537bc1537d5248a58897eaedd5cf320695e7953c1de9bf6b849b9"

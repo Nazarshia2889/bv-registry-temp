@@ -40,3 +40,8 @@ args_template = "HaplotypeCaller -R {reference} -I {bam} -O {vcf}"
 
 [tool.binaries]
 exposed = ["gatk"]
+
+[tool.factored]
+spec_path = "specs/gatk4/4.6.2.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/gatk4:4.6.2"
+image_digest = "sha256:bfaca4fb5df456a34889ff4b8b89293ed147743ef0613faefbd4556fae4c49ad"

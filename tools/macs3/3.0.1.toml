@@ -33,3 +33,8 @@ command = "macs3"
 
 [tool.binaries]
 exposed = ["macs3"]
+
+[tool.factored]
+spec_path = "specs/macs3/3.0.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/macs3:3.0.1"
+image_digest = "sha256:7f3793470fd370ad0f082d96c209a4eaa5e3b13a3f2263c81797820175dba4ce"

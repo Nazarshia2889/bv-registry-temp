@@ -39,3 +39,8 @@ command = "chromap"
 
 [tool.binaries]
 exposed = ["chromap"]
+
+[tool.factored]
+spec_path = "specs/chromap/0.2.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/chromap:0.2.6"
+image_digest = "sha256:221a48f2a839c65f870a2f739d1c5d27e74e1abc3cf51acb079eb988680cdf4e"

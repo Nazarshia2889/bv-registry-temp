@@ -47,3 +47,8 @@ exposed = [
   "blast_formatter", "convert2blastmask", "dustmasker",
   "segmasker", "windowmasker",
 ]
+
+[tool.factored]
+spec_path = "specs/blast/2.14.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/blast:2.14.0"
+image_digest = "sha256:72ce1b69babb27cdd409e8d0bced1d8420e20eccc75fff6697c307afde548fab"

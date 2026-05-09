@@ -34,3 +34,8 @@ command = "gtdbtk"
 
 [tool.binaries]
 exposed = ["gtdbtk"]
+
+[tool.factored]
+spec_path = "specs/gtdb-tk/2.4.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/gtdb-tk:2.4.0"
+image_digest = "sha256:4b413427c9f148b85ed7091bf557be0b11f2ed820dd0ca20b24bb9428709afa8"

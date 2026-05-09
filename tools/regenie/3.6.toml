@@ -39,3 +39,8 @@ command = "regenie"
 
 [tool.binaries]
 exposed = ["regenie"]
+
+[tool.factored]
+spec_path = "specs/regenie/3.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/regenie:3.6"
+image_digest = "sha256:c832dd9723c0176ae88aaea23a1cca9e14ba2d0e2e3749a109329cff4258b01a"

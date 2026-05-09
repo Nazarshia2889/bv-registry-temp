@@ -39,3 +39,8 @@ command = "cmsearch"
 
 [tool.binaries]
 exposed = ["cmsearch", "cmscan", "cmalign", "cmbuild", "cmcalibrate", "cmstat", "cmpress", "cmconvert"]
+
+[tool.factored]
+spec_path = "specs/infernal/1.1.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/infernal:1.1.5"
+image_digest = "sha256:731d463d119d08839005dccae60a0b36c46e0d3c7866483ff6248fa1d0218797"

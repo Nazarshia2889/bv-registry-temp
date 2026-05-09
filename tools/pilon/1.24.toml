@@ -39,3 +39,8 @@ command = "pilon"
 
 [tool.binaries]
 exposed = ["pilon"]
+
+[tool.factored]
+spec_path = "specs/pilon/1.24.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pilon:1.24"
+image_digest = "sha256:336ab64f7efd3f1cdc74ddac2518e37606b22b1677c9761a0481ef81f6d6e835"

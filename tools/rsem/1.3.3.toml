@@ -33,3 +33,8 @@ command = "rsem-calculate-expression"
 
 [tool.binaries]
 exposed = ["rsem-calculate-expression", "rsem-prepare-reference", "rsem-generate-data-matrix", "rsem-plot-model"]
+
+[tool.factored]
+spec_path = "specs/rsem/1.3.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/rsem:1.3.3"
+image_digest = "sha256:c4c36c86c89bbdb65c7f1b7a202959de561dab29844dfb93fe148cb0a5e34340"

@@ -33,3 +33,8 @@ command = "esearch"
 
 [tool.binaries]
 exposed = ["esearch", "efetch", "einfo", "elink", "epost", "esummary", "xtract", "filter-stop-words", "sort-uniq-count"]
+
+[tool.factored]
+spec_path = "specs/entrez-direct/22.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/entrez-direct:22.4"
+image_digest = "sha256:b7cd3a5661e241569909d67ed17eaf5777238cbecf31e2963e00c3212225006d"

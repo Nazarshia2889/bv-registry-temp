@@ -34,3 +34,8 @@ command = "mosdepth"
 
 [tool.binaries]
 exposed = ["mosdepth"]
+
+[tool.factored]
+spec_path = "specs/mosdepth/0.3.14.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/mosdepth:0.3.14"
+image_digest = "sha256:2b84900ca02a22a79e44fd8c56817ef9a2b17aeada1f01e1912908cb468c8dc6"

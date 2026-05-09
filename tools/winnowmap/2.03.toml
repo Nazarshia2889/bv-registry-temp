@@ -39,3 +39,8 @@ command = "winnowmap"
 
 [tool.binaries]
 exposed = ["winnowmap", "meryl"]
+
+[tool.factored]
+spec_path = "specs/winnowmap/2.03.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/winnowmap:2.03"
+image_digest = "sha256:4aba56bb0021ad5d0fc3db81a8f8a8180800b93449d29cbef9cdb10327a85a20"

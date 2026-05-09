@@ -39,3 +39,8 @@ command = "configureStrelkaGermlineWorkflow.py"
 
 [tool.binaries]
 exposed = ["configureStrelkaGermlineWorkflow.py", "configureStrelkaSomaticWorkflow.py"]
+
+[tool.factored]
+spec_path = "specs/strelka2/2.9.10.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/strelka2:2.9.10"
+image_digest = "sha256:6b754d19140a73d07ec9ba4a38820a679d339257e91ba3440e06a2c408e03e09"

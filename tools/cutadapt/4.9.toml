@@ -34,3 +34,8 @@ args_template = "-o {trimmed} {reads}"
 
 [tool.binaries]
 exposed = ["cutadapt"]
+
+[tool.factored]
+spec_path = "specs/cutadapt/4.9.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/cutadapt:4.9"
+image_digest = "sha256:d1b1d1b55f5f02b0f6ec5b7db4d6a28041152376437c9fff32bdf32457586aaf"

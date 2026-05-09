@@ -34,3 +34,8 @@ command = "picard"
 
 [tool.binaries]
 exposed = ["picard"]
+
+[tool.factored]
+spec_path = "specs/picard/3.4.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/picard:3.4.0"
+image_digest = "sha256:9d67f964c7809d274867b852eb75ce8716533ed2d1dd9ca526e5cf93f4157db6"

@@ -37,3 +37,8 @@ command = "SnpSift"
 
 [tool.binaries]
 exposed = ["SnpSift"]
+
+[tool.factored]
+spec_path = "specs/snpsift/5.4.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/snpsift:5.4.0"
+image_digest = "sha256:f11232ab20fd7ea22e277af4ac551cf73526afa2bf500e61b125295ae910d199"

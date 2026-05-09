@@ -39,3 +39,8 @@ command = "bismark"
 
 [tool.binaries]
 exposed = ["bismark", "bismark_genome_preparation", "bismark_methylation_extractor", "deduplicate_bismark"]
+
+[tool.factored]
+spec_path = "specs/bismark/0.24.2.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/bismark:0.24.2"
+image_digest = "sha256:92408a59e444cd845f80f1ef8aa496b54035497d7b153bfdfbe6d3aa317da8e9"

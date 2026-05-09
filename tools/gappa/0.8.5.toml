@@ -33,3 +33,8 @@ command = "gappa"
 
 [tool.binaries]
 exposed = ["gappa"]
+
+[tool.factored]
+spec_path = "specs/gappa/0.8.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/gappa:0.8.5"
+image_digest = "sha256:b88cd5de1cd68f9b43f9cd6d7aa602ea765fb2ff584c1dfb8c7f14f416513979"

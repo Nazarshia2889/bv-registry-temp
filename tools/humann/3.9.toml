@@ -34,3 +34,8 @@ command = "humann"
 
 [tool.binaries]
 exposed = ["humann"]
+
+[tool.factored]
+spec_path = "specs/humann/3.9.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/humann:3.9"
+image_digest = "sha256:3729539e7be6b91eb641234643788f284b4451c916bc1e49ea91bfc31f05be18"

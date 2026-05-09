@@ -33,3 +33,8 @@ command = "mashtree"
 
 [tool.binaries]
 exposed = ["mashtree"]
+
+[tool.factored]
+spec_path = "specs/mashtree/1.4.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/mashtree:1.4.6"
+image_digest = "sha256:c55f0bf6eac15fc9ae0a402018ff82f85cc104ae82a946b740763125476fce90"

@@ -34,3 +34,8 @@ command = "amrfinder"
 
 [tool.binaries]
 exposed = ["amrfinder", "amrfinder_update"]
+
+[tool.factored]
+spec_path = "specs/amrfinderplus/4.0.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/amrfinderplus:4.0.3"
+image_digest = "sha256:4e4928a9d14f09c10f5e26956402aa05bf017c9517698b7e61a3c80359eb61d6"

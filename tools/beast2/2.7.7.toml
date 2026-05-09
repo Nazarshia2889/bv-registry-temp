@@ -33,3 +33,8 @@ command = "beast"
 
 [tool.binaries]
 exposed = ["beast", "beauti", "treeannotator", "logcombiner", "applauncher"]
+
+[tool.factored]
+spec_path = "specs/beast2/2.7.7.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/beast2:2.7.7"
+image_digest = "sha256:270d31e9780f58704b3c6c091c8566bbb28ed89f271b451d440c4d761d3fe5b2"

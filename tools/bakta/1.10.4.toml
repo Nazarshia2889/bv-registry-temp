@@ -34,3 +34,8 @@ command = "bakta"
 
 [tool.binaries]
 exposed = ["bakta", "bakta_db"]
+
+[tool.factored]
+spec_path = "specs/bakta/1.10.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/bakta:1.10.4"
+image_digest = "sha256:ffc74a75c7da5ae64fe69d6f0b30ebc14475e4b02252411b1c06e56e22c1c7f7"

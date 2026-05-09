@@ -34,3 +34,8 @@ command = "prokka"
 
 [tool.binaries]
 exposed = ["prokka"]
+
+[tool.factored]
+spec_path = "specs/prokka/1.14.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/prokka:1.14.6"
+image_digest = "sha256:ca795e8981e5dec2891906c1f5fcae1cbee2e2cf46f5fbceb0d2c911f7c61844"

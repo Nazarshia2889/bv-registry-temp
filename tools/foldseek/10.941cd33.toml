@@ -39,3 +39,8 @@ command = "foldseek"
 
 [tool.binaries]
 exposed = ["foldseek"]
+
+[tool.factored]
+spec_path = "specs/foldseek/10.941cd33.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/foldseek:10.941cd33"
+image_digest = "sha256:bdefbd8ba83bd14a4eae5b41f32c070715c6f998c645ecf4a03bd1864f725c9b"

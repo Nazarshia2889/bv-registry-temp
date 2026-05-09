@@ -39,3 +39,8 @@ command = "smina"
 
 [tool.binaries]
 exposed = ["smina"]
+
+[tool.factored]
+spec_path = "specs/smina/2020.12.10.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/smina:2020.12.10"
+image_digest = "sha256:1a51a7c371b6f1e93f8386fe09978a3bc21311b277e8f6fd5037b063124cc07f"

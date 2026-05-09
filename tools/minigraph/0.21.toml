@@ -39,3 +39,8 @@ command = "minigraph"
 
 [tool.binaries]
 exposed = ["minigraph"]
+
+[tool.factored]
+spec_path = "specs/minigraph/0.21.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/minigraph:0.21"
+image_digest = "sha256:809fa82104aee43e276ed7d44965be44850de7d75cb411fef2f8c9a059d47274"

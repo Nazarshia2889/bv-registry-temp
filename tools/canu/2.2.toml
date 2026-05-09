@@ -33,3 +33,8 @@ command = "canu"
 
 [tool.binaries]
 exposed = ["canu"]
+
+[tool.factored]
+spec_path = "specs/canu/2.2.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/canu:2.2"
+image_digest = "sha256:fcd49d41f2846c6978f8b691f450330b9de9d345bdf1596ee66e3fa22bfb17a8"

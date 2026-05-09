@@ -45,3 +45,8 @@ args_template = "-i {reads} -d {draft} -o {output_dir} -t {cpu_cores}"
 
 [tool.binaries]
 exposed = ["medaka_consensus", "medaka", "medaka_haploid_variant", "medaka_variant"]
+
+[tool.factored]
+spec_path = "specs/medaka/1.11.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/medaka:1.11.3"
+image_digest = "sha256:5406de7454aa853e8e610eefa7a36dbf18493578a94f06063044dc1e3952ae8e"

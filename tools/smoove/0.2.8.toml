@@ -39,3 +39,8 @@ command = "smoove"
 
 [tool.binaries]
 exposed = ["smoove"]
+
+[tool.factored]
+spec_path = "specs/smoove/0.2.8.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/smoove:0.2.8"
+image_digest = "sha256:66390caf1698af955161cb64092f4f0ac5177296faa51ac2bf58e9d2a8c3df2c"

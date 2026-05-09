@@ -33,3 +33,8 @@ command = "bamCoverage"
 
 [tool.binaries]
 exposed = ["bamCoverage", "bamCompare", "computeMatrix", "plotHeatmap", "plotProfile", "multiBamSummary", "multiBigwigSummary", "plotCorrelation", "plotPCA", "plotFingerprint", "alignmentSieve"]
+
+[tool.factored]
+spec_path = "specs/deeptools/3.5.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/deeptools:3.5.5"
+image_digest = "sha256:8df546ecf101d8f8bfcbe23a70e74d59dc19e33c8da348ba46d1faa1f7b20afd"

@@ -34,3 +34,8 @@ command = "orthofinder"
 
 [tool.binaries]
 exposed = ["orthofinder"]
+
+[tool.factored]
+spec_path = "specs/orthofinder/3.1.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/orthofinder:3.1.4"
+image_digest = "sha256:73e719dcaab5a6888ad53f50acc8605066463c2b8b99a814e79f03aa0f681b16"

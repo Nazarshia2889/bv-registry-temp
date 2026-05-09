@@ -37,3 +37,8 @@ command = "snpEff"
 
 [tool.binaries]
 exposed = ["snpEff"]
+
+[tool.factored]
+spec_path = "specs/snpeff/5.4.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/snpeff:5.4.0"
+image_digest = "sha256:81a84f0d54b896f457d0efac01d4f2f6fa0cdde3c3cf2e083bd171fffd305248"

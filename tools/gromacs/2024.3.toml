@@ -38,3 +38,8 @@ command = "gmx"
 
 [tool.binaries]
 exposed = ["gmx"]
+
+[tool.factored]
+spec_path = "specs/gromacs/2024.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/gromacs:2024.3"
+image_digest = "sha256:775ac9452ed33bfc6b93d459f1c6278c9315bcc99d5c935755abb012af479a70"

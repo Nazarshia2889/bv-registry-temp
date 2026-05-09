@@ -35,3 +35,8 @@ command = "python"
 exposed = ["python"]
 
 # scanpy is a Python library; invoke via `bv exec python -m scanpy …` or in your own scripts.
+
+[tool.factored]
+spec_path = "specs/scanpy/1.10.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/scanpy:1.10.4"
+image_digest = "sha256:d49fbc8e4e328f15713aff82952b9c813b3b5141a242a2aa17a7c064d3b6d2b8"

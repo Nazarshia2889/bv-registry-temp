@@ -34,3 +34,8 @@ command = "vep"
 
 [tool.binaries]
 exposed = ["vep", "filter_vep", "haplo", "variant_recoder"]
+
+[tool.factored]
+spec_path = "specs/ensembl-vep/113.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/ensembl-vep:113.0"
+image_digest = "sha256:2fa3635f8acceafbb6741450fcf3c92b2f373119e71aaf679a49b9a101cd8a23"

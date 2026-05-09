@@ -33,3 +33,8 @@ command = "pigz"
 
 [tool.binaries]
 exposed = ["pigz", "unpigz"]
+
+[tool.factored]
+spec_path = "specs/pigz/2.8.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pigz:2.8"
+image_digest = "sha256:e6aa823bd4210274bf943ad56a81ab5b8883f43e3bb10ed001662fac69af368c"

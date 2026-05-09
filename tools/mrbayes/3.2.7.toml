@@ -33,3 +33,8 @@ command = "mb"
 
 [tool.binaries]
 exposed = ["mb"]
+
+[tool.factored]
+spec_path = "specs/mrbayes/3.2.7.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/mrbayes:3.2.7"
+image_digest = "sha256:eec6af2027850bf948417a79263be9c2bf0f062d4b51e322a168ab68762b7b42"

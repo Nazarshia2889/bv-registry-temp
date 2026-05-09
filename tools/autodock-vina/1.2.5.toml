@@ -39,3 +39,8 @@ command = "vina"
 
 [tool.binaries]
 exposed = ["vina"]
+
+[tool.factored]
+spec_path = "specs/autodock-vina/1.2.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/autodock-vina:1.2.5"
+image_digest = "sha256:4124f39b1176874232b3807b21204393a892b416f0c381b47e5d03cf89ec7360"

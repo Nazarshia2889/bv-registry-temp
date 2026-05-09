@@ -33,3 +33,8 @@ command = "dRep"
 
 [tool.binaries]
 exposed = ["dRep"]
+
+[tool.factored]
+spec_path = "specs/drep/3.5.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/drep:3.5.0"
+image_digest = "sha256:116382c0f1b2bb8b134657d5e7e1047ab512b42c4d388ca3cf4e2c051a8d55bb"

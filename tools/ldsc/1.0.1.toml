@@ -33,3 +33,8 @@ command = "ldsc.py"
 
 [tool.binaries]
 exposed = ["ldsc.py", "munge_sumstats.py"]
+
+[tool.factored]
+spec_path = "specs/ldsc/1.0.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/ldsc:1.0.1"
+image_digest = "sha256:294db0adfe480fab04d8b426fe0dee6c37d6dac9ad50d46d71975f808f831134"

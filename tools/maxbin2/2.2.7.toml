@@ -39,3 +39,8 @@ command = "run_MaxBin.pl"
 
 [tool.binaries]
 exposed = ["run_MaxBin.pl"]
+
+[tool.factored]
+spec_path = "specs/maxbin2/2.2.7.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/maxbin2:2.2.7"
+image_digest = "sha256:73b3ad73271e6657b237b8e44793c99b2eb14293f347d2fe32bb973a0b1bf644"

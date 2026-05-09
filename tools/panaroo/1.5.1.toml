@@ -33,3 +33,8 @@ command = "panaroo"
 
 [tool.binaries]
 exposed = ["panaroo", "panaroo-qc"]
+
+[tool.factored]
+spec_path = "specs/panaroo/1.5.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/panaroo:1.5.1"
+image_digest = "sha256:b3d7bde105644a168137416f0f16e84dd5f5ffcdfb6c4e506905601ca562b8ce"

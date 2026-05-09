@@ -39,3 +39,8 @@ command = "nanopolish"
 
 [tool.binaries]
 exposed = ["nanopolish"]
+
+[tool.factored]
+spec_path = "specs/nanopolish/0.14.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/nanopolish:0.14.0"
+image_digest = "sha256:6882030cbc0238b4feafc5f889cb4b506051048e68ef48b227cfeaf2910d81e8"

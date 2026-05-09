@@ -45,3 +45,8 @@ args_template = "--model_type=WGS --ref={reference} --reads={bam} --output_vcf={
 
 [tool.binaries]
 exposed = ["run_deepvariant"]
+
+[tool.factored]
+spec_path = "specs/deepvariant/1.10.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/deepvariant:1.10.0"
+image_digest = "sha256:951e6bd07b60af062c067a053a57087350fad6d665be86f11b05be1839c21543"

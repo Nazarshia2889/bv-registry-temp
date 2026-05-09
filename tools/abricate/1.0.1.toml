@@ -33,3 +33,8 @@ command = "abricate"
 
 [tool.binaries]
 exposed = ["abricate"]
+
+[tool.factored]
+spec_path = "specs/abricate/1.0.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/abricate:1.0.1"
+image_digest = "sha256:fe0ac65b1fbbf2c634e47b58a9992df245d53aa27a095f3aff21f803039c75f9"

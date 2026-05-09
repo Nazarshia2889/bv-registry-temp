@@ -39,3 +39,8 @@ command = "subread-align"
 
 [tool.binaries]
 exposed = ["subread-align", "subread-buildindex", "subjunc", "exactSNP"]
+
+[tool.factored]
+spec_path = "specs/subread/2.0.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/subread:2.0.6"
+image_digest = "sha256:5895205ee919c3855f203fce11651225952054b5c9f0771c878dee6bd41506c5"

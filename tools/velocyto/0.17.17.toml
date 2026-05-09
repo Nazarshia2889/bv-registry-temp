@@ -39,3 +39,8 @@ command = "velocyto"
 
 [tool.binaries]
 exposed = ["velocyto"]
+
+[tool.factored]
+spec_path = "specs/velocyto/0.17.17.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/velocyto:0.17.17"
+image_digest = "sha256:df39123af78b843744dc1c9c6f23185c3f4e446871c63391a1715b07000a8844"

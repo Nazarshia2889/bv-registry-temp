@@ -39,3 +39,8 @@ command = "hyphy"
 
 [tool.binaries]
 exposed = ["hyphy"]
+
+[tool.factored]
+spec_path = "specs/hyphy/2.5.62.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/hyphy:2.5.62"
+image_digest = "sha256:f45a42743e945f6bd06b0a3b84ae52ae3b7618ac55ac2afdc82c6f21d7aa10ba"

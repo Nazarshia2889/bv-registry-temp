@@ -39,3 +39,8 @@ command = "concoct"
 
 [tool.binaries]
 exposed = ["concoct"]
+
+[tool.factored]
+spec_path = "specs/concoct/1.1.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/concoct:1.1.0"
+image_digest = "sha256:4d066d8ad2b5eb95fe66bade1d94d3e47ca1844283a78da316c0db0fad11113b"
