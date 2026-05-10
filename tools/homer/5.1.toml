@@ -5,8 +5,7 @@ description = "Motif discovery and ChIP-seq analysis suite"
 homepage = "http://homer.ucsd.edu/homer/"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:HOMER"]
-
+maintainers = [ "github:HOMER",]
 [[tool.inputs]]
 name = "tagdir"
 type = "dir"
@@ -32,9 +31,9 @@ disk_gb = 50.0
 command = "findPeaks"
 
 [tool.binaries]
-exposed = ["findPeaks", "findMotifsGenome.pl", "annotatePeaks.pl", "makeTagDirectory", "scanMotifGenomeWide.pl", "compareMotifs.pl"]
+exposed = [ "findPeaks", "findMotifsGenome.pl", "annotatePeaks.pl", "makeTagDirectory", "scanMotifGenomeWide.pl", "compareMotifs.pl",]
 
 [tool.factored]
 spec_path = "specs/homer/5.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/homer:5.1"
-image_digest = "sha256:76d256dbba1f50e3e248482709c524f83512bedcf96ef5bacc6bf5349d63e5e5"
+image_digest = "sha256:03cbe83d511a15cb8b1ddbba1fc1769128982e55a122ebe52d69559e595ed503"

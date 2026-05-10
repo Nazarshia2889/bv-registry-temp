@@ -5,8 +5,7 @@ description = "Mark duplicates and extract discordant/split reads from SAM strea
 homepage = "https://github.com/GregoryFaust/samblaster"
 license = "MIT"
 tier = "community"
-maintainers = ["github:GregoryFaust"]
-
+maintainers = [ "github:GregoryFaust",]
 [[tool.inputs]]
 name = "sam"
 type = "sam"
@@ -32,9 +31,9 @@ disk_gb = 2.0
 command = "samblaster"
 
 [tool.binaries]
-exposed = ["samblaster"]
+exposed = [ "samblaster",]
 
 [tool.factored]
 spec_path = "specs/samblaster/0.1.26.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/samblaster:0.1.26"
-image_digest = "sha256:68dc4bec5c0b527f860f73df0bff01ac69b45289ea41b0a0c083ae439b9f4fa4"
+image_digest = "sha256:88a58a8ab59af57a0c3cac65526125d7457d3ebe6e80a160445c68da77f36523"

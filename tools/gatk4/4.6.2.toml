@@ -5,17 +5,7 @@ description = "GATK4: genome analysis toolkit for variant discovery in high-thro
 homepage = "https://gatk.broadinstitute.org/"
 license = "BSD-3-Clause"
 tier = "core"
-maintainers = ["github:broadinstitute"]
-
-[tool.image]
-backend = "docker"
-reference = "broadinstitute/gatk:4.6.0.0"
-
-[tool.hardware]
-cpu_cores = 4
-ram_gb = 16.0
-disk_gb = 10.0
-
+maintainers = [ "github:broadinstitute",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -34,14 +24,23 @@ type = "vcf"
 cardinality = "one"
 description = "Raw variant calls in GVCF/VCF format"
 
+[tool.image]
+backend = "docker"
+reference = "broadinstitute/gatk:4.6.0.0"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 10.0
+
 [tool.entrypoint]
 command = "gatk"
 args_template = "HaplotypeCaller -R {reference} -I {bam} -O {vcf}"
 
 [tool.binaries]
-exposed = ["gatk"]
+exposed = [ "gatk",]
 
 [tool.factored]
 spec_path = "specs/gatk4/4.6.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/gatk4:4.6.2"
-image_digest = "sha256:bfaca4fb5df456a34889ff4b8b89293ed147743ef0613faefbd4556fae4c49ad"
+image_digest = "sha256:680242d6571d5142e535203c595615dc304a890f9936422ef5cff97ec5855ce4"

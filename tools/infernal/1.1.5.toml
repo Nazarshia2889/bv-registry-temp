@@ -5,8 +5,7 @@ description = "Inference of RNA alignments from covariation models (Rfam engine)
 homepage = "http://eddylab.org/infernal/"
 license = "BSD-3-Clause"
 tier = "community"
-maintainers = ["github:EddyRivasLab"]
-
+maintainers = [ "github:EddyRivasLab",]
 [[tool.inputs]]
 name = "cm"
 type = "file"
@@ -38,9 +37,9 @@ disk_gb = 10.0
 command = "cmsearch"
 
 [tool.binaries]
-exposed = ["cmsearch", "cmscan", "cmalign", "cmbuild", "cmcalibrate", "cmstat", "cmpress", "cmconvert"]
+exposed = [ "cmsearch", "cmscan", "cmalign", "cmbuild", "cmcalibrate", "cmstat", "cmpress", "cmconvert",]
 
 [tool.factored]
 spec_path = "specs/infernal/1.1.5.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/infernal:1.1.5"
-image_digest = "sha256:731d463d119d08839005dccae60a0b36c46e0d3c7866483ff6248fa1d0218797"
+image_digest = "sha256:9c8418c703534f481f42d66092282db2ad516b51ff22bba6b91883f16eb98ec8"

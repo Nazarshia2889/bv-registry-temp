@@ -5,9 +5,8 @@ description = "Variant Effect Predictor: annotate variants with consequences and
 homepage = "https://www.ensembl.org/info/docs/tools/vep/index.html"
 license = "Apache-2.0"
 tier = "core"
-maintainers = ["github:Ensembl"]
-cache_paths = ["/cache/vep"]
-
+maintainers = [ "github:Ensembl",]
+cache_paths = [ "/cache/vep",]
 [[tool.inputs]]
 name = "vcf"
 type = "vcf"
@@ -33,9 +32,9 @@ disk_gb = 50.0
 command = "vep"
 
 [tool.binaries]
-exposed = ["vep", "filter_vep", "haplo", "variant_recoder"]
+exposed = [ "vep", "filter_vep", "haplo", "variant_recoder",]
 
 [tool.factored]
 spec_path = "specs/ensembl-vep/113.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/ensembl-vep:113.0"
-image_digest = "sha256:2fa3635f8acceafbb6741450fcf3c92b2f373119e71aaf679a49b9a101cd8a23"
+image_digest = "sha256:4b3b409015be465d1f88287a003d086cbfd78c960dd3d2a9ae7e2ca5b3817b43"

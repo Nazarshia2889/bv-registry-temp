@@ -5,8 +5,7 @@ description = "Binning of metagenomic contigs based on tetranucleotide frequenci
 homepage = "https://sourceforge.net/projects/maxbin2/"
 license = "BSD-3-Clause"
 tier = "community"
-maintainers = ["github:movingpictures83"]
-
+maintainers = [ "github:movingpictures83",]
 [[tool.inputs]]
 name = "contigs"
 type = "fasta"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "run_MaxBin.pl"
 
 [tool.binaries]
-exposed = ["run_MaxBin.pl"]
+exposed = [ "run_MaxBin.pl",]
 
 [tool.factored]
 spec_path = "specs/maxbin2/2.2.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/maxbin2:2.2.7"
-image_digest = "sha256:73b3ad73271e6657b237b8e44793c99b2eb14293f347d2fe32bb973a0b1bf644"
+image_digest = "sha256:68b2a965da2347ae23510189185e76dda9b4bc63faaac26896775f2df0277d87"

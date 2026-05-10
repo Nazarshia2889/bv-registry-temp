@@ -5,8 +5,7 @@ description = "Count reads overlapping genomic features"
 homepage = "https://github.com/htseq/htseq"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:htseq"]
-
+maintainers = [ "github:htseq",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -38,9 +37,9 @@ disk_gb = 10.0
 command = "htseq-count"
 
 [tool.binaries]
-exposed = ["htseq-count", "htseq-qa"]
+exposed = [ "htseq-count", "htseq-qa",]
 
 [tool.factored]
 spec_path = "specs/htseq/2.0.5.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/htseq:2.0.5"
-image_digest = "sha256:c4e9eaa923bea69cbf89927d4a47dcd62f633fe86474b1741452239ec4a9a437"
+image_digest = "sha256:0669cbe418ff112126b83b9ec35c58cfa5a1bfc2ccf84c56ed8c65813b7fd9bc"

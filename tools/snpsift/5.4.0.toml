@@ -5,11 +5,7 @@ description = "Toolbox that allows you to filter and manipulate annotated files"
 homepage = "http://snpeff.sourceforge.net/SnpSift.html"
 license = "LGPLv3"
 tier = "community"
-maintainers = ["github:pcingola"]
-
-[tool.metadata]
-upstream_version = "5.4.0c"
-
+maintainers = [ "github:pcingola",]
 [[tool.inputs]]
 name = "input"
 type = "vcf"
@@ -21,6 +17,9 @@ name = "output"
 type = "vcf"
 cardinality = "one"
 description = "Filtered or manipulated VCF file"
+
+[tool.metadata]
+upstream_version = "5.4.0c"
 
 [tool.image]
 backend = "docker"
@@ -36,9 +35,9 @@ disk_gb = 1.0
 command = "SnpSift"
 
 [tool.binaries]
-exposed = ["SnpSift"]
+exposed = [ "SnpSift",]
 
 [tool.factored]
 spec_path = "specs/snpsift/5.4.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/snpsift:5.4.0"
-image_digest = "sha256:f11232ab20fd7ea22e277af4ac551cf73526afa2bf500e61b125295ae910d199"
+image_digest = "sha256:51717d97decbc1bce2f44920d7cb0fd4d21da103d9bf17a38d49256bb71f8170"

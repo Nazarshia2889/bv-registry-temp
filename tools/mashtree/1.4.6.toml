@@ -5,8 +5,7 @@ description = "Build neighbor-joining trees from mash distances"
 homepage = "https://github.com/lskatz/mashtree"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:lskatz"]
-
+maintainers = [ "github:lskatz",]
 [[tool.inputs]]
 name = "fasta_dir"
 type = "dir"
@@ -32,9 +31,9 @@ disk_gb = 10.0
 command = "mashtree"
 
 [tool.binaries]
-exposed = ["mashtree"]
+exposed = [ "mashtree",]
 
 [tool.factored]
 spec_path = "specs/mashtree/1.4.6.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/mashtree:1.4.6"
-image_digest = "sha256:c55f0bf6eac15fc9ae0a402018ff82f85cc104ae82a946b740763125476fce90"
+image_digest = "sha256:5870f07de0b70197c7c18124dc9ac32cce18e0997b426377e79296818921d87e"

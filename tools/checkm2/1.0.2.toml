@@ -5,9 +5,8 @@ description = "ML-based bin quality assessment for completeness and contaminatio
 homepage = "https://github.com/chklovski/CheckM2"
 license = "GPL-3.0"
 tier = "core"
-maintainers = ["github:chklovski"]
-cache_paths = ["/cache/checkm2"]
-
+maintainers = [ "github:chklovski",]
+cache_paths = [ "/cache/checkm2",]
 [[tool.inputs]]
 name = "bins"
 type = "dir"
@@ -33,9 +32,9 @@ disk_gb = 50.0
 command = "checkm2"
 
 [tool.binaries]
-exposed = ["checkm2"]
+exposed = [ "checkm2",]
 
 [tool.factored]
 spec_path = "specs/checkm2/1.0.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/checkm2:1.0.2"
-image_digest = "sha256:70162338eab49ef919d23515eec3d9e75485eb62adf924ad1c7e4436270d25ca"
+image_digest = "sha256:cee8995f0dbf8de247f8f9d26d6261953ae27fa829216510a2a6968b3f01bfe1"

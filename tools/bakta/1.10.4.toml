@@ -5,9 +5,8 @@ description = "Rapid bacterial genome annotation with curated databases (modern 
 homepage = "https://github.com/oschwengers/bakta"
 license = "GPL-3.0"
 tier = "core"
-maintainers = ["github:oschwengers"]
-cache_paths = ["/cache/bakta"]
-
+maintainers = [ "github:oschwengers",]
+cache_paths = [ "/cache/bakta",]
 [[tool.inputs]]
 name = "genome"
 type = "fasta"
@@ -33,9 +32,9 @@ disk_gb = 30.0
 command = "bakta"
 
 [tool.binaries]
-exposed = ["bakta", "bakta_db"]
+exposed = [ "bakta", "bakta_db",]
 
 [tool.factored]
 spec_path = "specs/bakta/1.10.4.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/bakta:1.10.4"
-image_digest = "sha256:ffc74a75c7da5ae64fe69d6f0b30ebc14475e4b02252411b1c06e56e22c1c7f7"
+image_digest = "sha256:7f5a66ffbb12a5f361d1778b36efe60c9c90fd1b3d43737953518d3be9caba2f"

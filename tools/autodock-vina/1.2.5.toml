@@ -5,8 +5,7 @@ description = "Molecular docking with AutoDock Vina"
 homepage = "https://vina.scripps.edu/"
 license = "Apache-2.0"
 tier = "community"
-maintainers = ["github:ccsb-scripps"]
-
+maintainers = [ "github:ccsb-scripps",]
 [[tool.inputs]]
 name = "receptor"
 type = "file"
@@ -38,9 +37,9 @@ disk_gb = 5.0
 command = "vina"
 
 [tool.binaries]
-exposed = ["vina"]
+exposed = [ "vina",]
 
 [tool.factored]
 spec_path = "specs/autodock-vina/1.2.5.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/autodock-vina:1.2.5"
-image_digest = "sha256:4124f39b1176874232b3807b21204393a892b416f0c381b47e5d03cf89ec7360"
+image_digest = "sha256:9d65f182aa425dd3b5692e295404dfc2a22549dde49cd722985a3b8e7a4cd6c6"

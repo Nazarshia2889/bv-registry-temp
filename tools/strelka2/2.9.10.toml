@@ -5,8 +5,7 @@ description = "Small variant caller (SNV+indel) for germline and somatic samples
 homepage = "https://github.com/Illumina/strelka"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:Illumina"]
-
+maintainers = [ "github:Illumina",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -38,9 +37,9 @@ disk_gb = 20.0
 command = "configureStrelkaGermlineWorkflow.py"
 
 [tool.binaries]
-exposed = ["configureStrelkaGermlineWorkflow.py", "configureStrelkaSomaticWorkflow.py"]
+exposed = [ "configureStrelkaGermlineWorkflow.py", "configureStrelkaSomaticWorkflow.py",]
 
 [tool.factored]
 spec_path = "specs/strelka2/2.9.10.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/strelka2:2.9.10"
-image_digest = "sha256:6b754d19140a73d07ec9ba4a38820a679d339257e91ba3440e06a2c408e03e09"
+image_digest = "sha256:30fcd77436269d1232b5b1ebb835dd84491039c710b7dcd907e983b4e0f84502"

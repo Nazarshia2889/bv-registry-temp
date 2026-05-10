@@ -5,8 +5,7 @@ description = "Long-read mapper with structural-variant–aware alignment"
 homepage = "https://github.com/philres/ngmlr"
 license = "MIT"
 tier = "community"
-maintainers = ["github:philres"]
-
+maintainers = [ "github:philres",]
 [[tool.inputs]]
 name = "ref"
 type = "fasta"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "ngmlr"
 
 [tool.binaries]
-exposed = ["ngmlr"]
+exposed = [ "ngmlr",]
 
 [tool.factored]
 spec_path = "specs/ngmlr/0.2.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/ngmlr:0.2.7"
-image_digest = "sha256:9cb439752c506019bfefee183d77aaa747ec97e98808f35fcaa4901a0739d8c2"
+image_digest = "sha256:5ae38f2d6dc103a9e2af51595d3fcd55df53a1c57b15cd173c8e0c9fd4de266d"

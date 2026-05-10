@@ -5,8 +5,7 @@ description = "Short-read polisher for assembly improvement and variant calling"
 homepage = "https://github.com/broadinstitute/pilon"
 license = "GPL-2.0"
 tier = "community"
-maintainers = ["github:broadinstitute"]
-
+maintainers = [ "github:broadinstitute",]
 [[tool.inputs]]
 name = "genome"
 type = "fasta"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "pilon"
 
 [tool.binaries]
-exposed = ["pilon"]
+exposed = [ "pilon",]
 
 [tool.factored]
 spec_path = "specs/pilon/1.24.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/pilon:1.24"
-image_digest = "sha256:336ab64f7efd3f1cdc74ddac2518e37606b22b1677c9761a0481ef81f6d6e835"
+image_digest = "sha256:7cf7bec4a27dbe458556331688e167265119bbc2a086d566a37003e2ef5c593c"

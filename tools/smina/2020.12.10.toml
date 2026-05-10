@@ -5,8 +5,7 @@ description = "AutoDock Vina fork with custom scoring functions"
 homepage = "https://sourceforge.net/projects/smina/"
 license = "GPL-2.0"
 tier = "community"
-maintainers = ["github:mwojcikowski"]
-
+maintainers = [ "github:mwojcikowski",]
 [[tool.inputs]]
 name = "receptor"
 type = "file"
@@ -38,9 +37,9 @@ disk_gb = 5.0
 command = "smina"
 
 [tool.binaries]
-exposed = ["smina"]
+exposed = [ "smina",]
 
 [tool.factored]
 spec_path = "specs/smina/2020.12.10.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/smina:2020.12.10"
-image_digest = "sha256:1a51a7c371b6f1e93f8386fe09978a3bc21311b277e8f6fd5037b063124cc07f"
+image_digest = "sha256:b4a636c245bf55ba32723c1647d628b73ca17591a9a7f2e03b005b98214245ed"

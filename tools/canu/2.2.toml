@@ -5,8 +5,7 @@ description = "Long-read genome assembler for PacBio and Oxford Nanopore data"
 homepage = "https://github.com/marbl/canu"
 license = "GPL-2.0-or-later"
 tier = "community"
-maintainers = ["github:marbl"]
-
+maintainers = [ "github:marbl",]
 [[tool.inputs]]
 name = "reads"
 type = "fastq"
@@ -32,9 +31,9 @@ disk_gb = 200.0
 command = "canu"
 
 [tool.binaries]
-exposed = ["canu"]
+exposed = [ "canu",]
 
 [tool.factored]
 spec_path = "specs/canu/2.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/canu:2.2"
-image_digest = "sha256:fcd49d41f2846c6978f8b691f450330b9de9d345bdf1596ee66e3fa22bfb17a8"
+image_digest = "sha256:0773faa7c85138dc23086f0740a67d086f6ce03452c8ae0d3ac0a10a8e33b88d"

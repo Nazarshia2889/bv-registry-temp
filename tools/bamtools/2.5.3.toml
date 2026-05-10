@@ -5,8 +5,7 @@ description = "C++ API & command-line toolkit for working with BAM data"
 homepage = "https://github.com/pezmaster31/bamtools"
 license = "MIT"
 tier = "community"
-maintainers = ["github:pezmaster31"]
-
+maintainers = [ "github:pezmaster31",]
 [[tool.inputs]]
 name = "input"
 type = "bam"
@@ -33,9 +32,9 @@ disk_gb = 2.0
 command = "bamtools"
 
 [tool.binaries]
-exposed = ["bamtools"]
+exposed = [ "bamtools",]
 
 [tool.factored]
 spec_path = "specs/bamtools/2.5.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/bamtools:2.5.3"
-image_digest = "sha256:00ef8da65f2257a4d5760868e9ca7dedff5ab854d0e2f428f7d06cf631dfc9c7"
+image_digest = "sha256:6588401dc1c5ba513bc1c0054122396be40bf131a407f53a8a59794c57d96fda"

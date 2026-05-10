@@ -5,8 +5,7 @@ description = "Accurate inference of orthogroups, orthologues, gene trees and ro
 homepage = "https://github.com/OrthoFinder/OrthoFinder"
 license = "GPL-3.0-only"
 tier = "community"
-maintainers = ["github:OrthoFinder"]
-
+maintainers = [ "github:OrthoFinder",]
 [[tool.inputs]]
 name = "fasta_dir"
 type = "dir"
@@ -33,9 +32,9 @@ disk_gb = 20.0
 command = "orthofinder"
 
 [tool.binaries]
-exposed = ["orthofinder"]
+exposed = [ "orthofinder",]
 
 [tool.factored]
 spec_path = "specs/orthofinder/3.1.4.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/orthofinder:3.1.4"
-image_digest = "sha256:73e719dcaab5a6888ad53f50acc8605066463c2b8b99a814e79f03aa0f681b16"
+image_digest = "sha256:bf46a1ce1dbb1408c7a76685337d966d313c3ace98aea89f73bb19358efc0518"

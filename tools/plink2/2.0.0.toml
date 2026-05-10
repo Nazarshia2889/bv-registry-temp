@@ -5,8 +5,7 @@ description = "PLINK 2.0: whole-genome association and population-genetic toolki
 homepage = "https://www.cog-genomics.org/plink/2.0/"
 license = "GPL-3.0"
 tier = "core"
-maintainers = ["github:chrchang"]
-
+maintainers = [ "github:chrchang",]
 [[tool.inputs]]
 name = "input"
 type = "file"
@@ -32,9 +31,9 @@ disk_gb = 50.0
 command = "plink2"
 
 [tool.binaries]
-exposed = ["plink2"]
+exposed = [ "plink2",]
 
 [tool.factored]
 spec_path = "specs/plink2/2.0.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/plink2:2.0.0"
-image_digest = "sha256:48466a07b2196ab2e2c58ecf3bffd963435bd4e669e5d0d6dbc8f3c074913e64"
+image_digest = "sha256:d227c78e91d862f76cfd3776f560e5d63a21b509537615ea582159668fe63067"

@@ -5,8 +5,7 @@ description = "Bisulfite read aligner and methylation caller"
 homepage = "https://github.com/FelixKrueger/Bismark"
 license = "GPL-3.0"
 tier = "core"
-maintainers = ["github:FelixKrueger"]
-
+maintainers = [ "github:FelixKrueger",]
 [[tool.inputs]]
 name = "reads"
 type = "fastq"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "bismark"
 
 [tool.binaries]
-exposed = ["bismark", "bismark_genome_preparation", "bismark_methylation_extractor", "deduplicate_bismark"]
+exposed = [ "bismark", "bismark_genome_preparation", "bismark_methylation_extractor", "deduplicate_bismark",]
 
 [tool.factored]
 spec_path = "specs/bismark/0.24.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/bismark:0.24.2"
-image_digest = "sha256:92408a59e444cd845f80f1ef8aa496b54035497d7b153bfdfbe6d3aa317da8e9"
+image_digest = "sha256:3378ab8ed841236bdc76c79e90c5d8e48db655d11b0cf93d6cc99e789fcfbb93"

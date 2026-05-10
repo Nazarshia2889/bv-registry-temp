@@ -5,8 +5,7 @@ description = "Analysis of Hi-C/Micro-C cooler matrices: TADs, compartments, exp
 homepage = "https://github.com/open2c/cooltools"
 license = "MIT"
 tier = "community"
-maintainers = ["github:open2c"]
-
+maintainers = [ "github:open2c",]
 [[tool.inputs]]
 name = "cool"
 type = "file"
@@ -32,9 +31,9 @@ disk_gb = 10.0
 command = "cooltools"
 
 [tool.binaries]
-exposed = ["cooltools"]
+exposed = [ "cooltools",]
 
 [tool.factored]
 spec_path = "specs/cooltools/0.7.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/cooltools:0.7.0"
-image_digest = "sha256:ccc15bffae291f727750c1eebedf3c3209ba7a05c058576ad5924ab53bf8a022"
+image_digest = "sha256:c21e661f50a988263e8b1b69d1ab0ef838ad308b8d126105fb792710ac093020"

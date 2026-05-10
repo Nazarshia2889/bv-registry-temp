@@ -5,8 +5,7 @@ description = "Mask repetitive DNA using a curated library"
 homepage = "http://www.repeatmasker.org/"
 license = "OSL-2.1"
 tier = "community"
-maintainers = ["github:rmhubley"]
-
+maintainers = [ "github:rmhubley",]
 [[tool.inputs]]
 name = "genome"
 type = "fasta"
@@ -32,9 +31,9 @@ disk_gb = 50.0
 command = "RepeatMasker"
 
 [tool.binaries]
-exposed = ["RepeatMasker"]
+exposed = [ "RepeatMasker",]
 
 [tool.factored]
 spec_path = "specs/repeatmasker/4.1.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/repeatmasker:4.1.7"
-image_digest = "sha256:04b071199da50476c3233fb911afd2c199ec4d699884f9648b653f5f10c6a583"
+image_digest = "sha256:405037c9f0b4e3ed0268f77280c7d747e55b7a33ff11985116051ea4af948c2e"

@@ -5,8 +5,7 @@ description = "Rapid annotation of prokaryotic genomes"
 homepage = "https://github.com/tseemann/prokka"
 license = "GPL-3.0-only"
 tier = "community"
-maintainers = ["github:tseemann"]
-
+maintainers = [ "github:tseemann",]
 [[tool.inputs]]
 name = "input"
 type = "fasta"
@@ -33,9 +32,9 @@ disk_gb = 5.0
 command = "prokka"
 
 [tool.binaries]
-exposed = ["prokka"]
+exposed = [ "prokka",]
 
 [tool.factored]
 spec_path = "specs/prokka/1.14.6.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/prokka:1.14.6"
-image_digest = "sha256:ca795e8981e5dec2891906c1f5fcae1cbee2e2cf46f5fbceb0d2c911f7c61844"
+image_digest = "sha256:edf42c3b4f4e1b33d7a5eeeac8471b77ceb4340879c3a868ba0231ef05b275c8"

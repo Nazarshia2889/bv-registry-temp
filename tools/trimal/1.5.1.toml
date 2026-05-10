@@ -5,8 +5,7 @@ description = "A tool for the automated removal of spurious sequences or poorly 
 homepage = "https://trimal.readthedocs.io"
 license = "GPL-3.0-or-later"
 tier = "community"
-maintainers = ["github:inab"]
-
+maintainers = [ "github:inab",]
 [[tool.inputs]]
 name = "alignment"
 type = "msa"
@@ -33,9 +32,9 @@ disk_gb = 1.0
 command = "trimal"
 
 [tool.binaries]
-exposed = ["trimal", "readal", "statal"]
+exposed = [ "trimal", "readal", "statal",]
 
 [tool.factored]
 spec_path = "specs/trimal/1.5.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/trimal:1.5.1"
-image_digest = "sha256:3aeabdc702f20ad13437e5d8751e0fe74f5fd629b3f95b9ed647faf63d4df713"
+image_digest = "sha256:6756fd850c03ad6e83fbac70a8782c983ee7669aa2a1a3a813fbb8e3f05eb248"

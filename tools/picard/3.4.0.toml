@@ -5,8 +5,7 @@ description = "Java tools for working with NGS data in the BAM format"
 homepage = "http://broadinstitute.github.io/picard/"
 license = "MIT"
 tier = "community"
-maintainers = ["github:broadinstitute"]
-
+maintainers = [ "github:broadinstitute",]
 [[tool.inputs]]
 name = "input"
 type = "bam"
@@ -33,9 +32,9 @@ disk_gb = 5.0
 command = "picard"
 
 [tool.binaries]
-exposed = ["picard"]
+exposed = [ "picard",]
 
 [tool.factored]
 spec_path = "specs/picard/3.4.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/picard:3.4.0"
-image_digest = "sha256:9d67f964c7809d274867b852eb75ce8716533ed2d1dd9ca526e5cf93f4157db6"
+image_digest = "sha256:33faf2b58f75cbf36365ca1c6e8067ac3f0e1de70439f319217bac6c7ee74fb4"

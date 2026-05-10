@@ -5,8 +5,7 @@ description = "Phylogenetic placement post-analysis (jplace files)"
 homepage = "https://github.com/lczech/gappa"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:lczech"]
-
+maintainers = [ "github:lczech",]
 [[tool.inputs]]
 name = "jplace"
 type = "file"
@@ -32,9 +31,9 @@ disk_gb = 5.0
 command = "gappa"
 
 [tool.binaries]
-exposed = ["gappa"]
+exposed = [ "gappa",]
 
 [tool.factored]
 spec_path = "specs/gappa/0.8.5.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/gappa:0.8.5"
-image_digest = "sha256:b88cd5de1cd68f9b43f9cd6d7aa602ea765fb2ff584c1dfb8c7f14f416513979"
+image_digest = "sha256:1bb32091be3b7ee7dcc49d31e4f3bfe34a433d746127330c1e5b6ee768f1ef09"

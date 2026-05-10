@@ -5,8 +5,7 @@ description = "Bayesian phylogenetic inference using MCMC"
 homepage = "https://nbisweden.github.io/MrBayes/"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:NBISweden"]
-
+maintainers = [ "github:NBISweden",]
 [[tool.inputs]]
 name = "nexus"
 type = "file"
@@ -32,9 +31,9 @@ disk_gb = 10.0
 command = "mb"
 
 [tool.binaries]
-exposed = ["mb"]
+exposed = [ "mb",]
 
 [tool.factored]
 spec_path = "specs/mrbayes/3.2.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/mrbayes:3.2.7"
-image_digest = "sha256:eec6af2027850bf948417a79263be9c2bf0f062d4b51e322a168ab68762b7b42"
+image_digest = "sha256:e8564b6d2dbafdc73a3e42a74e0d6c3a5dfe7e91afe8b977405c1a9b63f85814"

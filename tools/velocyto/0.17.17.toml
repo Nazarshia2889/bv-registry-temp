@@ -5,8 +5,7 @@ description = "RNA velocity from spliced/unspliced read counts"
 homepage = "http://velocyto.org/"
 license = "BSD-2-Clause"
 tier = "community"
-maintainers = ["github:velocyto-team"]
-
+maintainers = [ "github:velocyto-team",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "velocyto"
 
 [tool.binaries]
-exposed = ["velocyto"]
+exposed = [ "velocyto",]
 
 [tool.factored]
 spec_path = "specs/velocyto/0.17.17.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/velocyto:0.17.17"
-image_digest = "sha256:df39123af78b843744dc1c9c6f23185c3f4e446871c63391a1715b07000a8844"
+image_digest = "sha256:5e2f3104816cbfba58e983726b0ea36b131d6035139e5b372f8b3c4399723d51"

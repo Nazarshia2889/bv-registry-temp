@@ -5,8 +5,7 @@ description = "Ultra-fast protein-structure search (alignment-by-3Di alphabet)"
 homepage = "https://github.com/steineggerlab/foldseek"
 license = "GPL-3.0"
 tier = "core"
-maintainers = ["github:steineggerlab"]
-
+maintainers = [ "github:steineggerlab",]
 [[tool.inputs]]
 name = "query"
 type = "pdb"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "foldseek"
 
 [tool.binaries]
-exposed = ["foldseek"]
+exposed = [ "foldseek",]
 
 [tool.factored]
 spec_path = "specs/foldseek/10.941cd33.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/foldseek:10.941cd33"
-image_digest = "sha256:bdefbd8ba83bd14a4eae5b41f32c070715c6f998c645ecf4a03bd1864f725c9b"
+image_digest = "sha256:1f384042797fd3b05126005314303e208811f937b2ff9db45ad122eea57b7cd2"

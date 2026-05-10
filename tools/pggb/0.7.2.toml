@@ -5,8 +5,7 @@ description = "PanGenome Graph Builder pipeline"
 homepage = "https://github.com/pangenome/pggb"
 license = "MIT"
 tier = "community"
-maintainers = ["github:pangenome"]
-
+maintainers = [ "github:pangenome",]
 [[tool.inputs]]
 name = "fasta"
 type = "fasta"
@@ -32,9 +31,9 @@ disk_gb = 200.0
 command = "pggb"
 
 [tool.binaries]
-exposed = ["pggb"]
+exposed = [ "pggb",]
 
 [tool.factored]
 spec_path = "specs/pggb/0.7.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/pggb:0.7.2"
-image_digest = "sha256:7f6150e15f9159b07d3aef0c956eae7ad03af13931f399187ccfc43e4673fc90"
+image_digest = "sha256:234b255ca6001b1c23c057f901651a0fa55e8ad015a276ce0c27769b038c0b03"

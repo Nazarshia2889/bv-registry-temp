@@ -5,8 +5,7 @@ description = "De novo transposable-element family discovery"
 homepage = "https://github.com/Dfam-consortium/RepeatModeler"
 license = "OSL-2.1"
 tier = "community"
-maintainers = ["github:Dfam-consortium"]
-
+maintainers = [ "github:Dfam-consortium",]
 [[tool.inputs]]
 name = "genome"
 type = "fasta"
@@ -32,9 +31,9 @@ disk_gb = 100.0
 command = "RepeatModeler"
 
 [tool.binaries]
-exposed = ["RepeatModeler", "BuildDatabase"]
+exposed = [ "RepeatModeler", "BuildDatabase",]
 
 [tool.factored]
 spec_path = "specs/repeatmodeler/2.0.5.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/repeatmodeler:2.0.5"
-image_digest = "sha256:bc9e50ce82fc060dc49ba93f22b16d0e4471cbc53e4c5023ca0c854f0e4d8733"
+image_digest = "sha256:0fbde952b1d4c50ca72b6a76e9f68da0fb0b9fc3b26e052f32e755ea12d2091d"

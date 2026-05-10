@@ -5,8 +5,7 @@ description = "Molecular dynamics simulation suite"
 homepage = "https://www.gromacs.org/"
 license = "LGPL-2.1"
 tier = "community"
-maintainers = ["github:gromacs"]
-
+maintainers = [ "github:gromacs",]
 [[tool.inputs]]
 name = "tpr"
 type = "file"
@@ -28,18 +27,18 @@ cpu_cores = 16
 ram_gb = 32.0
 disk_gb = 50.0
 
-[tool.hardware.gpu]
-required = false
-min_vram_gb = 8
-cuda_version = "12.0"
-
 [tool.entrypoint]
 command = "gmx"
 
 [tool.binaries]
-exposed = ["gmx"]
+exposed = [ "gmx",]
 
 [tool.factored]
 spec_path = "specs/gromacs/2024.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/gromacs:2024.3"
-image_digest = "sha256:775ac9452ed33bfc6b93d459f1c6278c9315bcc99d5c935755abb012af479a70"
+image_digest = "sha256:4143d43c879051cb0931cd55bc2b86739f64117463b0da92f1518167f9e05321"
+
+[tool.hardware.gpu]
+required = false
+min_vram_gb = 8
+cuda_version = "12.0"

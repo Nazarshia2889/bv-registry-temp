@@ -5,8 +5,7 @@ description = "Adapter trimming for high-throughput sequencing reads"
 homepage = "https://cutadapt.readthedocs.io/"
 license = "MIT"
 tier = "core"
-maintainers = ["github:marcelm"]
-
+maintainers = [ "github:marcelm",]
 [[tool.inputs]]
 name = "reads"
 type = "fastq"
@@ -33,9 +32,9 @@ command = "cutadapt"
 args_template = "-o {trimmed} {reads}"
 
 [tool.binaries]
-exposed = ["cutadapt"]
+exposed = [ "cutadapt",]
 
 [tool.factored]
 spec_path = "specs/cutadapt/4.9.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/cutadapt:4.9"
-image_digest = "sha256:d1b1d1b55f5f02b0f6ec5b7db4d6a28041152376437c9fff32bdf32457586aaf"
+image_digest = "sha256:a3dc587fc5b9280c7bbdc8bc5f87b82bf17d9a884f0bc689d81e4652e17b3b8e"

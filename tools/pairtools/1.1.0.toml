@@ -5,8 +5,7 @@ description = "Hi-C pair-file utilities: parse, sort, dedup, select"
 homepage = "https://github.com/open2c/pairtools"
 license = "MIT"
 tier = "core"
-maintainers = ["github:open2c"]
-
+maintainers = [ "github:open2c",]
 [[tool.inputs]]
 name = "sam"
 type = "sam"
@@ -32,9 +31,9 @@ disk_gb = 50.0
 command = "pairtools"
 
 [tool.binaries]
-exposed = ["pairtools"]
+exposed = [ "pairtools",]
 
 [tool.factored]
 spec_path = "specs/pairtools/1.1.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/pairtools:1.1.0"
-image_digest = "sha256:3de508a0be79b9ec3505ce1aa43eb1956bca11c94aff6af61fd5e091616c7606"
+image_digest = "sha256:4732c99f887970ff010af56c17fc61b9f6da61174363e56d40b4c23d19fd4281"

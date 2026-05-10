@@ -5,8 +5,7 @@ description = "Structural variant and indel caller for short reads"
 homepage = "https://github.com/Illumina/manta"
 license = "GPL-3.0"
 tier = "community"
-maintainers = ["github:Illumina"]
-
+maintainers = [ "github:Illumina",]
 [[tool.inputs]]
 name = "bam"
 type = "bam"
@@ -38,9 +37,9 @@ disk_gb = 20.0
 command = "configManta.py"
 
 [tool.binaries]
-exposed = ["configManta.py"]
+exposed = [ "configManta.py",]
 
 [tool.factored]
 spec_path = "specs/manta/1.6.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/manta:1.6.0"
-image_digest = "sha256:67daff0e996203fd6057427190572f5cef6e8f5e7f8bcbc6867553a18208ba50"
+image_digest = "sha256:4262025f03437a6fef2ea12f6b2252a827fb637702c1bb886403465eb8575650"

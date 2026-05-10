@@ -5,9 +5,8 @@ description = "Resistance Gene Identifier (CARD database)"
 homepage = "https://github.com/arpcard/rgi"
 license = "Apache-2.0"
 tier = "community"
-maintainers = ["github:arpcard"]
-cache_paths = ["/cache/rgi"]
-
+maintainers = [ "github:arpcard",]
+cache_paths = [ "/cache/rgi",]
 [[tool.inputs]]
 name = "fasta"
 type = "fasta"
@@ -33,9 +32,9 @@ disk_gb = 10.0
 command = "rgi"
 
 [tool.binaries]
-exposed = ["rgi"]
+exposed = [ "rgi",]
 
 [tool.factored]
 spec_path = "specs/rgi/6.0.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/rgi:6.0.3"
-image_digest = "sha256:af74051c36b75c5c94c6b5d677d90f2c27c0aebdabee11338199c0ec6a8dd975"
+image_digest = "sha256:ea1a6681181fa52870b9ecc65b89ba7aee7d0a74d5d227c0f41d1c0419c15658"

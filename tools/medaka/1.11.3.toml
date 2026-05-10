@@ -5,22 +5,7 @@ description = "Sequence variant calling and consensus from Oxford Nanopore data 
 homepage = "https://github.com/nanoporetech/medaka"
 license = "Oxford Nanopore Technologies PLC"
 tier = "community"
-maintainers = ["github:nanoporetech"]
-
-[tool.image]
-backend = "docker"
-reference = "ontresearch/medaka:v1.11.3"
-
-[tool.hardware]
-cpu_cores = 8
-ram_gb = 16.0
-disk_gb = 5.0
-
-[tool.hardware.gpu]
-required = false
-min_vram_gb = 4
-cuda_version = "11.8"
-
+maintainers = [ "github:nanoporetech",]
 [[tool.inputs]]
 name = "reads"
 type = "fastq"
@@ -39,14 +24,28 @@ type = "dir"
 cardinality = "one"
 description = "Polished consensus sequences"
 
+[tool.image]
+backend = "docker"
+reference = "ontresearch/medaka:v1.11.3"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 5.0
+
 [tool.entrypoint]
 command = "medaka_consensus"
 args_template = "-i {reads} -d {draft} -o {output_dir} -t {cpu_cores}"
 
 [tool.binaries]
-exposed = ["medaka_consensus", "medaka", "medaka_haploid_variant", "medaka_variant"]
+exposed = [ "medaka_consensus", "medaka", "medaka_haploid_variant", "medaka_variant",]
 
 [tool.factored]
 spec_path = "specs/medaka/1.11.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/medaka:1.11.3"
-image_digest = "sha256:5406de7454aa853e8e610eefa7a36dbf18493578a94f06063044dc1e3952ae8e"
+image_digest = "sha256:17c33bd4bc07d01a5df447e241fed4ca67e50f41063c4b283ead9d7c1332dbc9"
+
+[tool.hardware.gpu]
+required = false
+min_vram_gb = 4
+cuda_version = "11.8"

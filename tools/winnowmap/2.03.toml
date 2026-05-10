@@ -5,8 +5,7 @@ description = "Long-read mapper that downweights repetitive minimizers"
 homepage = "https://github.com/marbl/Winnowmap"
 license = "Public Domain"
 tier = "community"
-maintainers = ["github:marbl"]
-
+maintainers = [ "github:marbl",]
 [[tool.inputs]]
 name = "ref"
 type = "fasta"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "winnowmap"
 
 [tool.binaries]
-exposed = ["winnowmap", "meryl"]
+exposed = [ "winnowmap", "meryl",]
 
 [tool.factored]
 spec_path = "specs/winnowmap/2.03.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/winnowmap:2.03"
-image_digest = "sha256:4aba56bb0021ad5d0fc3db81a8f8a8180800b93449d29cbef9cdb10327a85a20"
+image_digest = "sha256:851b79ece9e313e181d9c317a2061b1a88bedea413b20d353fee4842c01cda95"

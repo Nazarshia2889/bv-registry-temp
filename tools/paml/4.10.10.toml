@@ -5,8 +5,7 @@ description = "A package of programs for phylogenetic analyses of DNA or protein
 homepage = "https://evomics.org/resources/software/molecular-evolution-software/paml"
 license = "GPL-3.0-or-later"
 tier = "community"
-maintainers = ["github:abacus-gene"]
-
+maintainers = [ "github:abacus-gene",]
 [[tool.inputs]]
 name = "alignment"
 type = "msa"
@@ -39,9 +38,9 @@ disk_gb = 2.0
 command = "codeml"
 
 [tool.binaries]
-exposed = ["codeml", "baseml", "evolver", "chi2", "yn00"]
+exposed = [ "codeml", "baseml", "evolver", "chi2", "yn00",]
 
 [tool.factored]
 spec_path = "specs/paml/4.10.10.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/paml:4.10.10"
-image_digest = "sha256:f526fa8e34d41a29c7f7ba5e62f6faee14f41ef96a41a67f9b0a1b237041e187"
+image_digest = "sha256:6c1b65f98da3a82f04e2f3d1d49a1dbdbe1355fd6a05a4cffa85373fd3636221"

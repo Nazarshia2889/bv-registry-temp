@@ -5,8 +5,7 @@ description = "Mass screening of contigs for AMR/virulence genes"
 homepage = "https://github.com/tseemann/abricate"
 license = "GPL-2.0"
 tier = "community"
-maintainers = ["github:tseemann"]
-
+maintainers = [ "github:tseemann",]
 [[tool.inputs]]
 name = "fasta"
 type = "fasta"
@@ -32,9 +31,9 @@ disk_gb = 10.0
 command = "abricate"
 
 [tool.binaries]
-exposed = ["abricate"]
+exposed = [ "abricate",]
 
 [tool.factored]
 spec_path = "specs/abricate/1.0.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/abricate:1.0.1"
-image_digest = "sha256:fe0ac65b1fbbf2c634e47b58a9992df245d53aa27a095f3aff21f803039c75f9"
+image_digest = "sha256:f793aa03e15f7c2f1c4d8275201b68c983c7c04b9fb69e48a4473fed86948f40"

@@ -5,8 +5,7 @@ description = "Clustering contigs with composition and coverage"
 homepage = "https://github.com/BinPro/CONCOCT"
 license = "BSD-3-Clause"
 tier = "community"
-maintainers = ["github:BinPro"]
-
+maintainers = [ "github:BinPro",]
 [[tool.inputs]]
 name = "contigs"
 type = "fasta"
@@ -38,9 +37,9 @@ disk_gb = 50.0
 command = "concoct"
 
 [tool.binaries]
-exposed = ["concoct"]
+exposed = [ "concoct",]
 
 [tool.factored]
 spec_path = "specs/concoct/1.1.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/concoct:1.1.0"
-image_digest = "sha256:4d066d8ad2b5eb95fe66bade1d94d3e47ca1844283a78da316c0db0fad11113b"
+image_digest = "sha256:245a95f79fe316d27f7dcceb950f30d986379cbcb3ee164a3313fb84e4e178d6"

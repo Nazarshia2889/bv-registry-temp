@@ -5,8 +5,7 @@ description = "Bayesian Evolutionary Analysis Sampling Trees (BEAST 2)"
 homepage = "https://www.beast2.org/"
 license = "LGPL-2.1"
 tier = "community"
-maintainers = ["github:CompEvol"]
-
+maintainers = [ "github:CompEvol",]
 [[tool.inputs]]
 name = "xml"
 type = "file"
@@ -32,9 +31,9 @@ disk_gb = 10.0
 command = "beast"
 
 [tool.binaries]
-exposed = ["beast", "beauti", "treeannotator", "logcombiner", "applauncher"]
+exposed = [ "beast", "beauti", "treeannotator", "logcombiner", "applauncher",]
 
 [tool.factored]
 spec_path = "specs/beast2/2.7.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/beast2:2.7.7"
-image_digest = "sha256:270d31e9780f58704b3c6c091c8566bbb28ed89f271b451d440c4d761d3fe5b2"
+image_digest = "sha256:f0973055d94a2a47ebc2479408c0d9d17173dd789ab93a3a54de246da839cf20"

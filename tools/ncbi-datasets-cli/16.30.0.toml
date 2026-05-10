@@ -5,8 +5,7 @@ description = "NCBI Datasets command-line: fetch genomes, genes, and metadata"
 homepage = "https://github.com/ncbi/datasets"
 license = "Public Domain"
 tier = "core"
-maintainers = ["github:ncbi"]
-
+maintainers = [ "github:ncbi",]
 [[tool.inputs]]
 name = "query"
 type = "file"
@@ -32,7 +31,7 @@ disk_gb = 50.0
 command = "datasets"
 
 [tool.binaries]
-exposed = ["datasets", "dataformat"]
+exposed = [ "datasets", "dataformat",]
 
 [tool.factored]
 spec_path = "specs/ncbi-datasets-cli/16.30.0.toml"
