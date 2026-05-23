@@ -42,4 +42,5 @@ exposed = [ "hyphy",]
 [tool.factored]
 spec_path = "specs/hyphy/2.5.62.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/hyphy:2.5.62"
-image_digest = "sha256:9bcd8f47b5dc15b88a9d6b45fb49146b5079b27fbd3718f6ca699d3ddcca8ba9"
+image_digest = "sha256:e7bf9e49fa8597f00118056fe6b89a3a28daea22dceda3de969fe3e733f8a21c"
+

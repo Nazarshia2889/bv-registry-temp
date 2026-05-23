@@ -42,4 +42,5 @@ exposed = [ "pilon",]
 [tool.factored]
 spec_path = "specs/pilon/1.24.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/pilon:1.24"
-image_digest = "sha256:7cf7bec4a27dbe458556331688e167265119bbc2a086d566a37003e2ef5c593c"
+image_digest = "sha256:f9c37db9eda7a169a992908c88ffe503624881ec9d457b45f37d9effaedd087a"
+

@@ -42,4 +42,5 @@ exposed = [ "MethylDackel",]
 [tool.factored]
 spec_path = "specs/methyldackel/0.6.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/methyldackel:0.6.1"
-image_digest = "sha256:082031a845ffd67820b4ad728634af7c2c4d31dbdf6aec68d80f40b363faa382"
+image_digest = "sha256:5367b381dd6a7ab2e6d75bc3e0bb8c67dd3460639ce9fb83fed588804d575f94"
+

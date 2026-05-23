@@ -40,4 +40,5 @@ exposed = [ "mash",]
 [tool.factored]
 spec_path = "specs/mash/2.3.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/mash:2.3.0"
-image_digest = "sha256:e4f2eda41a46c945bcd7daf063e7faeca42f6b3051fd9957c5b8db97d657aa02"
+image_digest = "sha256:cb07cebb424730f4fb47258a22cabbac1fdfd06d37b8cef9183d356fff70ea37"
+

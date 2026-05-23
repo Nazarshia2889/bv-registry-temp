@@ -43,4 +43,5 @@ exposed = [ "gatk",]
 [tool.factored]
 spec_path = "specs/gatk4/4.6.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/gatk4:4.6.2"
-image_digest = "sha256:680242d6571d5142e535203c595615dc304a890f9936422ef5cff97ec5855ce4"
+image_digest = "sha256:f5bb495f032bfbe3d9297b443e2c219bbd22e592bc8b9986b1498f3c4066ab25"
+

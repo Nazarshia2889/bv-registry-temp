@@ -37,4 +37,5 @@ exposed = [ "mafft", "mafft-linsi", "mafft-ginsi", "mafft-einsi", "mafft-fftnsi"
 [tool.factored]
 spec_path = "specs/mafft/7.525.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/mafft:7.525.0"
-image_digest = "sha256:7da24a76b113ff1602c6152ef43ab7384e18f616dcd4baa4d3365d58d423b91a"
+image_digest = "sha256:d912b4a126e264bca613a54a38cec0a8bcf15c67ee0ba111da950fdded9a78ca"
+

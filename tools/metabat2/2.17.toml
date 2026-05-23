@@ -42,4 +42,5 @@ exposed = [ "metabat2", "jgi_summarize_bam_contig_depths",]
 [tool.factored]
 spec_path = "specs/metabat2/2.17.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/metabat2:2.17"
-image_digest = "sha256:3851fefeabe78385610322bd04c6062bd74e6ffa3039d0b6b7cd209fce308a89"
+image_digest = "sha256:6d941aa92b55d81548b1568ff057bfc3bcf319f1abfed3bee10f0501e8da9fa7"
+

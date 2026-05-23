@@ -37,4 +37,5 @@ exposed = [ "trimal", "readal", "statal",]
 [tool.factored]
 spec_path = "specs/trimal/1.5.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/trimal:1.5.1"
-image_digest = "sha256:6756fd850c03ad6e83fbac70a8782c983ee7669aa2a1a3a813fbb8e3f05eb248"
+image_digest = "sha256:560ecab9966ae5e0c54caaa76addadf5833ca75f5e6c3dc858837cdbef9f7fd0"
+

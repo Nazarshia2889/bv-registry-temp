@@ -42,4 +42,5 @@ exposed = [ "concoct",]
 [tool.factored]
 spec_path = "specs/concoct/1.1.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/concoct:1.1.0"
-image_digest = "sha256:245a95f79fe316d27f7dcceb950f30d986379cbcb3ee164a3313fb84e4e178d6"
+image_digest = "sha256:0751be754f3b5c4a62d2b12c24ef13ad6ba36e454c91d778485424c0169a9be3"
+

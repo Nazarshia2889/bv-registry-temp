@@ -42,4 +42,5 @@ exposed = [ "configureStrelkaGermlineWorkflow.py", "configureStrelkaSomaticWorkf
 [tool.factored]
 spec_path = "specs/strelka2/2.9.10.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/strelka2:2.9.10"
-image_digest = "sha256:30fcd77436269d1232b5b1ebb835dd84491039c710b7dcd907e983b4e0f84502"
+image_digest = "sha256:6019047065e1ffd42d23827cd3cb9189bfbf47573127f1ea0e31e982eab225ce"
+

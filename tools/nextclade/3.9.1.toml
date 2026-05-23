@@ -37,4 +37,5 @@ exposed = [ "nextclade",]
 [tool.factored]
 spec_path = "specs/nextclade/3.9.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/nextclade:3.9.1"
-image_digest = "sha256:ec648a8eb4d17479b550c88f93902d9b727734333c4eb75b8731923cef66dd96"
+image_digest = "sha256:2c8d88b31f637a5a82f8171e7e884dc2865b216aedb4ee0e0ebf89c7b136d24e"
+

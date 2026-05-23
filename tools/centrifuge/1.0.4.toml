@@ -40,4 +40,5 @@ exposed = [ "centrifuge", "centrifuge-build", "centrifuge-inspect",]
 [tool.factored]
 spec_path = "specs/centrifuge/1.0.4.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/centrifuge:1.0.4"
-image_digest = "sha256:d6b9ec8ac5caff6a52e355c0ab7977b3a9cfb700a2e216de8bff07737af2398e"
+image_digest = "sha256:30bd1fe9c74131d3623cfbdaee0e172750caae2122d9c03ca624ed567ac4f625"
+

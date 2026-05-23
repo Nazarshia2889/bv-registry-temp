@@ -36,7 +36,8 @@ exposed = [ "gmx",]
 [tool.factored]
 spec_path = "specs/gromacs/2024.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/gromacs:2024.3"
-image_digest = "sha256:4143d43c879051cb0931cd55bc2b86739f64117463b0da92f1518167f9e05321"
+image_digest = "sha256:19557304499d54b6b655ff155ef8984470a63ffa4e7990d9281c063ef69279a9"
+
 
 [tool.hardware.gpu]
 required = false

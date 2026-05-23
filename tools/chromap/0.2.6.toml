@@ -42,4 +42,5 @@ exposed = [ "chromap",]
 [tool.factored]
 spec_path = "specs/chromap/0.2.6.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/chromap:0.2.6"
-image_digest = "sha256:698bf35f2541bb06f0a7d5c00f7ac31762c207128169d88233f95b8d16124898"
+image_digest = "sha256:5b0771f3e6408612b5fa39d8990c04dd45d7a8c1cdd4b808ebdbfb817fedfa02"
+

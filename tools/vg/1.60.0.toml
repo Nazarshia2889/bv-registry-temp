@@ -37,3 +37,4 @@ exposed = [ "vg",]
 spec_path = "specs/vg/1.60.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/vg:1.60.0"
 image_digest = "sha256:1b90906af3a7fb2a4483cb400fbb7afb9543008b64d5e3859f0a919ddd80bf24"
+

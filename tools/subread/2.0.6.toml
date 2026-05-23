@@ -42,4 +42,5 @@ exposed = [ "subread-align", "subread-buildindex", "subjunc", "exactSNP",]
 [tool.factored]
 spec_path = "specs/subread/2.0.6.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/subread:2.0.6"
-image_digest = "sha256:0eaae50cf8c0344dfab4f0629a2d255c711230d7b9ade97d7e306be9b2e61c81"
+image_digest = "sha256:1a667c4c698d72b74a13acc0eaaa78ccdeac6fdaf72346468fe69433deb50062"
+

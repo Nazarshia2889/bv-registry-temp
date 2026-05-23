@@ -36,4 +36,5 @@ exposed = [ "canu",]
 [tool.factored]
 spec_path = "specs/canu/2.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/canu:2.2"
-image_digest = "sha256:0773faa7c85138dc23086f0740a67d086f6ce03452c8ae0d3ac0a10a8e33b88d"
+image_digest = "sha256:9f2e95c687293793dcd50494b37f3a2024d4eb758c28fa5b133594e083f6d9c2"
+

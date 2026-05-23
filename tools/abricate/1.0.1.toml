@@ -36,4 +36,5 @@ exposed = [ "abricate",]
 [tool.factored]
 spec_path = "specs/abricate/1.0.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/abricate:1.0.1"
-image_digest = "sha256:f793aa03e15f7c2f1c4d8275201b68c983c7c04b9fb69e48a4473fed86948f40"
+image_digest = "sha256:3a9940b4061f613445ebf88c811519f751cd35a899da54b509c3dc3116905a66"
+

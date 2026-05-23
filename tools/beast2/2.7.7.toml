@@ -36,4 +36,5 @@ exposed = [ "beast", "beauti", "treeannotator", "logcombiner", "applauncher",]
 [tool.factored]
 spec_path = "specs/beast2/2.7.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/beast2:2.7.7"
-image_digest = "sha256:f0973055d94a2a47ebc2479408c0d9d17173dd789ab93a3a54de246da839cf20"
+image_digest = "sha256:b3d1e18a8fbfba8010aa8b1ee75bdaca9c281155c155d8d36c551e1684e53624"
+

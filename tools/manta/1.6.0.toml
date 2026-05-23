@@ -42,4 +42,5 @@ exposed = [ "configManta.py",]
 [tool.factored]
 spec_path = "specs/manta/1.6.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/manta:1.6.0"
-image_digest = "sha256:4262025f03437a6fef2ea12f6b2252a827fb637702c1bb886403465eb8575650"
+image_digest = "sha256:5c1aaf8c95543b1f592aac631f6d56519a27fb71a3af7d4621bc4f9a334a675c"
+

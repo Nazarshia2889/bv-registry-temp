@@ -36,4 +36,5 @@ exposed = [ "beagle",]
 [tool.factored]
 spec_path = "specs/beagle/5.4.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/beagle:5.4"
-image_digest = "sha256:bf2c68d788859e001977876941fc3e8239eadd6e2dc0d79d8844e19155deafb2"
+image_digest = "sha256:e6c7e298807d6a6053c1902ce9de4c1016a1b19b21f87fffd0693d3f16de80dd"
+

@@ -36,4 +36,5 @@ exposed = [ "samblaster",]
 [tool.factored]
 spec_path = "specs/samblaster/0.1.26.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/samblaster:0.1.26"
-image_digest = "sha256:88a58a8ab59af57a0c3cac65526125d7457d3ebe6e80a160445c68da77f36523"
+image_digest = "sha256:079c367dd7794449a476fbf53a90fbb5e5f9da3b1df908ecb022c9c83e668f70"
+

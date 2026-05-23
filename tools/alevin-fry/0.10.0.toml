@@ -36,4 +36,5 @@ exposed = [ "alevin-fry",]
 [tool.factored]
 spec_path = "specs/alevin-fry/0.10.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/alevin-fry:0.10.0"
-image_digest = "sha256:fde27f2c83a43b604d429976dc1a0c8f3344573fd5987773f2da5342b177eb33"
+image_digest = "sha256:e5366b6d5e309da650589e624f041842c66f0e96f3ca8c4ada404998f9959723"
+

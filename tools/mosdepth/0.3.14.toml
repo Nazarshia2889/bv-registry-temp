@@ -37,4 +37,5 @@ exposed = [ "mosdepth",]
 [tool.factored]
 spec_path = "specs/mosdepth/0.3.14.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/mosdepth:0.3.14"
-image_digest = "sha256:99be310afff35e5eb17ac3213d0adfa9d29d4b6b32ced10258a51c4c0ed1fb71"
+image_digest = "sha256:862b6caeaf9f259b37fd532c6bebb81525ee108ca6e3499596fef4679f58b162"
+

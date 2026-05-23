@@ -36,4 +36,5 @@ exposed = [ "bamCoverage", "bamCompare", "computeMatrix", "plotHeatmap", "plotPr
 [tool.factored]
 spec_path = "specs/deeptools/3.5.5.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/deeptools:3.5.5"
-image_digest = "sha256:1e053c97325babfdd9d6878dc92f171e2ff1098f20e4dad460ee436504e24491"
+image_digest = "sha256:daf78bf2b45f585393c3ab2827688f869b63949549a6f8e8a0684aa756388c7f"
+

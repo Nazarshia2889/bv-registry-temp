@@ -36,4 +36,5 @@ exposed = [ "pigz", "unpigz",]
 [tool.factored]
 spec_path = "specs/pigz/2.8.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/pigz:2.8"
-image_digest = "sha256:833a8d0b4fef89345f619067a13b9829d022ebbca9bd7e921582b75baa6615a7"
+image_digest = "sha256:b673ab0dde989fa20465e34fd419870883222b47f062c849b80171fc44745252"
+

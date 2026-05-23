@@ -37,4 +37,5 @@ exposed = [ "augustus", "etraining", "fastBlockSearch", "filterBam", "prepareAli
 [tool.factored]
 spec_path = "specs/augustus/3.5.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/augustus:3.5.0"
-image_digest = "sha256:ed91e411c62b17ea95634f39becfdd936b481f8c2345e851551139380552a75d"
+image_digest = "sha256:56a8e145ff3be132fa3abbf38351af9f6b4466087df34b0152f39c4cddbbb45d"
+

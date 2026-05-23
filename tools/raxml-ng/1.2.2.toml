@@ -37,4 +37,5 @@ exposed = [ "raxml-ng",]
 [tool.factored]
 spec_path = "specs/raxml-ng/1.2.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/raxml-ng:1.2.2"
-image_digest = "sha256:fce28dd9dd37546255151ff6f16dae0e435cbe53d366b279bf5483cb3f6dec8f"
+image_digest = "sha256:269ba4022b69ea7775e7c43d88462502dcbfbc34b04cb855eaaf4515b091ac6a"
+

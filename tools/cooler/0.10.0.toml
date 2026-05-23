@@ -36,4 +36,5 @@ exposed = [ "cooler",]
 [tool.factored]
 spec_path = "specs/cooler/0.10.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/cooler:0.10.0"
-image_digest = "sha256:0b692aa5fd6c4fd8ba47d602ca455e2cdd00133a069f58b95a384ed7670fe04d"
+image_digest = "sha256:0bb2b442cde1fab3a72adef62d6d004def5cdf563fd322ffd52332e6c264f85c"
+

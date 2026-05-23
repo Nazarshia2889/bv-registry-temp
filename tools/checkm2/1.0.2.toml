@@ -37,4 +37,5 @@ exposed = [ "checkm2",]
 [tool.factored]
 spec_path = "specs/checkm2/1.0.2.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/checkm2:1.0.2"
-image_digest = "sha256:cee8995f0dbf8de247f8f9d26d6261953ae27fa829216510a2a6968b3f01bfe1"
+image_digest = "sha256:b0810f7b0967b40d523a8fa334cc46474d684c6ac7c4dc52317a3578e9d4397f"
+

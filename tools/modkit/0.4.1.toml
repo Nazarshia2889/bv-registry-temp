@@ -36,4 +36,5 @@ exposed = [ "modkit",]
 [tool.factored]
 spec_path = "specs/modkit/0.4.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/modkit:0.4.1"
-image_digest = "sha256:3121ac1285443dd21a05f2adee0ce71974a93373041cf02cf06a0b5c795fb785"
+image_digest = "sha256:4f6a0f1a799a553d4d3cc6cfed7ac64c56d7960d709c411514c069cfc032e5ec"
+

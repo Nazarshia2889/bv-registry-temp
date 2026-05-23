@@ -43,4 +43,5 @@ exposed = [ "delly",]
 [tool.factored]
 spec_path = "specs/delly/1.7.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/delly:1.7.3"
-image_digest = "sha256:55af898e41c7bcb37ad14f474bcbf81757066a8189625ec838a9a008cbfd7393"
+image_digest = "sha256:db973a6ef9899513114788d6594c308dfde2468a06598d66ada3b363621d148f"
+

@@ -36,4 +36,5 @@ exposed = [ "shasta",]
 [tool.factored]
 spec_path = "specs/shasta/0.13.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/shasta:0.13.0"
-image_digest = "sha256:243f38eb80762240aafbc17c700096166041543a2cf500834a007b75050196ea"
+image_digest = "sha256:6b61060da2bd97a175626cda18d2501c9bf3acbd808b9e2b10b517abc547968b"
+

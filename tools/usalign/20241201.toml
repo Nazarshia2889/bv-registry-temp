@@ -42,4 +42,5 @@ exposed = [ "USalign",]
 [tool.factored]
 spec_path = "specs/usalign/20241201.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/usalign:20241201"
-image_digest = "sha256:86b60ba4ec44ba9f7eed03ae1f0dafa90186896720ce45cc453eae4d43a66a90"
+image_digest = "sha256:4f77f211de20e561ac4e3a5277970d22bab31584f677ed47a1c548dd091a2980"
+

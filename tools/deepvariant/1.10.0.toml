@@ -43,7 +43,8 @@ exposed = [ "run_deepvariant",]
 [tool.factored]
 spec_path = "specs/deepvariant/1.10.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/deepvariant:1.10.0"
-image_digest = "sha256:4713ca5f0eb55a54d02faf5923e5b8454dfb482bc12d542293ed90cd9b9e39aa"
+image_digest = "sha256:0f34b98549363b9c587631ba9e145fb5b0ea6b932e416a281cac098073d473cc"
+
 
 [tool.hardware.gpu]
 required = false

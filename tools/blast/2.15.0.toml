@@ -43,4 +43,5 @@ exposed = [ "blastn", "blastp", "tblastn", "tblastx", "psiblast", "rpsblast", "r
 [tool.factored]
 spec_path = "specs/blast/2.15.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/blast:2.15.0"
-image_digest = "sha256:0293e384a0476a5ed2ce560553359fa618c58c67d6897a6ee933dd29887d150f"
+image_digest = "sha256:86b7944421cfb55f9756a0cf704b163b730196b5e461341524184ad04bdf6d14"
+

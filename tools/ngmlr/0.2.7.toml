@@ -42,4 +42,5 @@ exposed = [ "ngmlr",]
 [tool.factored]
 spec_path = "specs/ngmlr/0.2.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/ngmlr:0.2.7"
-image_digest = "sha256:5ae38f2d6dc103a9e2af51595d3fcd55df53a1c57b15cd173c8e0c9fd4de266d"
+image_digest = "sha256:e6ffac6f5e22b3b8dff0f60cc5627e728a2a752e036bd6d5727d9213762698f0"
+

@@ -37,3 +37,4 @@ exposed = [ "admixture",]
 spec_path = "specs/admixture/1.3.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/admixture:1.3.0"
 image_digest = "sha256:9e7d3c4979e71f30e95224b21155c08d5159aa7fda53c3e42956d064a5536b50"
+

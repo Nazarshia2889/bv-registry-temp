@@ -36,4 +36,5 @@ exposed = [ "trf",]
 [tool.factored]
 spec_path = "specs/trf/4.9.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/trf:4.9.1"
-image_digest = "sha256:b79bbaf12a3f43f221a1f20dd270655add838e91812700271f28102f12baad23"
+image_digest = "sha256:c4202b527aae22d3843bd0a9a1ebae5441d9d3e7751527a91884ce8ff932c546"
+

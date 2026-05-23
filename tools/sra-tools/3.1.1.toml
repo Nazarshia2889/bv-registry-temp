@@ -37,4 +37,5 @@ exposed = [ "prefetch", "fasterq-dump", "fastq-dump", "sra-stat", "vdb-validate"
 [tool.factored]
 spec_path = "specs/sra-tools/3.1.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/sra-tools:3.1.1"
-image_digest = "sha256:6a7116fbb55721ccce0abf4a692d9d27a8cc55f6a756481a69f742a82a1c99e7"
+image_digest = "sha256:24244020a6e4016375ae8d79a7683f3fb46122ea8809af474fa5b99458dab6e1"
+

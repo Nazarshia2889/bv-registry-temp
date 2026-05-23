@@ -36,4 +36,5 @@ exposed = [ "mb",]
 [tool.factored]
 spec_path = "specs/mrbayes/3.2.7.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/mrbayes:3.2.7"
-image_digest = "sha256:e8564b6d2dbafdc73a3e42a74e0d6c3a5dfe7e91afe8b977405c1a9b63f85814"
+image_digest = "sha256:476069cf67296ed9b018156803d2f3c087a592adf31d68280679855fb516aa6e"
+

@@ -36,4 +36,5 @@ exposed = [ "cooltools",]
 [tool.factored]
 spec_path = "specs/cooltools/0.7.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/cooltools:0.7.0"
-image_digest = "sha256:c21e661f50a988263e8b1b69d1ab0ef838ad308b8d126105fb792710ac093020"
+image_digest = "sha256:61d4c864500016d55cecaf9265dae0e41411f667f39233e4ff43bc028731a5c2"
+

@@ -37,4 +37,5 @@ exposed = [ "bamtools",]
 [tool.factored]
 spec_path = "specs/bamtools/2.5.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/bamtools:2.5.3"
-image_digest = "sha256:6588401dc1c5ba513bc1c0054122396be40bf131a407f53a8a59794c57d96fda"
+image_digest = "sha256:8551c33a4a215a436f936071dfa0fc4ae1b19909da66db4644d4d91725beaac1"
+

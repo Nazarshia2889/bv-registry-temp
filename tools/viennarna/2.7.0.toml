@@ -37,4 +37,5 @@ exposed = ["RNAfold", "RNAcofold", "RNAalifold", "RNAplot", "RNAduplex", "RNAhea
 [tool.factored]
 spec_path = "specs/viennarna/2.7.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/viennarna:2.7.0"
-image_digest = "sha256:cb364368aa9d5a5a2672923eefe39e6bf71559d1057346d45b7ecbc8913683d6"
+image_digest = "sha256:72218f0f1fc2df704d4f76021e2f73b835691349fd45cc324941849ca36e2f5a"
+

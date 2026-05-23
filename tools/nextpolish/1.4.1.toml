@@ -36,4 +36,5 @@ exposed = [ "nextPolish",]
 [tool.factored]
 spec_path = "specs/nextpolish/1.4.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/nextpolish:1.4.1"
-image_digest = "sha256:7dfd86fa9594a28b8abde7c070cb05f2830662e35f776ddc857e8cc7b9a2b06c"
+image_digest = "sha256:c88b7a6ae469cf51b8f82b191ed57433ae4e516f2064133b48a321bfc3f7ac52"
+

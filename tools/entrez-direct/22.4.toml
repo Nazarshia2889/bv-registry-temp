@@ -36,4 +36,5 @@ exposed = [ "esearch", "efetch", "einfo", "elink", "epost", "esummary", "xtract"
 [tool.factored]
 spec_path = "specs/entrez-direct/22.4.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/entrez-direct:22.4"
-image_digest = "sha256:5b6d1ef14539df619ba7bfc97450248ed357be0f0d3ae971cb25a5a05f9bd535"
+image_digest = "sha256:d1bc1e817f3ae91332f5113a88d3e8e63115cb3cb620fd95594569e34e0a4b36"
+
