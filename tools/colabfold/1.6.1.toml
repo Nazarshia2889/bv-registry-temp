@@ -16,70 +16,70 @@ description = "Input FASTA, A3M, CSV/TSV, or directory of any of the above. For 
 
 [[tool.inputs]]
 name        = "model_type"
-type        = "enum"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "AlphaFold2 model variant: auto, alphafold2, alphafold2_ptm, alphafold2_multimer_v1/v2/v3. Default: auto."
 
 [[tool.inputs]]
 name        = "num_recycles"
-type        = "int"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Number of recycling iterations. Higher = more accurate but slower. Default: 3."
 
 [[tool.inputs]]
 name        = "num_models"
-type        = "int"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Number of model parameters to use (1-5). More = better ensemble. Default: 5."
 
 [[tool.inputs]]
 name        = "msa_mode"
-type        = "enum"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "MSA strategy: mmseqs2_uniref_env (default), mmseqs2_uniref, or single_sequence."
 
 [[tool.inputs]]
 name        = "num_seeds"
-type        = "int"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Number of random seeds (predictions per model). Default: 1."
 
 [[tool.inputs]]
 name        = "rank_by"
-type        = "enum"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Metric to rank output models: auto, plddt, ptm, iptm, multimer. Default: auto."
 
 [[tool.inputs]]
 name        = "stop_at_score"
-type        = "float"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Early-stop recycling once this pLDDT/pTM score is reached (0-100). Default: 100 (disabled)."
 
 [[tool.inputs]]
 name        = "use_amber"
-type        = "bool"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Run AMBER energy minimization on top predictions. Default: false."
 
 [[tool.inputs]]
 name        = "use_templates"
-type        = "bool"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Use PDB templates in prediction. Default: false."
 
 [[tool.inputs]]
 name        = "msa_only"
-type        = "bool"
+type        = "file"
 cardinality = "one"
 required    = false
 description = "Only generate MSAs and write A3M files; skip structure prediction. Default: false."
