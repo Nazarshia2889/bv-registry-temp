@@ -37,4 +37,4 @@ exposed = [ "cd-hit", "cd-hit-est", "cd-hit-2d", "cd-hit-est-2d",]
 [tool.factored]
 spec_path = "specs/cd_hit/4.8.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/cd_hit:4.8.1"
-image_digest = "sha256:d4e4707e1cc013e26ad495f0c0cbc2fbbee690e69f0a939105c94752fcfe798a"
+image_digest = "sha256:2dabd8258f0b81fcb06881236de83a6f0bf19958c5a42432e4bcb0797c76735f"

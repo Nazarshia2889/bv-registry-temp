@@ -4,7 +4,7 @@ channels = [
     "https://conda.anaconda.org/bioconda",
     "https://conda.anaconda.org/conda-forge",
 ]
-packages = ["delly ==1.3.3"]
+packages = ["delly ==1.7.3"]
 platform = "linux/amd64"
 
 [entrypoint]
