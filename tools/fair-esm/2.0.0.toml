@@ -1,0 +1,45 @@
+[tool]
+id = "fair-esm"
+version = "2.0.0"
+description = "Evolutionary Scale Modeling: Meta AI protein language models (ESM-1b, ESM-2, ESMFold)"
+homepage = "https://github.com/facebookresearch/esm"
+license = "MIT"
+tier = "core"
+maintainers = [ "github:facebookresearch",]
+cache_paths = [ "/cache/torch",]
+[[tool.inputs]]
+name = "fasta"
+type = "fasta"
+cardinality = "one"
+description = "Protein sequences"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Per-sequence embeddings or predicted structures"
+
+[tool.image]
+backend = "docker"
+reference = "ghcr.io/tejasprabhune/bv-pkg/fair-esm:2.0.0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 20.0
+
+[tool.entrypoint]
+command = "esm-extract"
+
+[tool.binaries]
+exposed = [ "esm-extract", "esm-fold",]
+
+[tool.factored]
+spec_path = "specs/fair-esm/2.0.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/fair-esm:2.0.0"
+image_digest = "sha256:d1ccc7b0dba0db6744c67b50649fbc7617c52b526c82f3be85a5bef8978bc58b"
+
+[tool.hardware.gpu]
+required = false
+min_vram_gb = 16
+cuda_version = "12.0"

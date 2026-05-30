@@ -1,0 +1,39 @@
+[tool]
+id = "scanpy"
+version = "1.10.4"
+description = "Single-cell analysis in Python (preprocessing, embedding, clustering, DE)"
+homepage = "https://scanpy.readthedocs.io/"
+license = "BSD-3-Clause"
+tier = "core"
+maintainers = [ "github:scverse",]
+[[tool.inputs]]
+name = "h5ad"
+type = "file"
+cardinality = "one"
+description = "AnnData (.h5ad) input"
+
+[[tool.outputs]]
+name = "h5ad_out"
+type = "file"
+cardinality = "one"
+description = "Processed AnnData"
+
+[tool.image]
+backend = "docker"
+reference = "ghcr.io/tejasprabhune/bv-pkg/scanpy:1.10.4"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 20.0
+
+[tool.entrypoint]
+command = "python"
+
+[tool.binaries]
+exposed = [ "python",]
+
+[tool.factored]
+spec_path = "specs/scanpy/1.10.4.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/scanpy:1.10.4"
+image_digest = "sha256:76f47e67ff83dd7e1553058dd88d295a4ae55e428eb13d7abe73448c1507d571"

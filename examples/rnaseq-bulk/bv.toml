@@ -1,0 +1,12 @@
+# Bulk RNA-seq quantification with Salmon (selective-alignment).
+# FASTQ -> fastp -> salmon -> tximport-ready quant.sf
+
+[project]
+name = "rnaseq-bulk"
+description = "Bulk RNA-seq transcript quantification"
+
+[tools]
+fastp     = "0.23.4"
+salmon    = "1.10.3"
+samtools  = "1.21.0"
+multiqc   = "1.25"

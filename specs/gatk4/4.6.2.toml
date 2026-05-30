@@ -1,0 +1,11 @@
+name = "gatk4"
+version = "4.6.2"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["gatk4 ==4.6.2.0"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/gatk"

@@ -1,0 +1,11 @@
+name = "infernal"
+version = "1.1.5"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["infernal ==1.1.5"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/cmsearch"

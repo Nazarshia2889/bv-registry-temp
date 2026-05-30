@@ -1,0 +1,11 @@
+name = "viennarna"
+version = "2.7.0"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["viennarna ==2.7.0"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/RNAfold"

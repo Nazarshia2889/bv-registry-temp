@@ -1,0 +1,52 @@
+[tool]
+id = "racon"
+version = "1.5.0"
+description = "Fast consensus polisher for long reads against draft assemblies"
+homepage = "https://github.com/lbcb-sci/racon"
+license = "MIT"
+tier = "community"
+maintainers = [ "github:lbcb-sci",]
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "one"
+description = "Reads used for assembly"
+
+[[tool.inputs]]
+name = "alignments"
+type = "sam"
+cardinality = "one"
+description = "Reads aligned to draft (SAM/PAF)"
+
+[[tool.inputs]]
+name = "draft"
+type = "fasta"
+cardinality = "one"
+description = "Draft assembly"
+
+[[tool.outputs]]
+name = "polished"
+type = "fasta"
+cardinality = "one"
+description = "Polished assembly"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/racon:1.5.0--h077b44d_8"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "racon"
+
+[tool.binaries]
+exposed = [ "racon",]
+
+[tool.factored]
+spec_path = "specs/racon/1.5.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/racon:1.5.0"
+image_digest = "sha256:24dc667bfef17f198ff8dff81ba745f93ec1086d04113bdda3319d3c7361e304"
+

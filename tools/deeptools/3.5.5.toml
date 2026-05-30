@@ -1,0 +1,40 @@
+[tool]
+id = "deeptools"
+version = "3.5.5"
+description = "Visualization and analysis of deep-sequencing data (BigWig, heatmaps, profiles)"
+homepage = "https://deeptools.readthedocs.io/"
+license = "GPL-3.0"
+tier = "core"
+maintainers = [ "github:deeptools",]
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Alignment file"
+
+[[tool.outputs]]
+name = "bigwig"
+type = "file"
+cardinality = "one"
+description = "Coverage track"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/deeptools:3.5.5--pyhdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "bamCoverage"
+
+[tool.binaries]
+exposed = [ "bamCoverage", "bamCompare", "computeMatrix", "plotHeatmap", "plotProfile", "multiBamSummary", "multiBigwigSummary", "plotCorrelation", "plotPCA", "plotFingerprint", "alignmentSieve",]
+
+[tool.factored]
+spec_path = "specs/deeptools/3.5.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/deeptools:3.5.5"
+image_digest = "sha256:daf78bf2b45f585393c3ab2827688f869b63949549a6f8e8a0684aa756388c7f"
+

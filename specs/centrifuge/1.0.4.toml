@@ -1,0 +1,11 @@
+name = "centrifuge"
+version = "1.0.4"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["centrifuge ==1.0.4"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/centrifuge"

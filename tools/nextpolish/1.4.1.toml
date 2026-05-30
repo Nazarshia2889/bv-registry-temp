@@ -1,0 +1,40 @@
+[tool]
+id = "nextpolish"
+version = "1.4.1"
+description = "Genome assembly polisher using short and long reads"
+homepage = "https://github.com/Nextomics/NextPolish"
+license = "GPL-3.0"
+tier = "community"
+maintainers = [ "github:Nextomics",]
+[[tool.inputs]]
+name = "config"
+type = "file"
+cardinality = "one"
+description = "NextPolish config file"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Polished assembly"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/nextpolish:1.4.1--h3952c39_7"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 100.0
+
+[tool.entrypoint]
+command = "nextPolish"
+
+[tool.binaries]
+exposed = [ "nextPolish",]
+
+[tool.factored]
+spec_path = "specs/nextpolish/1.4.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/nextpolish:1.4.1"
+image_digest = "sha256:c88b7a6ae469cf51b8f82b191ed57433ae4e516f2064133b48a321bfc3f7ac52"
+

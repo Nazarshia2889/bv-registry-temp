@@ -1,0 +1,45 @@
+[tool]
+id = "nanopolish"
+version = "0.14.0"
+description = "Signal-level analysis of Oxford Nanopore reads (polishing, methylation)"
+homepage = "https://github.com/jts/nanopolish"
+license = "MIT"
+tier = "community"
+maintainers = [ "github:jts",]
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "one"
+description = "Basecalled reads"
+
+[[tool.inputs]]
+name = "fast5"
+type = "dir"
+cardinality = "one"
+description = "Raw FAST5 directory"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Polished assembly or methylation calls"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/nanopolish:0.14.0--h5ca1c30_6"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 100.0
+
+[tool.entrypoint]
+command = "nanopolish"
+
+[tool.binaries]
+exposed = [ "nanopolish",]
+
+[tool.factored]
+spec_path = "specs/nanopolish/0.14.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/nanopolish:0.14.0"
+image_digest = "sha256:63da6b6cb6713f5ca7e224abc6c890dcba46b3c9cb9d0039227042a2f0dfafbc"

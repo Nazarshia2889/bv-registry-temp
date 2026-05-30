@@ -1,0 +1,39 @@
+[tool]
+id = "repeatmodeler"
+version = "2.0.5"
+description = "De novo transposable-element family discovery"
+homepage = "https://github.com/Dfam-consortium/RepeatModeler"
+license = "OSL-2.1"
+tier = "community"
+maintainers = [ "github:Dfam-consortium",]
+[[tool.inputs]]
+name = "genome"
+type = "fasta"
+cardinality = "one"
+description = "Genome assembly"
+
+[[tool.outputs]]
+name = "lib"
+type = "fasta"
+cardinality = "one"
+description = "TE consensus library"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/repeatmodeler:2.0.5--pl5321hdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 32
+ram_gb = 64.0
+disk_gb = 100.0
+
+[tool.entrypoint]
+command = "RepeatModeler"
+
+[tool.binaries]
+exposed = [ "RepeatModeler", "BuildDatabase",]
+
+[tool.factored]
+spec_path = "specs/repeatmodeler/2.0.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/repeatmodeler:2.0.5"
+image_digest = "sha256:0fbde952b1d4c50ca72b6a76e9f68da0fb0b9fc3b26e052f32e755ea12d2091d"

@@ -1,0 +1,41 @@
+[tool]
+id = "checkm2"
+version = "1.0.2"
+description = "ML-based bin quality assessment for completeness and contamination"
+homepage = "https://github.com/chklovski/CheckM2"
+license = "GPL-3.0"
+tier = "core"
+maintainers = [ "github:chklovski",]
+cache_paths = [ "/cache/checkm2",]
+[[tool.inputs]]
+name = "bins"
+type = "dir"
+cardinality = "one"
+description = "Directory of MAG FASTAs"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Quality report"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/checkm2:1.0.2--pyh7cba7a3_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "checkm2"
+
+[tool.binaries]
+exposed = [ "checkm2",]
+
+[tool.factored]
+spec_path = "specs/checkm2/1.0.2.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/checkm2:1.0.2"
+image_digest = "sha256:b0810f7b0967b40d523a8fa334cc46474d684c6ac7c4dc52317a3578e9d4397f"
+

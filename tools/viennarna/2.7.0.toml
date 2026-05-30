@@ -1,0 +1,41 @@
+[tool]
+id = "viennarna"
+version = "2.7.0"
+description = "ViennaRNA Package: RNA secondary structure prediction and analysis"
+homepage = "https://www.tbi.univie.ac.at/RNA/"
+license = "MIT"
+tier = "core"
+maintainers = ["github:ViennaRNA"]
+
+[[tool.inputs]]
+name = "fasta"
+type = "fasta"
+cardinality = "one"
+description = "RNA sequences"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Predicted structures (dot-bracket)"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/viennarna:2.7.0--py39pl5321h48c0b16_1"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 5.0
+
+[tool.entrypoint]
+command = "RNAfold"
+
+[tool.binaries]
+exposed = ["RNAfold", "RNAcofold", "RNAalifold", "RNAplot", "RNAduplex", "RNAheat", "RNAinverse", "RNAsubopt"]
+
+[tool.factored]
+spec_path = "specs/viennarna/2.7.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/viennarna:2.7.0"
+image_digest = "sha256:72218f0f1fc2df704d4f76021e2f73b835691349fd45cc324941849ca36e2f5a"
+

@@ -1,0 +1,46 @@
+[tool]
+id = "methyldackel"
+version = "0.6.1"
+description = "Universal methylation extractor for bisulfite-sequencing BAMs"
+homepage = "https://github.com/dpryan79/MethylDackel"
+license = "MIT"
+tier = "community"
+maintainers = [ "github:dpryan79",]
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Bisulfite alignment"
+
+[[tool.inputs]]
+name = "ref"
+type = "fasta"
+cardinality = "one"
+description = "Reference"
+
+[[tool.outputs]]
+name = "bedgraph"
+type = "file"
+cardinality = "one"
+description = "Per-position methylation"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/methyldackel:0.6.1--h577a1d6_9"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "MethylDackel"
+
+[tool.binaries]
+exposed = [ "MethylDackel",]
+
+[tool.factored]
+spec_path = "specs/methyldackel/0.6.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/methyldackel:0.6.1"
+image_digest = "sha256:5367b381dd6a7ab2e6d75bc3e0bb8c67dd3460639ce9fb83fed588804d575f94"
+

@@ -1,0 +1,40 @@
+[tool]
+id = "trf"
+version = "4.9.1"
+description = "Tandem Repeats Finder"
+homepage = "https://tandem.bu.edu/trf/trf.html"
+license = "AGPL-3.0"
+tier = "community"
+maintainers = [ "github:Benson-Genomics-Lab",]
+[[tool.inputs]]
+name = "fasta"
+type = "fasta"
+cardinality = "one"
+description = "DNA sequence"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Tandem repeat report"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/trf:4.09.1--h7b50bb2_7"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "trf"
+
+[tool.binaries]
+exposed = [ "trf",]
+
+[tool.factored]
+spec_path = "specs/trf/4.9.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/trf:4.9.1"
+image_digest = "sha256:c4202b527aae22d3843bd0a9a1ebae5441d9d3e7751527a91884ce8ff932c546"
+

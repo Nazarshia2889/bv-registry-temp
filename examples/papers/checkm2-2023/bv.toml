@@ -1,0 +1,19 @@
+# Port of: Chklovski et al. 2023, Nat Methods
+# "CheckM2: a rapid, scalable and accurate tool for assessing microbial
+# genome quality using machine learning"
+# DOI: 10.1038/s41592-023-01940-w
+
+[project]
+name = "checkm2-2023-port"
+description = "Reproduce the CheckM2 MAG quality benchmark"
+
+[tools]
+fastp     = "0.23.4"
+megahit   = "1.2.9"
+metabat2  = "2.17"
+checkm2   = "1.0.2"
+"gtdb-tk" = "2.4.0"
+drep      = "3.5.0"
+bakta     = "1.10.4"
+samtools  = "1.21.0"
+bwa-mem2  = "2.2.1"

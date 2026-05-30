@@ -20,7 +20,7 @@ description = "Multiple sequence alignment"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/muscle:5.1--h9f5acd7_1"
+reference = "quay.io/biocontainers/muscle:5.1--h4ac6f70_3"
 
 [tool.hardware]
 cpu_cores = 4
@@ -37,4 +37,5 @@ exposed = [ "muscle",]
 [tool.factored]
 spec_path = "specs/muscle/5.1.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/muscle:5.1.0"
-image_digest = "sha256:971989606102c6241f26fe6996d6d29640d2165efb222a88594a666dfe453124"
+image_digest = "sha256:9931b25c94d06f51573d5d90832978aad8bf8126959a93174245c8ee517849fc"
+

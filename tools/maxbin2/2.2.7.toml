@@ -1,0 +1,45 @@
+[tool]
+id = "maxbin2"
+version = "2.2.7"
+description = "Binning of metagenomic contigs based on tetranucleotide frequencies"
+homepage = "https://sourceforge.net/projects/maxbin2/"
+license = "BSD-3-Clause"
+tier = "community"
+maintainers = [ "github:movingpictures83",]
+[[tool.inputs]]
+name = "contigs"
+type = "fasta"
+cardinality = "one"
+description = "Assembly contigs"
+
+[[tool.inputs]]
+name = "abund"
+type = "file"
+cardinality = "one"
+description = "Per-contig abundance"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Binned MAGs"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/maxbin2:2.2.7--h503566f_8"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "run_MaxBin.pl"
+
+[tool.binaries]
+exposed = [ "run_MaxBin.pl",]
+
+[tool.factored]
+spec_path = "specs/maxbin2/2.2.7.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/maxbin2:2.2.7"
+image_digest = "sha256:68b2a965da2347ae23510189185e76dda9b4bc63faaac26896775f2df0277d87"

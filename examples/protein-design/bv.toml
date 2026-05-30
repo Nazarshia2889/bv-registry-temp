@@ -1,0 +1,14 @@
+# RFDiffusion -> ProteinMPNN -> ColabFold validation loop.
+
+[project]
+name = "protein-design"
+description = "De novo protein backbone design + sequence design + structure validation"
+
+[tools]
+proteinmpnn = "1.0.1"
+colabfold   = "1.6.1"
+foldseek    = "10.941cd33"
+tmalign     = "2024.3.3"
+usalign     = "20240319"
+seqkit      = "2.8.2"
+pymol-open-source = "3.0.0"

@@ -1,0 +1,11 @@
+name = "repeatmasker"
+version = "4.1.7"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["repeatmasker ==4.1.7p1"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/RepeatMasker"

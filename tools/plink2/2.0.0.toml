@@ -1,0 +1,40 @@
+[tool]
+id = "plink2"
+version = "2.0.0"
+description = "PLINK 2.0: whole-genome association and population-genetic toolkit"
+homepage = "https://www.cog-genomics.org/plink/2.0/"
+license = "GPL-3.0"
+tier = "core"
+maintainers = [ "github:chrchang",]
+[[tool.inputs]]
+name = "input"
+type = "file"
+cardinality = "one"
+description = "PGEN/BED genotypes"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "PLINK results"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/plink2:2.00a5.10--h4ac6f70_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "plink2"
+
+[tool.binaries]
+exposed = [ "plink2",]
+
+[tool.factored]
+spec_path = "specs/plink2/2.0.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/plink2:2.0.0"
+image_digest = "sha256:7aa77099ce0f740e7d3267cc7884f52a796983d1c27211389a37ca3b317ca12e"
+

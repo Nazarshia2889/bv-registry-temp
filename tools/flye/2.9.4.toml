@@ -37,4 +37,5 @@ exposed = [ "flye",]
 [tool.factored]
 spec_path = "specs/flye/2.9.4.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/flye:2.9.4"
-image_digest = "sha256:4b8acaffe42ec144d47882e9267c5d6d1cd571b603853fe308e0fc1890029ebd"
+image_digest = "sha256:d7090638d5b2f6e2107a0368c5694c05e301722a54a320466b31b40ab3a72169"
+

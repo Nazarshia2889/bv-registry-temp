@@ -1,0 +1,40 @@
+[tool]
+id = "samblaster"
+version = "0.1.26"
+description = "Mark duplicates and extract discordant/split reads from SAM streams"
+homepage = "https://github.com/GregoryFaust/samblaster"
+license = "MIT"
+tier = "community"
+maintainers = [ "github:GregoryFaust",]
+[[tool.inputs]]
+name = "sam"
+type = "sam"
+cardinality = "one"
+description = "SAM stream"
+
+[[tool.outputs]]
+name = "out"
+type = "sam"
+cardinality = "one"
+description = "SAM with duplicates flagged"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/samblaster:0.1.26--h9948957_7"
+
+[tool.hardware]
+cpu_cores = 2
+ram_gb = 8.0
+disk_gb = 2.0
+
+[tool.entrypoint]
+command = "samblaster"
+
+[tool.binaries]
+exposed = [ "samblaster",]
+
+[tool.factored]
+spec_path = "specs/samblaster/0.1.26.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/samblaster:0.1.26"
+image_digest = "sha256:079c367dd7794449a476fbf53a90fbb5e5f9da3b1df908ecb022c9c83e668f70"
+

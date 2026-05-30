@@ -1,0 +1,39 @@
+[tool]
+id = "pggb"
+version = "0.7.2"
+description = "PanGenome Graph Builder pipeline"
+homepage = "https://github.com/pangenome/pggb"
+license = "MIT"
+tier = "community"
+maintainers = [ "github:pangenome",]
+[[tool.inputs]]
+name = "fasta"
+type = "fasta"
+cardinality = "one"
+description = "Multi-genome FASTA"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Pangenome graph"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/pggb:0.7.2--h9ee0642_0"
+
+[tool.hardware]
+cpu_cores = 32
+ram_gb = 128.0
+disk_gb = 200.0
+
+[tool.entrypoint]
+command = "pggb"
+
+[tool.binaries]
+exposed = [ "pggb",]
+
+[tool.factored]
+spec_path = "specs/pggb/0.7.2.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pggb:0.7.2"
+image_digest = "sha256:234b255ca6001b1c23c057f901651a0fa55e8ad015a276ce0c27769b038c0b03"

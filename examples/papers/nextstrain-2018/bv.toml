@@ -1,0 +1,17 @@
+# Port of: Hadfield et al. 2018, Bioinformatics
+# "Nextstrain: real-time tracking of pathogen evolution"
+# DOI: 10.1093/bioinformatics/bty407
+
+[project]
+name = "nextstrain-2018-port"
+description = "Phylogenetic build of a pathogen genome dataset (alignment, tree, dating)"
+
+[tools]
+mafft     = "7.526"
+iqtree2   = "2.3.6"
+nextclade = "3.9.1"
+treetime  = "0.11.4"
+minimap2  = "2.28"
+seqkit    = "2.8.2"
+samtools  = "1.21.0"
+mash      = "2.3.0"

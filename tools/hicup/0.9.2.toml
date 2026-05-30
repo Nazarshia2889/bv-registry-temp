@@ -1,0 +1,40 @@
+[tool]
+id = "hicup"
+version = "0.9.2"
+description = "Hi-C pipeline for mapping, filtering, and QC"
+homepage = "https://www.bioinformatics.babraham.ac.uk/projects/hicup/"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:StevenWingett"]
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "many"
+description = "Hi-C paired reads"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Filtered Hi-C alignments + QC"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/hicup:0.9.2--hdfd78af_1"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "hicup"
+
+[tool.binaries]
+exposed = ["hicup"]
+
+[tool.factored]
+spec_path = "specs/hicup/0.9.2.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/hicup:0.9.2"
+image_digest = "sha256:23963ad2f9ea2d1ba2f1688e57195e616fbd479f34fb7487b5644bb95717dd48"

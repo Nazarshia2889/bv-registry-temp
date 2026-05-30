@@ -1,0 +1,40 @@
+[tool]
+id = "modkit"
+version = "0.4.1"
+description = "Oxford Nanopore methylation calling and bedMethyl manipulation"
+homepage = "https://github.com/nanoporetech/modkit"
+license = "ONT-Public"
+tier = "community"
+maintainers = [ "github:nanoporetech",]
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "BAM with MM/ML tags"
+
+[[tool.outputs]]
+name = "bed"
+type = "file"
+cardinality = "one"
+description = "bedMethyl methylation summary"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/ont-modkit:0.4.1--hcdda2d0_1"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "modkit"
+
+[tool.binaries]
+exposed = [ "modkit",]
+
+[tool.factored]
+spec_path = "specs/modkit/0.4.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/modkit:0.4.1"
+image_digest = "sha256:4f6a0f1a799a553d4d3cc6cfed7ac64c56d7960d709c411514c069cfc032e5ec"
+

@@ -1,0 +1,15 @@
+# Gene-tree -> species-tree pipeline from genome FASTAs.
+
+[project]
+name = "phylo-pipeline"
+description = "Orthology + alignment + ML phylogeny from a set of genomes"
+
+[tools]
+prodigal    = "2.6.3"
+orthofinder = "3.1.4"
+mafft       = "7.526"
+trimal      = "1.5.1"
+iqtree2     = "2.3.6"
+fasttree    = "2.1.11"
+seqkit      = "2.8.2"
+treetime    = "0.11.4"

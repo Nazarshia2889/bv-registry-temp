@@ -1,0 +1,11 @@
+name = "plink2"
+version = "2.0.0"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["plink2 ==2.00a5.10"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/plink2"

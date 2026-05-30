@@ -1,0 +1,11 @@
+name = "gtdb-tk"
+version = "2.4.0"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["gtdbtk ==2.4.0"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/gtdbtk"

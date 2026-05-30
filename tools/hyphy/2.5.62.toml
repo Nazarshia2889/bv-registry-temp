@@ -1,0 +1,46 @@
+[tool]
+id = "hyphy"
+version = "2.5.62"
+description = "HYPHY: hypothesis testing for molecular evolution and selection"
+homepage = "https://www.hyphy.org/"
+license = "MIT"
+tier = "community"
+maintainers = [ "github:veg",]
+[[tool.inputs]]
+name = "aln"
+type = "msa"
+cardinality = "one"
+description = "Codon alignment"
+
+[[tool.inputs]]
+name = "tree"
+type = "file"
+cardinality = "one"
+description = "Newick tree"
+
+[[tool.outputs]]
+name = "json"
+type = "file"
+cardinality = "one"
+description = "Selection analysis results"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/hyphy:2.5.62--h0d74fca_1"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 5.0
+
+[tool.entrypoint]
+command = "hyphy"
+
+[tool.binaries]
+exposed = [ "hyphy",]
+
+[tool.factored]
+spec_path = "specs/hyphy/2.5.62.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/hyphy:2.5.62"
+image_digest = "sha256:e7bf9e49fa8597f00118056fe6b89a3a28daea22dceda3de969fe3e733f8a21c"
+

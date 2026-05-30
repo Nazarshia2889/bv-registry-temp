@@ -26,7 +26,7 @@ description = "Aligned reads in SAM format"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/hisat2:2.2.1--hdbdd923_6"
+reference = "quay.io/biocontainers/hisat2:2.2.1--h503566f_8"
 
 [tool.hardware]
 cpu_cores = 8
@@ -43,4 +43,5 @@ exposed = [ "hisat2", "hisat2-build", "hisat2-inspect",]
 [tool.factored]
 spec_path = "specs/hisat2/2.2.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/hisat2:2.2.1"
-image_digest = "sha256:8cad1951051edf4ca9180b58e358e7591d05cecbc7f6998952a4dcd6b1642fa8"
+image_digest = "sha256:6f7eb306fef409e693f57c7f762e9ab9e84e126306f4aea83ee3ec63bd23f8bb"
+

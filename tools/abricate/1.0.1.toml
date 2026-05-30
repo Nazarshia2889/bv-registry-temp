@@ -1,0 +1,40 @@
+[tool]
+id = "abricate"
+version = "1.0.1"
+description = "Mass screening of contigs for AMR/virulence genes"
+homepage = "https://github.com/tseemann/abricate"
+license = "GPL-2.0"
+tier = "community"
+maintainers = [ "github:tseemann",]
+[[tool.inputs]]
+name = "fasta"
+type = "fasta"
+cardinality = "one"
+description = "Genome or contigs"
+
+[[tool.outputs]]
+name = "tab"
+type = "tabular"
+cardinality = "one"
+description = "AMR hits table"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/abricate:1.0.1--h05cac1d_4"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "abricate"
+
+[tool.binaries]
+exposed = [ "abricate",]
+
+[tool.factored]
+spec_path = "specs/abricate/1.0.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/abricate:1.0.1"
+image_digest = "sha256:3a9940b4061f613445ebf88c811519f751cd35a899da54b509c3dc3116905a66"
+

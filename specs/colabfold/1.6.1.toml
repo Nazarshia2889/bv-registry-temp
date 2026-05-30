@@ -1,0 +1,16 @@
+name = "colabfold"
+version = "1.6.1"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["colabfold ==1.5.5"]
+platform = "linux/amd64"
+
+# colabfold weights (~3.5 GB) are NOT baked into this image; they download on
+# first run into /cache/colabfold which the bv runtime binds to a writable
+# host dir (see cache_paths in the manifest). Keeping weights out of the
+# image preserves layer sharing across CUDA-using tools.
+
+[entrypoint]
+command = "/opt/conda/bin/colabfold_batch"

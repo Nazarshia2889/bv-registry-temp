@@ -1,0 +1,17 @@
+# Germline short-variant calling pipeline.
+# FASTQ -> bwa-mem2 -> samtools -> gatk4 (HaplotypeCaller) -> bcftools -> VEP
+
+[project]
+name = "variant-calling"
+description = "Germline SNV and indel calling from short reads"
+
+[tools]
+fastp     = "0.23.4"
+"bwa-mem2" = "2.2.1"
+samtools  = "1.21.0"
+picard    = "3.4.0"
+gatk4     = "4.6.0"
+bcftools  = "1.20"
+vcftools  = "0.1.16"
+"ensembl-vep" = "113.0"
+multiqc   = "1.25"

@@ -26,7 +26,7 @@ description = "Quantification output directory with quant.sf"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/salmon:1.10.3--h6dccd9a_2"
+reference = "quay.io/biocontainers/salmon:1.10.3--h45fbf2d_5"
 
 [tool.hardware]
 cpu_cores = 8
@@ -43,4 +43,5 @@ exposed = [ "salmon",]
 [tool.factored]
 spec_path = "specs/salmon/1.10.3.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/salmon:1.10.3"
-image_digest = "sha256:4dba7367a73617dea4676669632bbabbd17df1344cee9846b28d95c62306d97c"
+image_digest = "sha256:b94ca05fe70ecd67c08c129ff9fc6f73ea6b5381580a60b421602fa335b06b30"
+

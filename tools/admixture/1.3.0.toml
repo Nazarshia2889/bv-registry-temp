@@ -1,0 +1,40 @@
+[tool]
+id = "admixture"
+version = "1.3.0"
+description = "Maximum-likelihood ancestry estimation"
+homepage = "https://dalexander.github.io/admixture/"
+license = "GPL-3.0"
+tier = "community"
+maintainers = [ "github:dalexander",]
+[[tool.inputs]]
+name = "bed"
+type = "file"
+cardinality = "one"
+description = "PLINK BED genotypes"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Q (ancestry) and P (allele freq) matrices"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/admixture:1.3.0--0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "admixture"
+
+[tool.binaries]
+exposed = [ "admixture",]
+
+[tool.factored]
+spec_path = "specs/admixture/1.3.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/admixture:1.3.0"
+image_digest = "sha256:9e7d3c4979e71f30e95224b21155c08d5159aa7fda53c3e42956d064a5536b50"
+

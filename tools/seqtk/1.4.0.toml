@@ -20,7 +20,7 @@ description = "Processed sequences"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/seqtk:1.4--he4a0461_1"
+reference = "quay.io/biocontainers/seqtk:1.4--h577a1d6_3"
 
 [tool.hardware]
 cpu_cores = 1
@@ -37,4 +37,5 @@ exposed = [ "seqtk",]
 [tool.factored]
 spec_path = "specs/seqtk/1.4.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/seqtk:1.4.0"
-image_digest = "sha256:035775a0559d968431155750912cf4b976c055087839d0a3325ce1e72fca14be"
+image_digest = "sha256:60a3535e754d38913806621aa8d26f5a7eac8566da595ae4bc38c73d5fd8ded0"
+

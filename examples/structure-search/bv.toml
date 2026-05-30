@@ -1,0 +1,14 @@
+# Fold a sequence and search for structural homologs.
+# FASTA -> ColabFold -> Foldseek + TM/US-align -> hit table
+
+[project]
+name = "structure-search"
+description = "Fold a query sequence and search for structural homologs"
+
+[tools]
+colabfold = "1.6.1"
+foldseek  = "10.941cd33"
+tmalign   = "2024.3.3"
+usalign   = "20240319"
+mmseqs2   = "15.6f452"
+seqkit    = "2.8.2"

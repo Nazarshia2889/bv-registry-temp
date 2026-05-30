@@ -1,0 +1,45 @@
+[tool]
+id = "velocyto"
+version = "0.17.17"
+description = "RNA velocity from spliced/unspliced read counts"
+homepage = "http://velocyto.org/"
+license = "BSD-2-Clause"
+tier = "community"
+maintainers = [ "github:velocyto-team",]
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Cell-tagged BAM (e.g. Cell Ranger)"
+
+[[tool.inputs]]
+name = "gtf"
+type = "file"
+cardinality = "one"
+description = "Gene annotation"
+
+[[tool.outputs]]
+name = "loom"
+type = "file"
+cardinality = "one"
+description = "Spliced/unspliced count loom"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/velocyto.py:0.17.17--py39h24fbfe6_7"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 64.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "velocyto"
+
+[tool.binaries]
+exposed = [ "velocyto",]
+
+[tool.factored]
+spec_path = "specs/velocyto/0.17.17.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/velocyto:0.17.17"
+image_digest = "sha256:5e2f3104816cbfba58e983726b0ea36b131d6035139e5b372f8b3c4399723d51"

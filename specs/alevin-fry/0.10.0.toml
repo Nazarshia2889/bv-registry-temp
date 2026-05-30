@@ -1,0 +1,11 @@
+name = "alevin-fry"
+version = "0.10.0"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["alevin-fry ==0.10.0"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/alevin-fry"

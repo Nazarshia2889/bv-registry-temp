@@ -45,3 +45,8 @@ cache_paths = ["/cache/colabfold"]
 
 [tool.binaries]
 exposed = ["colabfold_batch"]
+
+[tool.factored]
+spec_path = "specs/colabfold/1.6.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/colabfold:1.6.0"
+image_digest = "sha256:ed616ca7ded0230385a8e820efda1f1ae3fc6f138999a0b90e12c5fb14c1c9fd"

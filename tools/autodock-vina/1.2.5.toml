@@ -1,0 +1,46 @@
+[tool]
+id = "autodock-vina"
+version = "1.2.5"
+description = "Molecular docking with AutoDock Vina"
+homepage = "https://vina.scripps.edu/"
+license = "Apache-2.0"
+tier = "community"
+maintainers = [ "github:ccsb-scripps",]
+[[tool.inputs]]
+name = "receptor"
+type = "file"
+cardinality = "one"
+description = "Receptor PDBQT"
+
+[[tool.inputs]]
+name = "ligand"
+type = "file"
+cardinality = "one"
+description = "Ligand PDBQT"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Docked poses"
+
+[tool.image]
+backend = "docker"
+reference = "ghcr.io/tejasprabhune/bv-pkg/autodock-vina:1.2.5"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 8.0
+disk_gb = 5.0
+
+[tool.entrypoint]
+command = "vina"
+
+[tool.binaries]
+exposed = [ "vina",]
+
+[tool.factored]
+spec_path = "specs/autodock-vina/1.2.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/autodock-vina:1.2.5"
+image_digest = "sha256:31765c7a5c986e495071e96b5df26e308fe11ae178b5db86bdf7bfec05ca714f"
+

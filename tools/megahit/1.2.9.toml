@@ -1,0 +1,39 @@
+[tool]
+id = "megahit"
+version = "1.2.9"
+description = "Ultra-fast metagenome assembler"
+homepage = "https://github.com/voutcn/megahit"
+license = "GPL-3.0"
+tier = "core"
+maintainers = [ "github:voutcn",]
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "many"
+description = "Metagenomic reads"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Assembly directory"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/megahit:1.2.9--haf24da9_8"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 100.0
+
+[tool.entrypoint]
+command = "megahit"
+
+[tool.binaries]
+exposed = [ "megahit",]
+
+[tool.factored]
+spec_path = "specs/megahit/1.2.9.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/megahit:1.2.9"
+image_digest = "sha256:0a47003ab76ef7640fd679e8db43cc57af1db02300ea33f3beded85ee694929c"

@@ -1,0 +1,11 @@
+name = "samblaster"
+version = "0.1.26"
+channels = [
+    "https://conda.anaconda.org/bioconda",
+    "https://conda.anaconda.org/conda-forge",
+]
+packages = ["samblaster ==0.1.26"]
+platform = "linux/amd64"
+
+[entrypoint]
+command = "/opt/conda/bin/samblaster"

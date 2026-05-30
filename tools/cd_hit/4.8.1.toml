@@ -5,8 +5,7 @@ description = "Clusters and compares protein or nucleotide sequences"
 homepage = "https://github.com/weizhongli/cdhit"
 license = "GPL-2.0-or-later"
 tier = "community"
-maintainers = ["github:weizhongli"]
-
+maintainers = [ "github:weizhongli",]
 [[tool.inputs]]
 name = "sequences"
 type = "fasta"
@@ -33,4 +32,9 @@ disk_gb = 5.0
 command = "cd-hit"
 
 [tool.binaries]
-exposed = ["cd-hit", "cd-hit-est", "cd-hit-2d", "cd-hit-est-2d"]
+exposed = [ "cd-hit", "cd-hit-est", "cd-hit-2d", "cd-hit-est-2d",]
+
+[tool.factored]
+spec_path = "specs/cd_hit/4.8.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/cd_hit:4.8.1"
+image_digest = "sha256:2dabd8258f0b81fcb06881236de83a6f0bf19958c5a42432e4bcb0797c76735f"

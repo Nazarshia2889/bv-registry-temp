@@ -20,7 +20,7 @@ description = "Processed VCF or BCF file"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/bcftools:1.21--h8b25389_0"
+reference = "quay.io/biocontainers/bcftools:1.21--h3a4d415_1"
 
 [tool.hardware]
 cpu_cores = 4
@@ -37,4 +37,5 @@ exposed = [ "bcftools",]
 [tool.factored]
 spec_path = "specs/bcftools/1.21.0.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/bcftools:1.21.0"
-image_digest = "sha256:dfb32eee3d83da2fe5630f8a310c1e6da294d86e5f4df01051ea721d9f661405"
+image_digest = "sha256:cde3fceed4759445cd3ad2a885733195f3a076b051ac4a1a9e74c03ac41b3a49"
+

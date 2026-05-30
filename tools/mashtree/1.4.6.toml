@@ -1,0 +1,39 @@
+[tool]
+id = "mashtree"
+version = "1.4.6"
+description = "Build neighbor-joining trees from mash distances"
+homepage = "https://github.com/lskatz/mashtree"
+license = "GPL-3.0"
+tier = "community"
+maintainers = [ "github:lskatz",]
+[[tool.inputs]]
+name = "fasta_dir"
+type = "dir"
+cardinality = "one"
+description = "Genome FASTAs"
+
+[[tool.outputs]]
+name = "tree"
+type = "file"
+cardinality = "one"
+description = "Newick tree"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/mashtree:1.4.6--pl5321h87e0c26_4"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "mashtree"
+
+[tool.binaries]
+exposed = [ "mashtree",]
+
+[tool.factored]
+spec_path = "specs/mashtree/1.4.6.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/mashtree:1.4.6"
+image_digest = "sha256:5870f07de0b70197c7c18124dc9ac32cce18e0997b426377e79296818921d87e"

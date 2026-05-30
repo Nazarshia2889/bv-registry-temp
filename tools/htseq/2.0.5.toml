@@ -1,0 +1,46 @@
+[tool]
+id = "htseq"
+version = "2.0.5"
+description = "Count reads overlapping genomic features"
+homepage = "https://github.com/htseq/htseq"
+license = "GPL-3.0"
+tier = "community"
+maintainers = [ "github:htseq",]
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Aligned reads"
+
+[[tool.inputs]]
+name = "gtf"
+type = "file"
+cardinality = "one"
+description = "GTF annotation"
+
+[[tool.outputs]]
+name = "counts"
+type = "tabular"
+cardinality = "one"
+description = "Per-feature counts"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/htseq:2.0.5--py39h8931b72_4"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "htseq-count"
+
+[tool.binaries]
+exposed = [ "htseq-count", "htseq-qa",]
+
+[tool.factored]
+spec_path = "specs/htseq/2.0.5.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/htseq:2.0.5"
+image_digest = "sha256:4bb9a36831ad3429f56031ecf1d30f90029138863f0a55997937c47af9711986"
+

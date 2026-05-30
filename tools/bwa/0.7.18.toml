@@ -32,7 +32,7 @@ description = "Aligned reads in SAM format"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/bwa:0.7.18--he4a0461_0"
+reference = "quay.io/biocontainers/bwa:0.7.18--h577a1d6_2"
 
 [tool.hardware]
 cpu_cores = 8
@@ -49,4 +49,5 @@ exposed = [ "bwa",]
 [tool.factored]
 spec_path = "specs/bwa/0.7.18.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/bwa:0.7.18"
-image_digest = "sha256:b2fb1a972c5d484a2e20e2c6088211418052f18b18eaef1ba1b9f8708713a95b"
+image_digest = "sha256:46d2abd9133bf5a915e4a13d83213f604f1b6acd845b35b829fd81821e6244dd"
+

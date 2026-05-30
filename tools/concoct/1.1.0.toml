@@ -1,0 +1,46 @@
+[tool]
+id = "concoct"
+version = "1.1.0"
+description = "Clustering contigs with composition and coverage"
+homepage = "https://github.com/BinPro/CONCOCT"
+license = "BSD-3-Clause"
+tier = "community"
+maintainers = [ "github:BinPro",]
+[[tool.inputs]]
+name = "contigs"
+type = "fasta"
+cardinality = "one"
+description = "Assembly contigs"
+
+[[tool.inputs]]
+name = "coverage"
+type = "file"
+cardinality = "one"
+description = "Coverage table"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Cluster assignments"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/concoct:1.1.0--py312hb1d17a5_9"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "concoct"
+
+[tool.binaries]
+exposed = [ "concoct",]
+
+[tool.factored]
+spec_path = "specs/concoct/1.1.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/concoct:1.1.0"
+image_digest = "sha256:0751be754f3b5c4a62d2b12c24ef13ad6ba36e454c91d778485424c0169a9be3"
+

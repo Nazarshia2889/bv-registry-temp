@@ -20,7 +20,7 @@ description = "Read counts per feature"
 
 [tool.image]
 backend = "docker"
-reference = "quay.io/biocontainers/subread:2.0.6--he4a0461_0"
+reference = "quay.io/biocontainers/subread:2.0.6--h577a1d6_3"
 
 [tool.hardware]
 cpu_cores = 8
@@ -37,4 +37,5 @@ exposed = [ "featureCounts",]
 [tool.factored]
 spec_path = "specs/featurecounts/2.0.6.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/featurecounts:2.0.6"
-image_digest = "sha256:5e5565719d8406ed5139a947be96fea9ad1ef8a639cf562d208c78c3719521aa"
+image_digest = "sha256:978b393bce74b5c408458cb734039c90fefe61fe690e09db7e5393c294773ddb"
+

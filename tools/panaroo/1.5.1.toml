@@ -1,0 +1,40 @@
+[tool]
+id = "panaroo"
+version = "1.5.1"
+description = "Pan-genome analysis with stricter graph cleaning than roary"
+homepage = "https://github.com/gtonkinhill/panaroo"
+license = "MIT"
+tier = "community"
+maintainers = ["github:gtonkinhill"]
+
+[[tool.inputs]]
+name = "gff_dir"
+type = "dir"
+cardinality = "one"
+description = "Directory of per-genome GFF files"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Pan-genome outputs"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/panaroo:1.5.1--pyhdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "panaroo"
+
+[tool.binaries]
+exposed = ["panaroo", "panaroo-qc"]
+
+[tool.factored]
+spec_path = "specs/panaroo/1.5.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/panaroo:1.5.1"
+image_digest = "sha256:b3d7bde105644a168137416f0f16e84dd5f5ffcdfb6c4e506905601ca562b8ce"

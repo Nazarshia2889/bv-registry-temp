@@ -1,0 +1,40 @@
+[tool]
+id = "rsem"
+version = "1.3.3"
+description = "RNA-Seq by Expectation Maximization for transcript quantification"
+homepage = "https://github.com/deweylab/RSEM"
+license = "GPL-3.0"
+tier = "community"
+maintainers = ["github:deweylab"]
+
+[[tool.inputs]]
+name = "bam"
+type = "bam"
+cardinality = "one"
+description = "Transcriptome BAM"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Expression estimates"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/rsem:1.3.3--pl5321h077b44d_12"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "rsem-calculate-expression"
+
+[tool.binaries]
+exposed = ["rsem-calculate-expression", "rsem-prepare-reference", "rsem-generate-data-matrix", "rsem-plot-model"]
+
+[tool.factored]
+spec_path = "specs/rsem/1.3.3.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/rsem:1.3.3"
+image_digest = "sha256:c4c36c86c89bbdb65c7f1b7a202959de561dab29844dfb93fe148cb0a5e34340"

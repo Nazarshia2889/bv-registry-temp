@@ -1,0 +1,46 @@
+[tool]
+id = "pilon"
+version = "1.24"
+description = "Short-read polisher for assembly improvement and variant calling"
+homepage = "https://github.com/broadinstitute/pilon"
+license = "GPL-2.0"
+tier = "community"
+maintainers = [ "github:broadinstitute",]
+[[tool.inputs]]
+name = "genome"
+type = "fasta"
+cardinality = "one"
+description = "Draft assembly"
+
+[[tool.inputs]]
+name = "frags"
+type = "bam"
+cardinality = "one"
+description = "Aligned short reads"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Polished assembly + variants"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/pilon:1.24--hdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "pilon"
+
+[tool.binaries]
+exposed = [ "pilon",]
+
+[tool.factored]
+spec_path = "specs/pilon/1.24.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/pilon:1.24"
+image_digest = "sha256:f9c37db9eda7a169a992908c88ffe503624881ec9d457b45f37d9effaedd087a"
+

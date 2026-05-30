@@ -1,0 +1,40 @@
+[tool]
+id = "ldsc"
+version = "1.0.1"
+description = "LD Score regression for SNP-heritability and genetic correlation"
+homepage = "https://github.com/bulik/ldsc"
+license = "GPL-3.0"
+tier = "community"
+maintainers = [ "github:bulik",]
+[[tool.inputs]]
+name = "sumstats"
+type = "file"
+cardinality = "one"
+description = "GWAS summary statistics"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "Heritability/rg estimates"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/ldsc:1.0.1--pyhdfd78af_2"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 16.0
+disk_gb = 10.0
+
+[tool.entrypoint]
+command = "ldsc.py"
+
+[tool.binaries]
+exposed = [ "ldsc.py", "munge_sumstats.py",]
+
+[tool.factored]
+spec_path = "specs/ldsc/1.0.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/ldsc:1.0.1"
+image_digest = "sha256:06e800cd8f20921d2844fdcb58318b38ecb888533a1777ea3ac182a53eaf7594"
+

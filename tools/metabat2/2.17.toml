@@ -1,0 +1,46 @@
+[tool]
+id = "metabat2"
+version = "2.17"
+description = "Adaptive binning algorithm for genome reconstruction from metagenomes"
+homepage = "https://bitbucket.org/berkeleylab/metabat"
+license = "BSD-3-Clause"
+tier = "core"
+maintainers = [ "bitbucket:berkeleylab",]
+[[tool.inputs]]
+name = "contigs"
+type = "fasta"
+cardinality = "one"
+description = "Assembly contigs"
+
+[[tool.inputs]]
+name = "depth"
+type = "file"
+cardinality = "one"
+description = "Per-contig depth file"
+
+[[tool.outputs]]
+name = "bins"
+type = "dir"
+cardinality = "one"
+description = "Binned MAG FASTA files"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/metabat2:2.17--h6f16272_1"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 32.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "metabat2"
+
+[tool.binaries]
+exposed = [ "metabat2", "jgi_summarize_bam_contig_depths",]
+
+[tool.factored]
+spec_path = "specs/metabat2/2.17.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/metabat2:2.17"
+image_digest = "sha256:6d941aa92b55d81548b1568ff057bfc3bcf319f1abfed3bee10f0501e8da9fa7"
+

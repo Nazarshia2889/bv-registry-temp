@@ -5,17 +5,7 @@ description = "Viral sequence quality control, clade assignment, and mutation ca
 homepage = "https://clades.nextstrain.org/"
 license = "MIT"
 tier = "community"
-maintainers = ["github:nextstrain"]
-
-[tool.image]
-backend = "docker"
-reference = "nextstrain/nextclade:3.9.1"
-
-[tool.hardware]
-cpu_cores = 4
-ram_gb = 4.0
-disk_gb = 2.0
-
+maintainers = [ "github:nextstrain",]
 [[tool.inputs]]
 name = "sequences"
 type = "fasta"
@@ -28,9 +18,24 @@ type = "dir"
 cardinality = "one"
 description = "Nextclade results including clade calls and alignment"
 
+[tool.image]
+backend = "docker"
+reference = "nextstrain/nextclade:3.9.1"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb = 4.0
+disk_gb = 2.0
+
 [tool.entrypoint]
 command = "nextclade"
 args_template = "run --jobs {cpu_cores} --dataset-name sars-cov-2 --output-all {output_dir} {sequences}"
 
 [tool.binaries]
-exposed = ["nextclade"]
+exposed = [ "nextclade",]
+
+[tool.factored]
+spec_path = "specs/nextclade/3.9.1.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/nextclade:3.9.1"
+image_digest = "sha256:2c8d88b31f637a5a82f8171e7e884dc2865b216aedb4ee0e0ebf89c7b136d24e"
+

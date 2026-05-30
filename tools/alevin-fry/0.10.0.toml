@@ -1,0 +1,40 @@
+[tool]
+id = "alevin-fry"
+version = "0.10.0"
+description = "Efficient single-cell RNA-seq quantification from salmon/piscem RAD output"
+homepage = "https://github.com/COMBINE-lab/alevin-fry"
+license = "BSD-3-Clause"
+tier = "core"
+maintainers = [ "github:COMBINE-lab",]
+[[tool.inputs]]
+name = "rad"
+type = "dir"
+cardinality = "one"
+description = "salmon/piscem RAD directory"
+
+[[tool.outputs]]
+name = "quant"
+type = "dir"
+cardinality = "one"
+description = "Per-cell quantification"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/alevin-fry:0.10.0--h919a2d8_0"
+
+[tool.hardware]
+cpu_cores = 8
+ram_gb = 16.0
+disk_gb = 50.0
+
+[tool.entrypoint]
+command = "alevin-fry"
+
+[tool.binaries]
+exposed = [ "alevin-fry",]
+
+[tool.factored]
+spec_path = "specs/alevin-fry/0.10.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/alevin-fry:0.10.0"
+image_digest = "sha256:e5366b6d5e309da650589e624f041842c66f0e96f3ca8c4ada404998f9959723"
+

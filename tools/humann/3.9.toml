@@ -1,0 +1,41 @@
+[tool]
+id = "humann"
+version = "3.9"
+description = "Functional profiling of microbial communities (pathways and gene families)"
+homepage = "https://github.com/biobakery/humann"
+license = "MIT"
+tier = "core"
+maintainers = ["github:biobakery"]
+cache_paths = ["/cache/humann"]
+
+[[tool.inputs]]
+name = "reads"
+type = "fastq"
+cardinality = "one"
+description = "Quality-filtered reads"
+
+[[tool.outputs]]
+name = "outdir"
+type = "dir"
+cardinality = "one"
+description = "Pathway and gene-family abundances"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/humann:3.9--py312hdfd78af_0"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 100.0
+
+[tool.entrypoint]
+command = "humann"
+
+[tool.binaries]
+exposed = ["humann"]
+
+[tool.factored]
+spec_path = "specs/humann/3.9.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/humann:3.9"
+image_digest = "sha256:3729539e7be6b91eb641234643788f284b4451c916bc1e49ea91bfc31f05be18"

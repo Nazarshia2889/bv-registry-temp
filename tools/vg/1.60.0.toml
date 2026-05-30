@@ -1,0 +1,40 @@
+[tool]
+id = "vg"
+version = "1.60.0"
+description = "Variation graph toolkit for graph-based reference genomes"
+homepage = "https://github.com/vgteam/vg"
+license = "MIT"
+tier = "core"
+maintainers = [ "github:vgteam",]
+[[tool.inputs]]
+name = "graph"
+type = "file"
+cardinality = "one"
+description = "vg graph (.vg, .gbz)"
+
+[[tool.outputs]]
+name = "out"
+type = "file"
+cardinality = "one"
+description = "vg result"
+
+[tool.image]
+backend = "docker"
+reference = "quay.io/biocontainers/vg:1.60.0--h9ee0642_0"
+
+[tool.hardware]
+cpu_cores = 16
+ram_gb = 64.0
+disk_gb = 100.0
+
+[tool.entrypoint]
+command = "vg"
+
+[tool.binaries]
+exposed = [ "vg",]
+
+[tool.factored]
+spec_path = "specs/vg/1.60.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/vg:1.60.0"
+image_digest = "sha256:1b90906af3a7fb2a4483cb400fbb7afb9543008b64d5e3859f0a919ddd80bf24"
+
