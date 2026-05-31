@@ -1,170 +1,54 @@
 [tool]
 id          = "rfdiffusion"
-version     = "1.0.0"
-description = "De novo protein backbone generation using denoising diffusion built on the RoseTTAFold architecture. Supports unconditional monomer design, protein-protein binder design (with hotspot residues), motif scaffolding, symmetric oligomer design, and fold conditioning. Outputs PDB backbone structures ready for inverse folding with ProteinMPNN."
+version     = "1.1.0"
+description = "Diffusion model for protein backbone generation (RoseTTAFold-based): unconditional and symmetric oligomer design, motif scaffolding, de novo binder design, fold conditioning, and partial diffusion / design diversification"
 homepage    = "https://github.com/RosettaCommons/RFdiffusion"
-license     = "BSD"
-tier        = "core"
-maintainers = ["github:RosettaCommons"]
+license     = "BSD-3-Clause"
+tier        = "community"
+maintainers = [ "github:RosettaCommons",]
 
+[[tool.inputs]]
+name        = "input_pdb"
+type        = "pdb"
+cardinality = "one"
+description = "Optional input structure (inference.input_pdb). Supplies the motif for motif scaffolding, the target for binder design (with 'contigmap.contigs' and 'ppi.hotspot_res'), the scaffold/peptide for fold conditioning, or the starting structure for partial diffusion. Not required for unconditional or symmetric generation."
+
+[[tool.inputs]]
+name        = "model_weights"
+type        = "dir"
+cardinality = "one"
+description = "Optional directory of RFdiffusion .pt checkpoints (Base_ckpt.pt, Complex_base_ckpt.pt, ActiveSite_ckpt.pt, InpaintSeq_ckpt.pt, etc.). Sets inference.model_directory_path; defaults to the weights bundled in the image at /app/RFdiffusion/models. The inference script auto-selects the appropriate checkpoint for the requested task."
+
+[[tool.inputs]]
+name        = "scaffold_dir"
+type        = "dir"
+cardinality = "one"
+description = "Optional directory of secondary-structure and block-adjacency .pt files for fold conditioning (scaffoldguided.scaffold_dir), produced from PDBs with helper_scripts/make_secstruc_adj.py. Used together with scaffoldguided.scaffoldguided=True."
+
+[[tool.outputs]]
+name        = "designs"
+type        = "dir"
+cardinality = "one"
+description = "Output directory selected via inference.output_prefix. Contains one <prefix>_<n>.pdb backbone per design (backbone only, every designed residue emitted as glycine), a matching <prefix>_<n>.trb metadata file (sampled contig, input-to-output residue mapping, inpaint_seq, and the full run config), and a traj/ subdirectory of per-timestep trajectory PDBs (pX0 and Xt-1, stored in reverse order)."
 
 [tool.image]
 backend   = "docker"
-reference = "rosettacommons/rfdiffusion:latest"
-
+reference = "docker.io/rosettacommons/rfdiffusion:latest"
 
 [tool.hardware]
 cpu_cores = 4
 ram_gb    = 16.0
-disk_gb   = 10.0
-
+disk_gb   = 20.0
 
 [tool.hardware.gpu]
-required     = false
-recommended  = true
-min_vram_gb  = 8
-cuda_version = "11.8"
-
-
-[[tool.inputs]]
-name        = "input_pdb"
-type        = "file"
-entity      = "protein_structure"
-format      = "pdb"
-cardinality = "one"
-required    = false
-hydra_key   = "inference.input_pdb"
-description = "Path to the input PDB file. Required for binder design, motif scaffolding, and fold conditioning."
-
-
-[[tool.inputs]]
-name        = "output_prefix"
-type        = "file"
-entity      = "output_path_prefix"
-cardinality = "one"
-required    = true
-description = "Output path prefix including directory, e.g. 'results/design'."
-
-
-[[tool.inputs]]
-name        = "contigs"
-type        = "file"
-entity      = "contig_string"
-cardinality = "one"
-required    = true
-description = "Contig specification, e.g. '[100]' for monomer, '[A1-150/0 70-100]' for binder."
-
-
-[[tool.inputs]]
-name        = "num_designs"
-type        = "file"
-entity      = "num_designs"
-cardinality = "one"
-required    = false
-default     = "10"
-description = "Number of backbone designs to generate."
-
-
-[[tool.inputs]]
-name        = "hotspot_res"
-type        = "file"
-entity      = "hotspot_residues"
-cardinality = "one"
-required    = false
-default     = ""
-hydra_key   = "ppi.hotspot_res"
-description = "Hotspot residues for binder design, e.g. '[A30,A33,A34]'."
-
-
-[[tool.inputs]]
-name        = "model_checkpoint"
-type        = "file"
-entity      = "model_checkpoint_name"
-cardinality = "one"
-required    = false
-default     = "Complex_base_ckpt.pt"
-description = "Model checkpoint: 'Complex_base_ckpt.pt' for binder design, 'Base_ckpt.pt' for monomer."
-
-
-[[tool.inputs]]
-name        = "num_timesteps"
-type        = "file"
-entity      = "diffusion_timesteps"
-cardinality = "one"
-required    = false
-default     = "50"
-description = "Number of diffusion timesteps. Default: 50."
-
-
-[[tool.inputs]]
-name        = "noise_scale_ca"
-type        = "file"
-entity      = "noise_scale_ca"
-cardinality = "one"
-required    = false
-default     = "1.0"
-description = "Noise scale for CA atoms. Set to 0 for binder design."
-
-
-[[tool.inputs]]
-name        = "noise_scale_frame"
-type        = "file"
-entity      = "noise_scale_frame"
-cardinality = "one"
-required    = false
-default     = "1.0"
-description = "Noise scale for backbone frames. Set to 0 for binder design."
-
-
-[[tool.inputs]]
-name        = "extra_overrides"
-type        = "file"
-entity      = "hydra_overrides"
-cardinality = "one"
-required    = false
-default     = ""
-description = "Additional Hydra-style overrides passed directly to run_inference.py."
-
-
-[[tool.outputs]]
-name        = "pdb_files"
-type        = "file"
-entity      = "protein_backbone_structure"
-format      = "pdb"
-description = "Generated backbone PDB files, one per design."
-
-
-[[tool.outputs]]
-name        = "trb_files"
-type        = "file"
-entity      = "rfdiffusion_metadata"
-format      = "trb"
-description = "Per-design .trb metadata files."
-
-
-[[tool.outputs]]
-name        = "output_dir"
-type        = "dir"
-entity      = "rfdiffusion_output_dir"
-description = "Directory containing all output files."
-
+required     = true
+min_vram_gb  = 16
+cuda_version = "11.1"
 
 [tool.entrypoint]
-command       = "python"
-workdir       = "/app/RFdiffusion"
-native_output_dir  = "results"
-args_template = "scripts/run_inference.py inference.input_pdb={input_pdb} inference.output_prefix={output_prefix} contigmap.contigs='{contigs}' inference.num_designs={num_designs} diffuser.T={num_timesteps} denoiser.noise_scale_ca={noise_scale_ca} denoiser.noise_scale_frame={noise_scale_frame} inference.ckpt_override_path=models/{model_checkpoint} {extra_overrides}"
-# Hydra-style overrides are passed positionally — no flags, no dashes.
-# Must use shell=True at runtime so the single quotes around {contigs} are
-# interpreted by the shell and not stripped by subprocess list parsing.
-# Optional fields rendered only when set:
-#   inference.input_pdb={input_pdb}     (when input_pdb is provided)
-#   ppi.hotspot_res={hotspot_res}       (when hotspot_res is provided)
-#   {extra_overrides} expands the list items space-separated.
-
-# Model weights (~1.5 GB total) are bundled in the image under models/.
-cache_paths = ["/cache/rfdiffusion"]
-
+command       = "run_inference.py"
+args_template = "inference.model_directory_path=/app/RFdiffusion/models inference.output_prefix={designs}/design inference.num_designs=10 'contigmap.contigs=[150-150]' diffuser.T=50"
+cache_paths   = [ "/app/RFdiffusion/schedules",]
 
 [tool.binaries]
-exposed = ["python"]
+exposed = [ "run_inference.py",]
