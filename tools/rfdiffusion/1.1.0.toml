@@ -64,9 +64,14 @@ min_vram_gb  = 16
 cuda_version = "11.1"
 
 [tool.entrypoint]
-command       = "/app/entrypoint.sh"
-args_template = "inference.model_directory_path=/app/RFdiffusion/models inference.output_prefix={designs}/design 'contigmap.contigs={contigs}' inference.num_designs={num_designs}"
+command       = "conda"
+args_template = "run --no-capture-output -n SE3nv python /app/RFdiffusion/scripts/run_inference.py inference.model_directory_path=/app/RFdiffusion/models inference.output_prefix={designs}/design 'contigmap.contigs={contigs}' inference.num_designs={num_designs}"
 cache_paths   = [ "/app/RFdiffusion/schedules",]
 
 [tool.binaries]
-exposed = [ "run_inference.py",]
+exposed = [ "conda",]
+
+[tool.factored]
+spec_path       = "specs/rfdiffusion/1.1.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/rfdiffusion:1.1.0"
+image_digest    = "sha256:<populated-by-bv-publish>"
