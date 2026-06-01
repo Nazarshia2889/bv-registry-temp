@@ -8,28 +8,46 @@ tier        = "community"
 maintainers = [ "github:RosettaCommons",]
 
 [[tool.inputs]]
+name        = "contigs"
+type        = "file"
+cardinality = "one"
+description = "Contig string (Hydra key contigmap.contigs) defining WHAT to build - the central design specification. Examples: '[150-150]' a fixed 150-residue de novo monomer; '[100-200]' one chain of sampled length 100-200; '[10-40/A163-181/10-40]' motif scaffolding with sampled residues flanking chain A residues 163-181 taken from input_pdb; '[A1-150/0 70-100]' a 70-100 residue binder ('/0 ' is a chain break) against target chain A residues 1-150. Plain ranges are sampled/de novo segments; chain+residue tokens (e.g. A163-181) are copied from input_pdb. Substituted into the entrypoint as 'contigmap.contigs={contigs}'."
+
+[[tool.inputs]]
+name        = "num_designs"
+type        = "file"
+cardinality = "one"
+description = "Number of independent designs to generate (Hydra key inference.num_designs), e.g. 10. Outputs are numbered design_0.pdb through design_<N-1>.pdb."
+
+[[tool.inputs]]
+name        = "diffuser_T"
+type        = "file"
+cardinality = "one"
+description = "Optional number of reverse-diffusion denoising steps (Hydra key diffuser.T, default 50; ~20 is often sufficient and roughly 2.5x faster). Not in the default args; enable by appending diffuser.T={diffuser_T}. For partial diffusion of an existing structure use diffuser.partial_T with input_pdb instead."
+
+[[tool.inputs]]
 name        = "input_pdb"
 type        = "pdb"
 cardinality = "one"
-description = "Optional input structure (inference.input_pdb). Supplies the motif for motif scaffolding, the target for binder design (with 'contigmap.contigs' and 'ppi.hotspot_res'), the scaffold/peptide for fold conditioning, or the starting structure for partial diffusion. Not required for unconditional or symmetric generation."
+description = "Optional input structure (Hydra key inference.input_pdb) for motif scaffolding, the binder target (with 'ppi.hotspot_res=[A30,A33,A34]'), fold conditioning, or partial diffusion. Referenced from contigs via chain+residue tokens; not needed for unconditional or symmetric generation. Enable by appending inference.input_pdb={input_pdb} to the entrypoint args."
 
 [[tool.inputs]]
 name        = "model_weights"
 type        = "dir"
 cardinality = "one"
-description = "Optional directory of RFdiffusion .pt checkpoints (Base_ckpt.pt, Complex_base_ckpt.pt, ActiveSite_ckpt.pt, InpaintSeq_ckpt.pt, etc.). Sets inference.model_directory_path; defaults to the weights bundled in the image at /app/RFdiffusion/models. The inference script auto-selects the appropriate checkpoint for the requested task."
+description = "Optional override for the checkpoint directory (Hydra key inference.model_directory_path). Defaults to the weights bundled in the image at /app/RFdiffusion/models; supply this only to use newer or custom .pt checkpoints (Base_ckpt.pt, Complex_base_ckpt.pt, ActiveSite_ckpt.pt, InpaintSeq_ckpt.pt, etc.). Enable by appending inference.model_directory_path={model_weights}."
 
 [[tool.inputs]]
 name        = "scaffold_dir"
 type        = "dir"
 cardinality = "one"
-description = "Optional directory of secondary-structure and block-adjacency .pt files for fold conditioning (scaffoldguided.scaffold_dir), produced from PDBs with helper_scripts/make_secstruc_adj.py. Used together with scaffoldguided.scaffoldguided=True."
+description = "Optional directory of secondary-structure and block-adjacency .pt files for fold conditioning (Hydra keys scaffoldguided.scaffoldguided=True and scaffoldguided.scaffold_dir), produced from PDBs with helper_scripts/make_secstruc_adj.py."
 
 [[tool.outputs]]
 name        = "designs"
 type        = "dir"
 cardinality = "one"
-description = "Output directory selected via inference.output_prefix. Contains one <prefix>_<n>.pdb backbone per design (backbone only, every designed residue emitted as glycine), a matching <prefix>_<n>.trb metadata file (sampled contig, input-to-output residue mapping, inpaint_seq, and the full run config), and a traj/ subdirectory of per-timestep trajectory PDBs (pX0 and Xt-1, stored in reverse order)."
+description = "Output directory (set via inference.output_prefix). Contains one design_<n>.pdb backbone per design (backbone only, every designed residue emitted as glycine), a matching design_<n>.trb metadata file (sampled contig, input-to-output residue mapping, inpaint_seq, and the full run config), and a traj/ subdirectory of per-timestep trajectory PDBs (pX0 and Xt-1, stored in reverse order)."
 
 [tool.image]
 backend   = "docker"
@@ -38,7 +56,7 @@ reference = "docker.io/rosettacommons/rfdiffusion:latest"
 [tool.hardware]
 cpu_cores = 4
 ram_gb    = 16.0
-disk_gb   = 20.0
+disk_gb   = 30.0
 
 [tool.hardware.gpu]
 required     = true
@@ -46,9 +64,14 @@ min_vram_gb  = 16
 cuda_version = "11.1"
 
 [tool.entrypoint]
-command       = "run_inference.py"
-args_template = "inference.model_directory_path=/app/RFdiffusion/models inference.output_prefix={designs}/design inference.num_designs=10 'contigmap.contigs=[150-150]' diffuser.T=50"
+command       = "/app/entrypoint.sh"
+args_template = "inference.model_directory_path=/app/RFdiffusion/models inference.output_prefix={designs}/design 'contigmap.contigs={contigs}' inference.num_designs={num_designs}"
 cache_paths   = [ "/app/RFdiffusion/schedules",]
 
 [tool.binaries]
 exposed = [ "run_inference.py",]
+
+[tool.factored]
+spec_path       = "specs/rfdiffusion/1.1.0.toml"
+image_reference = "ghcr.io/tejasprabhune/bv-pkg/rfdiffusion:1.1.0"
+image_digest    = "sha256:<populated-by-bv-publish>"
