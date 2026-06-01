@@ -33,7 +33,7 @@ description = "Output directory selected via inference.output_prefix. Contains o
 
 [tool.image]
 backend   = "docker"
-reference = "docker://rosettacommons/rfdiffusion"
+reference = "https://hub.docker.com/r/rosettacommons/rfdiffusion"
 
 [tool.hardware]
 cpu_cores = 4
