@@ -70,8 +70,3 @@ cache_paths   = [ "/app/RFdiffusion/schedules",]
 
 [tool.binaries]
 exposed = [ "run_inference.py",]
-
-[tool.factored]
-spec_path       = "specs/rfdiffusion/1.1.0.toml"
-image_reference = "ghcr.io/tejasprabhune/bv-pkg/rfdiffusion:1.1.0"
-image_digest    = "sha256:<populated-by-bv-publish>"
