@@ -168,6 +168,7 @@ cuda_version = "11.1"
 [tool.entrypoint]
 command       = "run_inference.py"
 args_template = """\
+--config-path /app/RFdiffusion/config/inference \
 --config-name {config_name} \
 inference.model_directory_path=/app/RFdiffusion/models \
 inference.output_prefix={designs}/design \
