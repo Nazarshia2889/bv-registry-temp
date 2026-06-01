@@ -34,8 +34,3 @@ args_template = "-f {structure}"
 
 [tool.binaries]
 exposed = [ "fpocket", "mdpocket", "dpocket", "tpocket",]
-
-[tool.factored]
-spec_path       = "specs/fpocket/4.2.3.toml"
-image_reference = "ghcr.io/tejasprabhune/bv-pkg/fpocket:4.2.3"
-image_digest    = "sha256:<populated-by-bv-publish>"
