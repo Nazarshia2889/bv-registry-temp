@@ -1,6 +1,6 @@
 [tool]
 id          = "gromacs"
-version     = "2024.4"
+version     = "2024.4.0"
 description = "Molecular dynamics simulation engine (GROMACS). Performs simulations, energy minimizations, normal mode analyses and trajectory reanalysis. Supports Verlet and group cutoff schemes, PME electrostatics, GPU offloading of non-bonded/PME/bonded/update kernels, domain decomposition, replica exchange, AWH biasing, essential dynamics, and membrane embedding"
 homepage    = "https://www.gromacs.org/"
 license     = "LGPL-2.1-or-later"
