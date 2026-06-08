@@ -1,46 +1,312 @@
 [tool]
-id = "autodock-vina"
-version = "1.2.5"
-description = "Molecular docking with AutoDock Vina"
-homepage = "https://vina.scripps.edu/"
-license = "Apache-2.0"
-tier = "community"
+id          = "autodock-vina"
+version     = "1.2.5"
+description = "Molecular docking and virtual screening with AutoDock Vina. Supports Vina, Vinardo and AutoDock4 scoring functions, flexible receptor side chains, simultaneous multi-ligand docking, batch mode, macrocycle docking, hydrated docking, and external affinity map I/O"
+homepage    = "https://vina.scripps.edu/"
+license     = "Apache-2.0"
+tier        = "community"
 maintainers = [ "github:ccsb-scripps",]
-[[tool.inputs]]
-name = "receptor"
-type = "file"
-cardinality = "one"
-description = "Receptor PDBQT"
 
 [[tool.inputs]]
-name = "ligand"
-type = "file"
+name        = "receptor"
+type        = "pdbqt"
+required    = true
 cardinality = "one"
-description = "Ligand PDBQT"
+description = "Rigid receptor PDBQT file (--receptor)."
+
+[[tool.inputs]]
+name        = "ligand"
+type        = "pdbqt"
+required    = true
+cardinality = "one"
+description = "Ligand PDBQT file (--ligand) for single-ligand docking. For batch virtual screening use the batch input instead."
+
+[[tool.inputs]]
+name        = "center_x"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "X coordinate of the search box center in Angstrom (--center_x). Required unless the search box is supplied via maps or config."
+
+[[tool.inputs]]
+name        = "center_y"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Y coordinate of the search box center in Angstrom (--center_y). Required unless the search box is supplied via maps or config."
+
+[[tool.inputs]]
+name        = "center_z"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Z coordinate of the search box center in Angstrom (--center_z). Required unless the search box is supplied via maps or config."
+
+[[tool.inputs]]
+name        = "size_x"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Search box size along X in Angstrom (--size_x). Required unless the search box is supplied via maps or config."
+
+[[tool.inputs]]
+name        = "size_y"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Search box size along Y in Angstrom (--size_y). Required unless the search box is supplied via maps or config."
+
+[[tool.inputs]]
+name        = "size_z"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Search box size along Z in Angstrom (--size_z). Required unless the search box is supplied via maps or config."
+
+[[tool.inputs]]
+name        = "flex"
+type        = "pdbqt"
+required    = false
+cardinality = "one"
+description = "Flexible receptor side chains PDBQT file (--flex)."
+
+[[tool.inputs]]
+name        = "batch"
+type        = "pdbqt"
+required    = false
+cardinality = "many"
+description = "Ligand PDBQT file(s) for batch/virtual-screening mode (--batch). Use instead of ligand; output goes to the dir input."
+
+[[tool.inputs]]
+name        = "maps"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Affinity map prefix (--maps) for pre-computed AutoGrid4 maps. When provided, receptor and search box coordinates are read from the maps instead of being specified explicitly."
+
+[[tool.inputs]]
+name        = "config"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Configuration file (--config) containing any of the above options as key=value lines. Alternative to specifying all flags on the command line."
+
+[[tool.inputs]]
+name        = "scoring"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Scoring function (--scoring): vina (default), vinardo, or ad4. The ad4 function requires pre-computed affinity maps via the maps input."
+
+[[tool.inputs]]
+name        = "exhaustiveness"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Exhaustiveness of the global search (--exhaustiveness, default 8). Roughly proportional to compute time. Higher values improve pose quality at the cost of speed."
+
+[[tool.inputs]]
+name        = "num_modes"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Maximum number of binding modes to generate (--num_modes, default 9)."
+
+[[tool.inputs]]
+name        = "energy_range"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Maximum energy difference between the best and worst displayed binding mode in kcal/mol (--energy_range, default 3)."
+
+[[tool.inputs]]
+name        = "cpu"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Number of CPU cores to use (--cpu, default 0 = autodetect)."
+
+[[tool.inputs]]
+name        = "seed"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Explicit random seed for reproducibility (--seed, default 0 = random)."
+
+[[tool.inputs]]
+name        = "max_evals"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Number of evaluations per Monte Carlo run (--max_evals, default 0 = heuristic based on ligand flexibility)."
+
+[[tool.inputs]]
+name        = "min_rmsd"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Minimum RMSD between output poses in Angstrom (--min_rmsd, default 1). Poses closer than this are clustered."
+
+[[tool.inputs]]
+name        = "spacing"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Grid spacing in Angstrom (--spacing, default 0.375)."
+
+[[tool.inputs]]
+name        = "verbosity"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Verbosity level (--verbosity, default 1): 0 = no output, 1 = normal, 2 = verbose."
+
+[[tool.inputs]]
+name        = "dir"
+type        = "dir"
+required    = false
+cardinality = "one"
+description = "Output directory for batch mode (--dir). Each ligand in the batch produces a separate output PDBQT in this directory."
+
+[[tool.inputs]]
+name        = "write_maps"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Prefix for writing computed affinity maps to disk (--write_maps). Produces .map and .maps.fld files reusable via the maps input."
+
+[[tool.inputs]]
+name        = "weight_gauss1"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Scoring function weight for the first Gaussian term (--weight_gauss1, default -0.035579)."
+
+[[tool.inputs]]
+name        = "weight_gauss2"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Scoring function weight for the second Gaussian term (--weight_gauss2, default -0.005156)."
+
+[[tool.inputs]]
+name        = "weight_repulsion"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Scoring function weight for the repulsion term (--weight_repulsion, default 0.840245)."
+
+[[tool.inputs]]
+name        = "weight_hydrophobic"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Scoring function weight for the hydrophobic term (--weight_hydrophobic, default -0.035069)."
+
+[[tool.inputs]]
+name        = "weight_hydrogen"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Scoring function weight for the hydrogen-bonding term (--weight_hydrogen, default -0.587439)."
+
+[[tool.inputs]]
+name        = "weight_rot"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Scoring function weight for the rotational entropy penalty (--weight_rot, default 0.05846)."
+
+[[tool.inputs]]
+name        = "score_only"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Score the current pose without docking (--score_only, boolean flag). Append --score_only to the entrypoint args when enabled."
+
+[[tool.inputs]]
+name        = "local_only"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Perform local optimization only, no global search (--local_only, boolean flag). Append --local_only to the entrypoint args when enabled."
+
+[[tool.inputs]]
+name        = "randomize_only"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Randomize the ligand conformation without docking (--randomize_only, boolean flag). Append --randomize_only to the entrypoint args when enabled."
+
+[[tool.inputs]]
+name        = "no_refine"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Skip final pose refinement step (--no_refine, boolean flag). Append --no_refine to the entrypoint args when enabled."
+
+[[tool.inputs]]
+name        = "force_even_voxels"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Force the number of grid voxels to be even, needed for .map format compliance (--force_even_voxels, boolean flag). Append --force_even_voxels to the entrypoint args when enabled."
 
 [[tool.outputs]]
-name = "out"
-type = "file"
+name        = "out"
+type        = "pdbqt"
+required    = true
 cardinality = "one"
-description = "Docked poses"
+description = "Output PDBQT file (--out) containing all docked poses ranked by affinity, with scores and RMSD from the best mode."
 
 [tool.image]
-backend = "docker"
+backend   = "docker"
 reference = "ghcr.io/tejasprabhune/bv-pkg/autodock-vina:1.2.5"
 
 [tool.hardware]
 cpu_cores = 4
-ram_gb = 8.0
-disk_gb = 5.0
+ram_gb    = 8.0
+disk_gb   = 5.0
 
 [tool.entrypoint]
-command = "vina"
+command       = "vina"
+args_template = """\
+--receptor {receptor} \
+--ligand {ligand} \
+--out {out} \
+--center_x {center_x} \
+--center_y {center_y} \
+--center_z {center_z} \
+--size_x {size_x} \
+--size_y {size_y} \
+--size_z {size_z} \
+--flex {flex} \
+--batch {batch} \
+--maps {maps} \
+--config {config} \
+--scoring {scoring} \
+--exhaustiveness {exhaustiveness} \
+--num_modes {num_modes} \
+--energy_range {energy_range} \
+--cpu {cpu} \
+--seed {seed} \
+--max_evals {max_evals} \
+--min_rmsd {min_rmsd} \
+--spacing {spacing} \
+--verbosity {verbosity} \
+--dir {dir} \
+--write_maps {write_maps} \
+--weight_gauss1 {weight_gauss1} \
+--weight_gauss2 {weight_gauss2} \
+--weight_repulsion {weight_repulsion} \
+--weight_hydrophobic {weight_hydrophobic} \
+--weight_hydrogen {weight_hydrogen} \
+--weight_rot {weight_rot}"""
 
 [tool.binaries]
 exposed = [ "vina",]
 
 [tool.factored]
-spec_path = "specs/autodock-vina/1.2.5.toml"
+spec_path       = "specs/autodock-vina/1.2.5.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/autodock-vina:1.2.5"
-image_digest = "sha256:31765c7a5c986e495071e96b5df26e308fe11ae178b5db86bdf7bfec05ca714f"
-
+image_digest    = "sha256:31765c7a5c986e495071e96b5df26e308fe11ae178b5db86bdf7bfec05ca714f"
