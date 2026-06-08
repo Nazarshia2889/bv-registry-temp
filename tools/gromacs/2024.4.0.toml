@@ -394,7 +394,7 @@ description = "Checkpoint file (-cpo, .cpt) written at -cpt intervals. Stores th
 
 [tool.image]
 backend   = "docker"
-reference = "ghcr.io/tejasprabhune/bv-pkg/gromacs:2024.3"
+reference = "docker.io/gromacs/gromacs:2024.4"
 
 [tool.hardware]
 cpu_cores = 8
