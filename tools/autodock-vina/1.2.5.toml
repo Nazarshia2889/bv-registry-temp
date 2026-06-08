@@ -9,14 +9,14 @@ maintainers = [ "github:ccsb-scripps",]
 
 [[tool.inputs]]
 name        = "receptor"
-type        = "pdbqt"
+type        = "file"
 required    = true
 cardinality = "one"
 description = "Rigid receptor PDBQT file (--receptor)."
 
 [[tool.inputs]]
 name        = "ligand"
-type        = "pdbqt"
+type        = "file"
 required    = true
 cardinality = "one"
 description = "Ligand PDBQT file (--ligand) for single-ligand docking. For batch virtual screening use the batch input instead."
@@ -65,14 +65,14 @@ description = "Search box size along Z in Angstrom (--size_z). Required unless t
 
 [[tool.inputs]]
 name        = "flex"
-type        = "pdbqt"
+type        = "file"
 required    = false
 cardinality = "one"
 description = "Flexible receptor side chains PDBQT file (--flex)."
 
 [[tool.inputs]]
 name        = "batch"
-type        = "pdbqt"
+type        = "file"
 required    = false
 cardinality = "many"
 description = "Ligand PDBQT file(s) for batch/virtual-screening mode (--batch). Use instead of ligand; output goes to the dir input."
@@ -254,7 +254,7 @@ description = "Force the number of grid voxels to be even, needed for .map forma
 
 [[tool.outputs]]
 name        = "out"
-type        = "pdbqt"
+type        = "file"
 required    = true
 cardinality = "one"
 description = "Output PDBQT file (--out) containing all docked poses ranked by affinity, with scores and RMSD from the best mode."
