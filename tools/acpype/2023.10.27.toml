@@ -155,8 +155,3 @@ args_template = """\
 
 [tool.binaries]
 exposed = [ "acpype",]
-
-[tool.factored]
-spec_path       = "specs/acpype/2023.10.27.toml"
-image_reference = "ghcr.io/tejasprabhune/bv-pkg/acpype:2023.10.27"
-image_digest    = "sha256:<populated-by-bv-publish>"
