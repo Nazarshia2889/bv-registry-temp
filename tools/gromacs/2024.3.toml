@@ -1,45 +1,465 @@
 [tool]
-id = "gromacs"
-version = "2024.3"
-description = "Molecular dynamics simulation suite"
-homepage = "https://www.gromacs.org/"
-license = "LGPL-2.1"
-tier = "community"
+id          = "gromacs"
+version     = "2024.4"
+description = "Molecular dynamics simulation engine (GROMACS). Performs simulations, energy minimizations, normal mode analyses and trajectory reanalysis. Supports Verlet and group cutoff schemes, PME electrostatics, GPU offloading of non-bonded/PME/bonded/update kernels, domain decomposition, replica exchange, AWH biasing, essential dynamics, and membrane embedding"
+homepage    = "https://www.gromacs.org/"
+license     = "LGPL-2.1-or-later"
+tier        = "community"
 maintainers = [ "github:gromacs",]
+
 [[tool.inputs]]
-name = "tpr"
-type = "file"
+name        = "tpr"
+type        = "file"
+required    = true
 cardinality = "one"
-description = "Run input file"
+description = "Portable binary run input file (-s, .tpr) produced by gmx grompp. Contains topology, coordinates, velocities, simulation parameters and force-field data — the single required input for gmx mdrun."
+
+[[tool.inputs]]
+name        = "cpi"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Checkpoint file for continuation runs (-cpi, .cpt). Restores positions, velocities, energies and box from a previous run."
+
+[[tool.inputs]]
+name        = "table"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Tabulated non-bonded potential (-table, .xvg)."
+
+[[tool.inputs]]
+name        = "tablep"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Tabulated pair interaction potential (-tablep, .xvg)."
+
+[[tool.inputs]]
+name        = "tableb"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Tabulated bonded potential (-tableb, .xvg)."
+
+[[tool.inputs]]
+name        = "rerun"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Trajectory for rerun analysis (-rerun, .xtc/.trr/.gro/.pdb). Recompute energies/forces on each frame without integrating."
+
+[[tool.inputs]]
+name        = "ei"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Essential dynamics / flooding sampling input (-ei, .edi)."
+
+[[tool.inputs]]
+name        = "awh"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Accelerated weight histogram (AWH) bias initialization (-awh, .xvg)."
+
+[[tool.inputs]]
+name        = "plumed"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "PLUMED input script (-plumed, .dat). Requires GROMACS built with PLUMED support (native in 2025+)."
+
+[[tool.inputs]]
+name        = "membed"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Membrane embedding parameters (-membed, .dat)."
+
+[[tool.inputs]]
+name        = "mp"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Topology for membrane embedding (-mp, .top)."
+
+[[tool.inputs]]
+name        = "mn"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Index file for membrane embedding (-mn, .ndx)."
+
+[[tool.inputs]]
+name        = "deffnm"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Default filename prefix for all I/O (-deffnm). When set, all input/output filenames default to this prefix with appropriate extensions."
+
+[[tool.inputs]]
+name        = "nsteps"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Override number of simulation steps from the .tpr (-nsteps, default -2 = use .tpr value). Set -1 for indefinite."
+
+[[tool.inputs]]
+name        = "maxh"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Maximum wall-clock run time in hours (-maxh, default -1 = no limit). Writes a checkpoint and exits cleanly when reached."
+
+[[tool.inputs]]
+name        = "cpt_interval"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Checkpoint writing interval in minutes (-cpt, default 15)."
+
+[[tool.inputs]]
+name        = "nt"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Total number of threads (-nt, default 0 = autodetect). Sets thread-MPI ranks x OpenMP threads."
+
+[[tool.inputs]]
+name        = "ntmpi"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Number of thread-MPI ranks (-ntmpi, default 0 = auto). Use with ntomp to control MPI x OpenMP decomposition."
+
+[[tool.inputs]]
+name        = "ntomp"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Number of OpenMP threads per MPI rank (-ntomp, default 0 = auto)."
+
+[[tool.inputs]]
+name        = "ntomp_pme"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Number of OpenMP threads for PME-only ranks (-ntomp_pme, default 0 = auto)."
+
+[[tool.inputs]]
+name        = "npme"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Number of dedicated PME ranks (-npme, default -1 = auto). 0 = no separate PME ranks."
+
+[[tool.inputs]]
+name        = "nb"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Non-bonded interaction kernel (-nb): auto, cpu, or gpu."
+
+[[tool.inputs]]
+name        = "pme"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "PME computation kernel (-pme): auto, cpu, or gpu."
+
+[[tool.inputs]]
+name        = "pmefft"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "PME FFT kernel (-pmefft): auto, cpu, or gpu."
+
+[[tool.inputs]]
+name        = "bonded"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Bonded interaction kernel (-bonded): auto, cpu, or gpu."
+
+[[tool.inputs]]
+name        = "update"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Integration/constraint update kernel (-update): auto, cpu, or gpu."
+
+[[tool.inputs]]
+name        = "gpu_id"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "GPU device IDs to use (-gpu_id), e.g. '02' for devices 0 and 2."
+
+[[tool.inputs]]
+name        = "gputasks"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "GPU task assignment string per rank (-gputasks), e.g. '0011' assigns NB to GPU0 and PME to GPU1 per two ranks."
+
+[[tool.inputs]]
+name        = "pin"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Thread pinning policy (-pin): auto, on, or off."
+
+[[tool.inputs]]
+name        = "pinoffset"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Logical core offset for thread pinning (-pinoffset, default 0)."
+
+[[tool.inputs]]
+name        = "pinstride"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Stride between pinned threads (-pinstride, default 0 = auto)."
+
+[[tool.inputs]]
+name        = "dd"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Domain decomposition grid as 'x y z' (-dd, default '0 0 0' = auto)."
+
+[[tool.inputs]]
+name        = "ddorder"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "DD rank order (-ddorder): interleave, pp_pme, or cartesian."
+
+[[tool.inputs]]
+name        = "dlb"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Dynamic load balancing (-dlb): auto, yes, or no."
+
+[[tool.inputs]]
+name        = "dds"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Initial DD cell size fraction for DLB (-dds, default 0.8)."
+
+[[tool.inputs]]
+name        = "rdd"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Distance for DD communication in nm (-rdd, default 0 = auto from interaction ranges)."
+
+[[tool.inputs]]
+name        = "rcon"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Maximum distance for P-LINCS constraint communication (-rcon, default 0 = auto)."
+
+[[tool.inputs]]
+name        = "nstlist"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Neighbor list update frequency (-nstlist, default 0 = set by mdp/auto-tuning)."
+
+[[tool.inputs]]
+name        = "replex"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Replica exchange attempt interval in steps (-replex, default 0 = disabled)."
+
+[[tool.inputs]]
+name        = "nex"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Number of exchange attempts per replica exchange interval (-nex, default 0 = auto)."
+
+[[tool.inputs]]
+name        = "reseed"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Random seed for replica exchange (-reseed, default -1 = random)."
+
+[[tool.inputs]]
+name        = "pforce"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Print all forces larger than this threshold in kJ/mol/nm (-pforce, default -1 = never print)."
+
+[[tool.inputs]]
+name        = "xvg"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "XVG plot format (-xvg): xmgrace, xmgr, or none."
+
+[[tool.inputs]]
+name        = "nbfe"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Free-energy perturbation non-bonded kernel (-nbfe): auto, cpu, or gpu."
+
+[[tool.inputs]]
+name        = "tunepme"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Optimize PME load between PP and PME ranks at startup (-tunepme / -notunepme, boolean flag). Append -tunepme or -notunepme."
+
+[[tool.inputs]]
+name        = "v"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Verbose stdout output during simulation (-v / -nov, boolean flag). Append -v or -nov."
+
+[[tool.inputs]]
+name        = "ddcheck"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Check for all bonded interactions with DD (-ddcheck / -noddcheck, boolean flag). Append -ddcheck or -noddcheck."
+
+[[tool.inputs]]
+name        = "append_output"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Append to existing output files on continuation (-append / -noappend, boolean flag). Append -append or -noappend."
+
+[[tool.inputs]]
+name        = "cpnum"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Keep numbered checkpoint files (-cpnum / -nocpnum, boolean flag). Append -cpnum or -nocpnum."
 
 [[tool.outputs]]
-name = "out"
-type = "file"
+name        = "trajectory"
+type        = "file"
+required    = true
 cardinality = "one"
-description = "Trajectory and outputs"
+description = "Full-precision trajectory (-o, .trr). Contains positions, velocities and forces at intervals set in the .mdp."
+
+[[tool.outputs]]
+name        = "xtc"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Compressed trajectory (-x, .xtc or .tng). Positions only at nstxout-compressed intervals."
+
+[[tool.outputs]]
+name        = "final_coords"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Structure file with final coordinates and box (-c, .gro)."
+
+[[tool.outputs]]
+name        = "energy"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Energy file (-e, .edr) containing all energy terms, temperature, pressure, volume and virial at nstenergy intervals."
+
+[[tool.outputs]]
+name        = "log"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Simulation log (-g, .log) with run parameters, performance statistics and step-by-step energy summaries."
+
+[[tool.outputs]]
+name        = "checkpoint_out"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Checkpoint file (-cpo, .cpt) written at -cpt intervals. Stores the complete simulation state for exact continuation."
 
 [tool.image]
-backend = "docker"
-reference = "ghcr.io/tejasprabhune/bv-pkg/gromacs:2024.3"
+backend   = "docker"
+reference = "quay.io/biocontainers/gromacs:2024.4--<BUILD>"
 
 [tool.hardware]
-cpu_cores = 16
-ram_gb = 32.0
-disk_gb = 50.0
+cpu_cores = 8
+ram_gb    = 16.0
+disk_gb   = 20.0
+
+[tool.hardware.gpu]
+required     = false
+min_vram_gb  = 8
+cuda_version = "12.0"
 
 [tool.entrypoint]
-command = "gmx"
+command       = "gmx"
+args_template = """\
+mdrun \
+-s {tpr} \
+-o {trajectory} \
+-x {xtc} \
+-c {final_coords} \
+-e {energy} \
+-g {log} \
+-cpo {checkpoint_out} \
+-cpi {cpi} \
+-table {table} \
+-tablep {tablep} \
+-tableb {tableb} \
+-rerun {rerun} \
+-ei {ei} \
+-awh {awh} \
+-plumed {plumed} \
+-membed {membed} \
+-mp {mp} \
+-mn {mn} \
+-deffnm {deffnm} \
+-nsteps {nsteps} \
+-maxh {maxh} \
+-cpt {cpt_interval} \
+-nt {nt} \
+-ntmpi {ntmpi} \
+-ntomp {ntomp} \
+-ntomp_pme {ntomp_pme} \
+-npme {npme} \
+-nb {nb} \
+-pme {pme} \
+-pmefft {pmefft} \
+-bonded {bonded} \
+-update {update} \
+-gpu_id {gpu_id} \
+-gputasks {gputasks} \
+-pin {pin} \
+-pinoffset {pinoffset} \
+-pinstride {pinstride} \
+-dd {dd} \
+-ddorder {ddorder} \
+-dlb {dlb} \
+-dds {dds} \
+-rdd {rdd} \
+-rcon {rcon} \
+-nstlist {nstlist} \
+-replex {replex} \
+-nex {nex} \
+-reseed {reseed} \
+-pforce {pforce} \
+-xvg {xvg} \
+-nbfe {nbfe}"""
 
 [tool.binaries]
 exposed = [ "gmx",]
-
-[tool.factored]
-spec_path = "specs/gromacs/2024.3.toml"
-image_reference = "ghcr.io/tejasprabhune/bv-pkg/gromacs:2024.3"
-image_digest = "sha256:19557304499d54b6b655ff155ef8984470a63ffa4e7990d9281c063ef69279a9"
-
-
-[tool.hardware.gpu]
-required = false
-min_vram_gb = 8
-cuda_version = "12.0"
