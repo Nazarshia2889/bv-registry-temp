@@ -1,6 +1,6 @@
 [tool]
 id = "foldseek"
-version = "10.941cd33"
+version = "10.9.4"
 description = "Ultra-fast protein-structure search (alignment-by-3Di alphabet)"
 homepage = "https://github.com/steineggerlab/foldseek"
 license = "GPL-3.0"
