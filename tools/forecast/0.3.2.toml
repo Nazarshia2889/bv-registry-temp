@@ -4,7 +4,7 @@ version     = "0.3.2"
 description = "FORECasT: predicts the distribution of CRISPR-Cas9 repair outcomes (indel alleles and their relative frequencies) for a target site, from sequence alone. Part of the SelfTarget suite."
 homepage    = "https://github.com/felicityallen/SelfTarget"
 license     = "MIT"
-tier        = "experimental"
+tier        = "community"
 maintainers = [ "github:felicityallen",]
 
 [[tool.inputs]]
