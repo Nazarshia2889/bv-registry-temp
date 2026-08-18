@@ -4,7 +4,7 @@ version     = "1.1.2"
 description = "CRISPRoff v1.1.2: thermodynamic off-target specificity scoring for CRISPR-Cas9 gRNAs using nucleic acid duplex energy parameters. Scores off-targets supplied to it; it does NOT enumerate off-targets itself (pair with cas-offinder or RIsearch2 upstream)."
 homepage    = "https://github.com/RTH-tools/crisproff"
 license     = "GPL-3.0"
-tier        = "experimental"
+tier        = "community"
 maintainers = [ "github:RTH-tools",]
 
 [[tool.inputs]]
