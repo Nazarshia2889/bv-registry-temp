@@ -4,7 +4,7 @@ version     = "1.0.0"
 description = "CRISPRon: deep-learning prediction of SpCas9 gRNA on-target efficiency from 30 nt sequence windows (4 nt 5' context + 20 nt spacer + NGG PAM + 3 nt 3' context). Six-model CNN ensemble; scores are predicted indel frequency in percent."
 homepage    = "https://github.com/RTH-tools/crispron"
 license     = "AGPL-3.0"
-tier        = "experimental"
+tier        = "community"
 maintainers = [ "github:RTH-tools",]
 
 [[tool.inputs]]
