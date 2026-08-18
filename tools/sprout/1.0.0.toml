@@ -4,7 +4,7 @@ version     = "1.0.0"
 description = "SPROUT: predicts CRISPR-Cas9 repair outcome statistics for a guide, trained on primary human T cells. Reports insertion fraction, insertion:deletion ratio, average insertion and deletion lengths, outcome diversity, and the most likely inserted base. Note: summary statistics, not per-allele indel profiles."
 homepage    = "https://github.com/amirmohan/SPROUT"
 license     = "Apache-2.0"
-tier        = "experimental"
+tier        = "community"
 maintainers = [ "github:amirmohan",]
 
 [[tool.inputs]]
