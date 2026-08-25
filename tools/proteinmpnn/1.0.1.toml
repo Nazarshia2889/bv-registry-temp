@@ -15,27 +15,6 @@ cardinality = "one"
 description = "Single input backbone to redesign (--pdb_path). ProteinMPNN reads the backbone atoms (N, CA, C, O) and samples an amino-acid sequence for it. For batches or complex chain handling, pre-parse structures with parse_multiple_chains.py and use jsonl_path instead of this."
 
 [[tool.inputs]]
-name        = "num_seq_per_target"
-type        = "file"
-required    = true
-cardinality = "one"
-description = "Number of sequences to generate per input backbone (--num_seq_per_target), e.g. 8. Each sampled sequence is written to the output FASTA with its score, global_score and seq_recovery."
-
-[[tool.inputs]]
-name        = "sampling_temp"
-type        = "file"
-required    = true
-cardinality = "one"
-description = "Sampling temperature(s) for amino-acid sampling (--sampling_temp), a space-separated string such as '0.1' or '0.1 0.2 0.3'. Suggested range 0.1-0.3: higher gives more sequence diversity, lower stays closer to the most likely (native-like) residues."
-
-[[tool.inputs]]
-name        = "pdb_path_chains"
-type        = "file"
-required    = false
-cardinality = "one"
-description = "Space-separated list of chains to design for the single PDB (--pdb_path_chains), e.g. 'A B'. Any chain not listed is held fixed (its sequence is kept and used as context). Append --pdb_path_chains {pdb_path_chains}."
-
-[[tool.inputs]]
 name        = "jsonl_path"
 type        = "file"
 required    = false
@@ -98,36 +77,8 @@ required    = false
 cardinality = "one"
 description = "Override directory of model weights (--path_to_model_weights). Defaults to the vanilla, soluble and CA-only weights bundled in the image; set this only for custom or newer checkpoints."
 
-[[tool.inputs]]
-name        = "model_name"
-type        = "file"
-required    = false
-cardinality = "one"
-description = "Model checkpoint to use (--model_name): v_48_002, v_48_010, v_48_020 (default) or v_48_030, where the trailing number is the training backbone-noise level in hundredths of an Angstrom. Combine with --use_soluble_model for soluble-only weights, or --ca_only with a CA-only model for CA-trace inputs."
-
-[[tool.inputs]]
-name        = "backbone_noise"
-type        = "file"
-required    = false
-cardinality = "one"
-description = "Standard deviation of Gaussian noise added to backbone atoms during design (--backbone_noise, default 0.0). Small values can improve designs on imperfect or low-resolution backbones."
-
-[[tool.inputs]]
-name        = "batch_size"
-type        = "file"
-required    = false
-cardinality = "one"
-description = "Per-forward-pass batch size (--batch_size, default 1). Raise on larger GPUs to speed up many-sequence runs; lower if the GPU runs out of memory. Should divide num_seq_per_target."
-
-[[tool.inputs]]
-name        = "seed"
-type        = "file"
-required    = false
-cardinality = "one"
-description = "Random seed (--seed). 0 (default) picks a random seed each run; set a fixed value for reproducible sampling."
-
 [[tool.outputs]]
-name        = "sequences"
+name        = "output_dir"
 type        = "dir"
 required    = true
 cardinality = "one"
@@ -149,7 +100,7 @@ cuda_version = "11.3"
 
 [tool.entrypoint]
 command       = "python"
-args_template = "/app/proteinmpnn/protein_mpnn_run.py --pdb_path {pdb_path} --out_folder {sequences} --num_seq_per_target {num_seq_per_target} --sampling_temp {sampling_temp}"
+args_template = "/app/proteinmpnn/protein_mpnn_run.py --pdb_path {pdb_path} --out_folder {output_dir}"
 
 [tool.binaries]
 exposed = [ "python", "protein_mpnn_run.py", "parse_multiple_chains.py", "assign_fixed_chains.py", "make_fixed_positions_dict.py", "make_tied_positions_dict.py", "make_bias_AA.py", "make_bias_per_residue_dict.py",]

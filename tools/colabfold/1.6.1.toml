@@ -4,7 +4,7 @@ version     = "1.6.1"
 description = "Fast protein structure prediction using AlphaFold2 with MMseqs2-based MSA generation"
 homepage    = "https://github.com/sokrypton/ColabFold"
 license     = "MIT"
-tier        = "community"
+tier        = "core"
 maintainers = ["github:sokrypton"]
 
 [[tool.inputs]]
@@ -13,76 +13,6 @@ type        = "fasta[protein]"
 cardinality = "one"
 required    = true
 description = "Input FASTA, A3M, CSV/TSV, or directory of any of the above. For multimers, separate chains with ':'."
-
-[[tool.inputs]]
-name        = "model_type"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "AlphaFold2 model variant: auto, alphafold2, alphafold2_ptm, alphafold2_multimer_v1/v2/v3. Default: auto."
-
-[[tool.inputs]]
-name        = "num_recycles"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Number of recycling iterations. Higher = more accurate but slower. Default: 3."
-
-[[tool.inputs]]
-name        = "num_models"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Number of model parameters to use (1-5). More = better ensemble. Default: 5."
-
-[[tool.inputs]]
-name        = "msa_mode"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "MSA strategy: mmseqs2_uniref_env (default), mmseqs2_uniref, or single_sequence."
-
-[[tool.inputs]]
-name        = "num_seeds"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Number of random seeds (predictions per model). Default: 1."
-
-[[tool.inputs]]
-name        = "rank_by"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Metric to rank output models: auto, plddt, ptm, iptm, multimer. Default: auto."
-
-[[tool.inputs]]
-name        = "stop_at_score"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Early-stop recycling once this pLDDT/pTM score is reached (0-100). Default: 100 (disabled)."
-
-[[tool.inputs]]
-name        = "use_amber"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Run AMBER energy minimization on top predictions. Default: false."
-
-[[tool.inputs]]
-name        = "use_templates"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Use PDB templates in prediction. Default: false."
-
-[[tool.inputs]]
-name        = "msa_only"
-type        = "file"
-cardinality = "one"
-required    = false
-description = "Only generate MSAs and write A3M files; skip structure prediction. Default: false."
 
 [[tool.outputs]]
 name        = "output_dir"
@@ -125,7 +55,7 @@ cuda_version = "12.0"
 
 [tool.entrypoint]
 command       = "colabfold_batch"
-args_template = "--model-type {model_type} --num-recycle {num_recycles} --num-models {num_models} --msa-mode {msa_mode} --num-seeds {num_seeds} --rank {rank_by} --stop-at-score {stop_at_score} {input_path} {output_dir}"
+args_template = "{input_path} {output_dir}"
 
 cache_paths = ["/cache/colabfold"]
 
