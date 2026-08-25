@@ -65,4 +65,4 @@ exposed = ["colabfold_batch"]
 [tool.factored]
 spec_path = "specs/colabfold/1.6.1.toml"
 image_reference = "ghcr.io/tejasprabhune/bv-pkg/colabfold:1.6.1"
-image_digest = "sha256:5815125a003ed3cbbac8b56278b93d6779dbc396aed60e67d6543af5222f8c7f"
+image_digest = "sha256:4b928c3b6eb9b35c76af6d735cc545aeb9d6f106e7bbb07233048b73c87552b6"
