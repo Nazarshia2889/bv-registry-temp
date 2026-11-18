@@ -1,0 +1,64 @@
+[tool]
+id          = "prnet"
+version     = "1.0.0"
+description = "Perturbation-conditioned deep generative model predicting transcriptional responses to chemical perturbations: given a control expression profile plus a compound SMILES and dose, samples the perturbed bulk or single-cell expression profile. Ships pretrained LINCS L1000 (978-gene) and Sci-Plex (5000-gene) checkpoints"
+homepage    = "https://github.com/Perturbation-Response-Prediction/PRnet"
+license     = "Apache-2.0"
+tier        = "community"
+maintainers = [ "github:Perturbation-Response-Prediction",]
+
+[[tool.inputs]]
+name        = "data_path"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "AnnData .h5ad holding the expression matrix to run inference on (--data_path). adata.X is normalized and log1p-transformed by the entrypoint before inference, so pass raw counts. adata.obs must contain: the split column named by split_key; 'dose' (numeric, where 0.0 marks control rows); 'SMILES' (encoded to a 1024-bit FCFP4 Morgan fingerprint scaled by log10(dose+1)); 'paired_control_index' (obs index label of the matched control row for each perturbed row); and the condition column named by obs_key. adata.n_vars must equal the gene count the chosen checkpoint was trained on - 978 for the bundled LINCS checkpoint, 5000 for the bundled Sci-Plex one - otherwise loading the weights fails with a shape mismatch. The bundled dataset/demo.h5ad (681 x 978) is a working example."
+
+[[tool.inputs]]
+name        = "split_key"
+type        = "file"
+required    = true
+cardinality = "one"
+description = "Name of the adata.obs column that assigns each row to a split (--split_key), e.g. 'demo_split'. Values are read as the literal strings 'train', 'valid' and 'test'; inference consumes the 'test' rows, to which all rows with dose == 0.0 are appended as controls. The value is also the filename prefix of every output file. If the column also marks 'train' or 'valid' rows, datasets for those are built at startup too and their SMILES fingerprints computed, which costs time and memory even though inference only consumes 'test'. Required in practice: the entrypoint's built-in default ('demo_split') exists only in the bundled demo dataset, so any other input needs this set explicitly."
+
+[[tool.inputs]]
+name        = "model_path"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Checkpoint (.pt state_dict) to load for inference. Append `--model_path {model_path}` to select one. Defaults to the bundled /app/PRnet/checkpoint/lincs_best_epoch_all.pt (2.1 MB, 978 genes); the image also bundles /app/PRnet/checkpoint/sciplex_best_epoch_all.pt (8.4 MB, 5000 genes). Both ship inside the image - nothing is downloaded at runtime. The gene count of data_path must match the checkpoint. Note: upstream hardcodes the LINCS checkpoint and this flag does not exist there; the image patches test_demo.py to add it, which is also what makes the bundled Sci-Plex checkpoint reachable."
+
+[[tool.inputs]]
+name        = "obs_key"
+type        = "file"
+required    = false
+cardinality = "one"
+description = "Name of the adata.obs column naming each perturbation condition. Append `--obs_key {obs_key}` to override. Defaults to 'cov_drug_dose_name', which is the column the bundled dataset/demo.h5ad uses. The repo's own scripts differ: test_lincs.py uses 'cov_drug_name' and test_sciplex.py uses 'cov_drug', so set this to match whichever data and checkpoint you pair. Its values are written verbatim, one per row, as the row labels in the <split_key>_cov_drug_array.csv output, e.g. 'HT115_PJ-34_10.0'. Like model_path, this flag is added by the image's patch and does not exist upstream."
+
+[[tool.outputs]]
+name        = "results_dir"
+type        = "dir"
+required    = true
+cardinality = "one"
+description = "Output folder (--results_dir). Receives four headerless comma-delimited CSVs, all prefixed with the split_key value: <split_key>_y_pre_array.csv, the model's sampled prediction; <split_key>_y_true_array.csv, the observed perturbed profile; <split_key>_x_true_array.csv, the matched control profile fed in; and <split_key>_cov_drug_array.csv, one condition label per line from the obs_key column. The three matrices are (test rows with dose != 0) x (number of genes): rows marked 'test' that are controls (dose == 0.0) are dropped from the prediction set, so the count is 661 x 978 for the bundled demo, whose 'test' rows are all dose != 0. Two cautions: the directory must already exist, since the code never creates it; and all four files are opened in append mode, so re-running into a non-empty directory concatenates rather than overwrites (a second demo run takes each file from 661 to 1322 rows). Give each run a fresh directory. Row order is NOT adata.obs order: the test DataLoader is built with shuffle=True, so rows come out permuted and must be joined back to your input via the labels in <split_key>_cov_drug_array.csv, which stay aligned across all four files within a run. The permutation and the predictions are nonetheless reproducible: the trainer seeds torch with 2024, and two consecutive runs on identical inputs were verified byte-identical. That seed is not exposed on the command line, so drawing a different sample from the model's output distribution requires editing the code. Note also that <split_key>_x_true_array.csv holds the control profile after normalize_total and log1p, not raw counts. Critical: the code concatenates this value onto the filenames directly rather than joining it as a path, so it must end in a trailing slash. The args_template appends a literal '/' for exactly this reason, which is safe whether or not the runner's value already ends in one (a doubled slash resolves normally). Passed without one, the four files are written into the PARENT directory with the final path segment fused onto the filename (a value of '/data/out' yields '/data/outdemo_split_y_pre_array.csv') and the run still exits 0, leaving the declared output directory silently empty."
+
+[tool.image]
+backend   = "docker"
+reference = "docker.io/alakshminarasimhan/prnet:1.0.0"
+
+[tool.hardware]
+cpu_cores = 4
+ram_gb    = 16.0
+disk_gb   = 25.0
+
+[tool.hardware.gpu]
+required     = false
+min_vram_gb  = 4
+cuda_version = "11.3"
+
+[tool.entrypoint]
+command       = "python"
+args_template = "/app/PRnet/test_demo.py --data_path {data_path} --split_key {split_key} --results_dir {results_dir}/"
+
+[tool.binaries]
+exposed = [ "python", "test_demo.py", "test_lincs.py", "test_sciplex.py", "train_lincs.py", "train_sciplex.py", "analysis_lincs.py", "analysis_sciplex.py",]
